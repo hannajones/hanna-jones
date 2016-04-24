@@ -4,7 +4,7 @@
   "description": "A simple personal portfolio website built using React and Firebase.",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --content-base . --progress --colors"
+    "start": "webpack-dev-server --inline --content-base . --history-api-fallback --progress --colors"
   },
   "author": "Hanna Jones",
   "license": "ISC",

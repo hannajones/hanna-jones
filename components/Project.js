@@ -13,9 +13,10 @@ class Project extends React.Component {
     var data = this.props.data
     return (
       <div>
-        <Carousel images={data.images}/>
+        <p>Project</p>
+        {/*<Carousel images={data.images}/>
         <h3>{data.title}</h3>
-        <p>{data.description}</p>
+        <p>{data.description}</p>*/}
       </div>
     )
   }

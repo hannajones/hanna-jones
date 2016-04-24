@@ -1,5 +1,6 @@
 import React from 'react'
 import Project from './Project'
+import { Link } from 'react-router'
 
 class Card extends React.Component {
   render() {
@@ -16,7 +17,8 @@ class Card extends React.Component {
             <p className="card-paragraph">{this.props.project.description}</p>
           </div>
           <div className="card-action">
-            <p>Details</p>
+            <p><Link to="projects/sfusdselects">Details</Link></p>
+            {this.props.children}
           </div>
         </div>
       </div>
