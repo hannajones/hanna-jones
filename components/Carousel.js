@@ -31,8 +31,8 @@ class Carousel extends React.Component {
         <img className="project-image" src={this.props.images[this.state.index]} alt="image"/>
           { this.props.images.length > 1 ? 
             <div id="buttons">
-              <button onClick={this.setNextImage}>Next</button>
-              <button onClick={this.setPreviousImage}>Back</button>
+              <a className="waves-effect waves-light btn" onClick={this.setNextImage}>Next</a>
+              <a className="waves-effect waves-light btn" onClick={this.setPreviousImage}>Back</a>
             </div>
             : false
           }

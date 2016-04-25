@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from './Carousel';
+import { Link } from 'react-router';
 import ProjectStore from '../stores/ProjectStore';
 import ProjectActions from '../actions/ProjectActions';
 
@@ -28,6 +29,7 @@ class Project extends React.Component {
         <Carousel images={data.images}/>
         <h3>{data.title}</h3>
         <p>{data.description}</p>
+        <button><Link to="/">Home</Link></button>
       </div>
     )
   }

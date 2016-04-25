@@ -1,7 +1,7 @@
 .image-container {
   height: 250px;
   width: 450px;
-  margin: 10px;
+  margin: 10px 10px 75px 10px;
 }
 
 .project-image {
@@ -14,3 +14,9 @@
   height: 60px;
   line-height: 20px;
 }
+
+a.waves-effect.waves-light.btn {
+  margin: 10px 10px 10px 0;
+}
+
+
