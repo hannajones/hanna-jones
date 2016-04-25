@@ -17,8 +17,7 @@ class Card extends React.Component {
             <p className="card-paragraph">{this.props.project.description}</p>
           </div>
           <div className="card-action">
-            <p><Link to="projects/sfusdselects">Details</Link></p>
-            {this.props.children}
+            <Link to={`/project/${this.props.project.title}`}>{this.props.project.title}</Link>
           </div>
         </div>
       </div>
