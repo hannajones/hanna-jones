@@ -6,12 +6,12 @@ import Project from './components/Project'
 import ProjectsContainer from './components/ProjectsContainer'
 import ProjectForm from './components/ProjectForm'
 
-render(<App/>, document.getElementById('app'))
+// render(<App/>, document.getElementById('app'))
 
-// render((
-//   <Router history={browserHistory}>
-//     <Route path="/" component={App}/>
-//     <Route path="project/:title" component={Project}/>
-//     <Route path="new" component={ProjectForm}/>
-//   </Router>
-// ), document.getElementById('app'))
+render((
+  <Router history={browserHistory}>
+    <Route path="/" component={App}/>
+    <Route path="project/:id" component={Project}/>
+    <Route path="new" component={ProjectForm}/>
+  </Router>
+), document.getElementById('app'))

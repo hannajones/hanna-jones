@@ -23,12 +23,10 @@ var dataToArray = function(data) {
 // calling function on dummy data
 dataToArray(appData);
 
-console.log(_catalog)
-
-var _projects = [];
+var _projects = _catalog;
 
 const _findProject = (project) => {
-  return _projects.find(myProject => myProject.id === project.id)
+  return _projects.find(myProject => myProject.id == project)
 }
 
 const _createProject = (project) => {
