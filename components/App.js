@@ -1,32 +1,26 @@
-import React from 'react'
-import ProjectsContainer from './ProjectsContainer'
-import ProjectForm from './ProjectForm'
-import Rebase from 're-base'
+import React from 'react';
+import ProjectsContainer from './ProjectsContainer';
+import ProjectForm from './ProjectForm';
+import Rebase from 're-base';
+import ProjectActions from '../actions/ProjectActions';
+import ProjectStore from '../stores/ProjectStore'
 
-//refactor to ES6
-// var base = Rebase.createClass('https://hannajones.firebaseio.com/')
+function getCatalog() {
+  return { projects: ProjectStore.getCatalog() }
+}
 
 class App extends React.Component {
   constructor() {
-    super()
-    this.state = {
-      projects: {}
-    }
-  }
-  // componentDidMount() {
-  //   base.syncState()
-  // }
-  loadSamples(e) {
-    e.preventDefault()
-    this.setState({
-      projects: require('../scripts/data.js')
-    })
+    super();
+    this.state = getCatalog()
   }
   render() {
+    // let projects = this.state.projects.map(project => {
+    //   return <li key={project.id}>{project.title}</li>
+    // });
     return (
       <div>
-        <ProjectsContainer loadSamples={this.loadSamples.bind(this)} projects={this.state.projects}/>
-        <ProjectForm/>
+        <ProjectsContainer projects={this.state.projects}/>
       </div>
     )
   }

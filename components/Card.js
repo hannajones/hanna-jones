@@ -1,6 +1,6 @@
-import React from 'react'
-import Project from './Project'
-import { Link } from 'react-router'
+import React from 'react';
+import Project from './Project';
+import { Link } from 'react-router';
 
 class Card extends React.Component {
   render() {

@@ -1,5 +1,6 @@
-import React from 'react'
-import Carousel from './Carousel'
+import React from 'react';
+import Carousel from './Carousel';
+import ProjectStore from '../stores/ProjectStore';
 
 class Project extends React.Component {
   // renderImages(image) {
@@ -22,3 +23,8 @@ class Project extends React.Component {
 }
 
 export default Project
+
+// trying to use store
+// componentWillMount / componentDidMount
+// need to find the project data where project.title === this.props.params.title
+// not sure if this is possible
