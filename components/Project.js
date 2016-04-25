@@ -29,7 +29,7 @@ class Project extends React.Component {
         <Carousel images={data.images}/>
         <h3>{data.title}</h3>
         <p>{data.description}</p>
-        <button><Link to="/">Home</Link></button>
+        <a className="waves-effect waves-light btn"><Link className="white-text" to="/">Home</Link></a>
       </div>
     )
   }
