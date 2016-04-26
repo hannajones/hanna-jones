@@ -28,7 +28,7 @@ class Resume extends React.Component {
         <div className="header-bar">
           <h5>Skills & Abilities</h5>
         </div>
-        <a className="waves-effect waves-light btn"><Link className="white-text" to="/">Home</Link></a>
+        <button className="waves-effect waves-light btn"><Link className="white-text" to="/">Home</Link></button>
       </div>
     )
   }
