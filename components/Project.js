@@ -25,7 +25,7 @@ class Project extends React.Component {
   render() {
     var data = this.state.project
     return (
-      <div>
+      <div className="content-container">
         <Carousel images={data.images}/>
         <h3>{data.title}</h3>
         <p>{data.description}</p>

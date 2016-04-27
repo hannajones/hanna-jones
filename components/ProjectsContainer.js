@@ -20,7 +20,7 @@ class ProjectsContainer extends React.Component {
   }
   render() {
     return (
-      <div id="projects-container">
+      <div className="content-container">
         <h1>Projects</h1>
         <ul>
           {Object.keys(this.state.projects).map(this.renderCards)}

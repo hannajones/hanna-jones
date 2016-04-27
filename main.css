@@ -31,7 +31,7 @@ body {
 #about-background {
   margin: 0 auto;
   height: 90vh;
-  width: 75%;
+  width: 100%;
   margin-top: 5vh;
 }
 
@@ -79,7 +79,7 @@ button.waves-effect.waves-light.btn {
   align-content: flex-start;
 }
 
-#projects-container {
+.content-container {
   order: 2;
   flex: 2 auto;
   width: 100%
