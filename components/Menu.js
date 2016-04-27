@@ -13,7 +13,7 @@ class Menu extends React.Component {
             <h3>Jones</h3>
           </div>
           <div className="menu-item">
-            <h5><Link className="menu-link" to="/">About</Link></h5>
+            <h5><Link className="menu-link" to="about">About</Link></h5>
           </div>
           <div className="menu-item">
             <h5><Link className="menu-link" to="/">Projects</Link></h5>
