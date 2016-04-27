@@ -6,23 +6,21 @@ import Rebase from 're-base';
 import ProjectActions from '../actions/ProjectActions';
 import ProjectStore from '../stores/ProjectStore'
 
-function getCatalog() {
-  return { projects: ProjectStore.getCatalog() }
-}
+// function getCatalog() {
+//   return { projects: ProjectStore.getCatalog() }
+// }
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = getCatalog()
+    // this.state = getCatalog()
   }
   render() {
-    // let projects = this.state.projects.map(project => {
-    //   return <li key={project.id}>{project.title}</li>
-    // });
     return (
       <div id="container-flex">
         <Menu/>
-        <ProjectsContainer projects={this.state.projects}/>
+        {/*<ProjectsContainer projects={this.state.projects}/>*/}
+        {this.props.children}
       </div>
     )
   }

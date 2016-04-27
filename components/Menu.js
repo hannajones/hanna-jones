@@ -16,7 +16,7 @@ class Menu extends React.Component {
             <h5><Link className="menu-link" to="about">About</Link></h5>
           </div>
           <div className="menu-item">
-            <h5><Link className="menu-link" to="/">Projects</Link></h5>
+            <h5><Link className="menu-link" to="projects">Projects</Link></h5>
           </div>
           <div className="menu-item">
             <h5><Link className="menu-link" to="resume">Résumé</Link></h5>
