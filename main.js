@@ -8,8 +8,6 @@ import ProjectForm from './components/ProjectForm'
 import NotFound from './components/NotFound'
 import Resume from './components/Resume'
 
-// render(<App/>, document.getElementById('app'))
-
 render((
   <Router history={browserHistory}>
     <Route path="/" component={App}/>

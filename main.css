@@ -1,3 +1,11 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ubuntu'
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .image-container {
   height: 250px;
   width: 450px;
@@ -27,19 +35,13 @@ button.waves-effect.waves-light.btn {
   margin-bottom: 15px;
 }
 
-#flex-container {
-  width: 100%;
+#container-flex {
+  height: 100vh;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: flex-start;
   align-content: flex-start;
-}
-
-#menu-container {
-  order: 1;
-  flex: 1 auto;
-  width: 33%;
 }
 
 #projects-container {
@@ -48,10 +50,22 @@ button.waves-effect.waves-light.btn {
   width: 100%
 }
 
+/* Menu Component */
+
+#menu-container {
+  order: 1;
+  flex: 1 auto;
+  width: 45%;
+  padding-right: 100px;
+}
+
 #menu {
   background-color: #0288D1;
   color: #fff;
   width: 100%;
+  border-radius: 15px;
+  margin: 50px 10px 0 0;
+  font-family: 'Ubuntu'
 }
 
 .menu-header {
@@ -60,8 +74,31 @@ button.waves-effect.waves-light.btn {
 
 .menu-item {
   padding: 5px;
+  border-top: 1px solid #fff;
 }
 
-div.menu-item > h4 > a {
+/* hover styles not quite working yet */
+
+.menu-item:hover {
+  background-color: #fff;
+  color: #0288D1;
+}
+
+.menu-link:hover {
+  background-color: #fff;
+  color: #0288D1;
+}
+
+div.menu-item > h5 > a {
   color: #fff;
+}
+
+/* Particles.js */
+
+#particles-js{
+  width: 100%;
+  background-color: #fff;
+  background-image: url('');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }

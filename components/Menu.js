@@ -9,19 +9,20 @@ class Menu extends React.Component {
       <div id="menu-container">
         <div id="menu" className="center-align">
           <div className="menu-header">
-            <h3>Hanna Jones</h3>
+            <h3>Hanna</h3>
+            <h3>Jones</h3>
           </div>
           <div className="menu-item">
-            <h4>About</h4>
+            <h5><Link className="menu-link" to="/">About</Link></h5>
           </div>
           <div className="menu-item">
-            <h4><Link to="/">Projects</Link></h4>
+            <h5><Link className="menu-link" to="/">Projects</Link></h5>
           </div>
           <div className="menu-item">
-            <h4><Link to="resume">Résumé</Link></h4>
+            <h5><Link className="menu-link" to="resume">Résumé</Link></h5>
           </div>
           <div className="menu-item">
-            <h4>Contact</h4>
+            <h5><Link className="menu-link" to="/">Contact</Link></h5>
           </div>
         </div>
       </div>
