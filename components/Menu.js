@@ -8,22 +8,32 @@ class Menu extends React.Component {
     return (
       <div id="menu-container">
         <div id="menu" className="center-align">
-          <div className="menu-header">
-            <h3>Hanna</h3>
-            <h3>Jones</h3>
-          </div>
-          <div className="menu-item">
-            <h5><Link className="menu-link" to="about">About</Link></h5>
-          </div>
-          <div className="menu-item">
-            <h5><Link className="menu-link" to="projects">Projects</Link></h5>
-          </div>
-          <div className="menu-item">
-            <h5><Link className="menu-link" to="resume">Résumé</Link></h5>
-          </div>
-          <div className="menu-item">
-            <h5><Link className="menu-link" to="/">Contact</Link></h5>
-          </div>
+          <Link to="about">
+            <div className="menu-header">
+              <h3>Hanna</h3>
+              <h3>Jones</h3>
+            </div>
+          </Link>
+          <Link className="menu-link" to="/">
+            <div className="menu-item">
+              <h5>About</h5>
+            </div>
+          </Link>
+          <Link className="menu-link" to="projects">
+            <div className="menu-item">
+              <h5>Projects</h5>
+            </div>
+          </Link>
+          <Link className="menu-link" to="resume">
+            <div className="menu-item">
+              <h5>Résumé</h5>
+            </div>
+          </Link>
+          <Link className="menu-link" to="about">
+            <div className="menu-item">
+              <h5>Contact</h5>
+            </div>
+          </Link>
         </div>
       </div>
     )

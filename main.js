@@ -12,11 +12,11 @@ import About from './components/About';
 render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
+      <IndexRoute component={About}/>
       <Route path="projects" component={ProjectsContainer}/>
       <Route path="project/:id" component={Project}/>
       <Route path="new" component={ProjectForm}/>
       <Route path="resume" component={Resume}/>
-      <Route path="about" component={About}/>
       <Route path="*" component={NotFound}/>
     </Route>
   </Router>

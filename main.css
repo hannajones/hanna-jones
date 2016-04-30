@@ -24,6 +24,17 @@ body {
   max-height: 100%;
 }
 
+/* working on fixing menu resizing */
+
+div.col.s12.m7 {
+  margin: 0;
+  padding: 0;
+}
+
+.set-width {
+  width: 75%;
+}
+
 #about-header {
   color: #0288D1;
 }
@@ -105,6 +116,7 @@ button.waves-effect.waves-light.btn {
 
 .menu-header {
   padding: 5px;
+  color: #fff;
 }
 
 .menu-item {
@@ -124,7 +136,7 @@ button.waves-effect.waves-light.btn {
   color: #0288D1;
 }
 
-div.menu-item > h5 > a {
+.menu-link {
   color: #fff;
 }
 
