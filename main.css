@@ -143,9 +143,9 @@ button.waves-effect.waves-light.btn {
   color: #0288D1;
 }
 
-.menu-link:hover {
-  background-color: #fff;
-  color: #0288D1;
+.menu-item.contact:hover {
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 .menu-link {
