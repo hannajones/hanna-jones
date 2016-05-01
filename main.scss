@@ -1,7 +1,10 @@
+$header-font: 'Ubuntu', sans-serif;
+$body-font: 'Open Sans', sans-serif;
+
 /* common elements */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Ubuntu'
+  font-family: $header-font;
 }
 
 body {
@@ -47,7 +50,6 @@ body {
 
 .set-width {
   width: 75%;
-  display: inline-block;
 }
 
 .card-paragraph {

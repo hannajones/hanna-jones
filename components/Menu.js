@@ -8,7 +8,7 @@ class Menu extends React.Component {
     return (
       <div id="menu-container">
         <div id="menu" className="center-align">
-          <Link to="about">
+          <Link to="/">
             <div className="menu-header">
               <h3>Hanna</h3>
               <h3>Jones</h3>
