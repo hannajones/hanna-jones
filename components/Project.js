@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from './Carousel';
+import HomeButton from './HomeButton';
 import { Link } from 'react-router';
 import ProjectStore from '../stores/ProjectStore';
 import ProjectActions from '../actions/ProjectActions';
@@ -26,10 +27,12 @@ class Project extends React.Component {
     var data = this.state.project
     return (
       <div className="content-container">
-        <Carousel images={data.images}/>
-        <h3>{data.title}</h3>
-        <p>{data.description}</p>
-        <button className="waves-effect waves-light btn"><Link className="white-text" to="/">Home</Link></button>
+        <div className="section-background z-depth-2">
+          <Carousel images={data.images}/>
+          <h3>{data.title}</h3>
+          <p>{data.description}</p>
+          <HomeButton/>
+        </div>
       </div>
     )
   }

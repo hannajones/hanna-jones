@@ -1,5 +1,7 @@
 import React from 'react';
+import HomeButton from './HomeButton';
 import { Link } from 'react-router';
+
 
 // should probably make each sub section of the resume its own component - load the text data in from the database
 
@@ -30,7 +32,7 @@ class Resume extends React.Component {
             <div className="header-bar">
               <h5>Skills & Abilities</h5>
             </div>
-            <button className="waves-effect waves-light btn"><Link className="white-text" to="/">Home</Link></button>
+            <HomeButton/>
           </div>
         </div>
       </div>
