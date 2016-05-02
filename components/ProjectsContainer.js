@@ -21,10 +21,12 @@ class ProjectsContainer extends React.Component {
   render() {
     return (
       <div className="content-container">
-        <h1>Projects</h1>
-        <ul>
-          {Object.keys(this.state.projects).map(this.renderCards)}
-        </ul>
+        <div className="section-background z-depth-2">
+          <h1>Projects</h1>
+          <ul>
+            {Object.keys(this.state.projects).map(this.renderCards)}
+          </ul>
+        </div>
       </div>
     )
   }

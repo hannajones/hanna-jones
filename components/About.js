@@ -4,7 +4,7 @@ class About extends React.Component {
   render() {
     return (
       <div className="content-container">
-        <div id="about-background" className="z-depth-2">
+        <div className="section-background z-depth-2">
           <div id="about-image-container">
             <img id="about-image" src="https://s3.amazonaws.com/hanna-jones-photos/about/hanna-web.jpg" alt="hanna jones"/>
           </div>
