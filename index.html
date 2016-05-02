@@ -13,18 +13,13 @@
   </head>
   <body>
     <div id="canvas-container">
-      <div id="canvas"></div>
+      <div id="particles-js"></div>
       <div class="container">
         <div id="app"></div>
       </div>
     </div>
-    <script>
-      var pattern = Trianglify({
-        width: window.innerWidth,
-        height: window.innerHeight
-      });
-      document.getElementById('canvas').appendChild(pattern.svg())
-    </script>
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
     <script src="/bundle.js"></script>
   </body>
 </html>
