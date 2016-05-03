@@ -5,7 +5,7 @@ import { EventEmitter } from 'events';
 const CHANGE_EVENT = 'change'
 
 // underscore prefix indicates private variable
-var _catalog = [];
+var _projects = [];
 
 // populate with dummy data
 var appData = require('../scripts/data.js')
@@ -15,22 +15,21 @@ var dataToArray = function(data) {
   var keys = Object.keys(data);
   for (var i = 0; i < keys.length; i++) {
     var key = keys[i];
-    _catalog.push(data[key])
+    _projects.push(data[key])
   }
-  return _catalog
+  return _projects
 }
 
 // calling function on dummy data
 dataToArray(appData);
 
-var _projects = _catalog;
 console.log(_projects);
 
 const _findProject = (project) => {
   return _projects.find(myProject => myProject.id == project)
 }
 
-const _createProject = (project, e) => {
+const _createProject = (project) => {
   _projects.push(project)
   console.log(project)
   console.log(_projects)
