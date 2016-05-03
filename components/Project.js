@@ -27,7 +27,7 @@ class Project extends React.Component {
     var data = this.state.project
     return (
       <div className="content-container">
-        <div className="section-background z-depth-2">
+        <div className="section-background z-depth-2 center-align">
           <Carousel images={data.images}/>
           <h3>{data.title}</h3>
           <p>{data.description}</p>

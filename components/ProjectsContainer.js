@@ -32,7 +32,7 @@ class ProjectsContainer extends React.Component {
   render() {
     return (
       <div className="content-container">
-        <div className="section-background z-depth-2">
+        <div className="section-background z-depth-2 center-align">
           <h1>Projects</h1>
           <ul>
             {Object.keys(this.state.projects).map(this.renderCards)}

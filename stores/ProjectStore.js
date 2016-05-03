@@ -10,7 +10,7 @@ var _projects = [];
 // populate with dummy data
 var appData = require('../scripts/data.js')
 
-// function to push dummy data into catalog
+// function to push dummy data into _projects
 var dataToArray = function(data) {
   var keys = Object.keys(data);
   for (var i = 0; i < keys.length; i++) {

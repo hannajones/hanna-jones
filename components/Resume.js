@@ -13,7 +13,7 @@ class Resume extends React.Component {
   render() {
     return (
       <div className="content-container">
-        <div className="section-background z-depth-2">
+        <div className="section-background z-depth-2 center-align">
           <div className="resume">
             <h3>Hanna M. Jones</h3>
             <p>jones.hanna.m@gmail.com</p>
