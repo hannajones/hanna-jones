@@ -50,6 +50,7 @@ body {
 }
 
 .section-background {
+  padding: 10px;
   margin: 0 auto;
   height: 90vh;
   width: 100%;
