@@ -15,6 +15,7 @@ class ProjectForm extends React.Component {
     this.updateTitle = this.updateTitle.bind(this);
     this.updateDescription = this.updateDescription.bind(this);
     this.pushImage = this.pushImage.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
     var currentProject = this.state.project
@@ -43,6 +44,10 @@ class ProjectForm extends React.Component {
     this.refs.image.value = ""
     console.log(this.state.project.images)
   }
+  handleSubmit() {
+    // this.pushImage()
+    ProjectActions.createProject.bind(null, this.state.project)
+  }
   render() {
     return (
       <div className="content-container">
@@ -52,7 +57,7 @@ class ProjectForm extends React.Component {
             <textarea ref="description" name="description" id="description" cols="30" rows="10" onChange={this.updateDescription}></textarea><br/>
             <input type="text" ref="image" placeholder="image url"/><br/>
             <a className="waves-effect waves-light btn" onClick={this.pushImage}>Add Image</a><br/><br/>
-            <a className="waves-effect waves-light btn" onClick={this.pushImages, ProjectActions.createProject.bind(null, this.state.project)}>Submit</a><br/>
+            <a className="waves-effect waves-light btn" onClick={this.handleSubmit}>Submit</a><br/>
           </form>
         </div>
       </div>
