@@ -5,19 +5,30 @@ import { Link } from 'react-router';
 import ProjectActions from '../actions/ProjectActions';
 import ProjectStore from '../stores/ProjectStore'
 
-function getCatalog() {
-  return { projects: ProjectStore.getCatalog() }
+const projects = () => {
+  return { projects: ProjectStore.getProjects() }
 }
 
 class ProjectsContainer extends React.Component {
   constructor() {
     super()
-    this.state = getCatalog()
-    this.renderCards = this.renderCards.bind(this)
+    this.state = projects();
+    this.renderCards = this.renderCards.bind(this);
+    this._onChange = this._onChange.bind(this);
+  }
+  componentWillMount() {
+    ProjectStore.addChangeListener(this._onChange)
+  }
+  componentWillUnmount() {
+    ProjectStore.removeChangeListener(this._onChange)
+  }
+  _onChange() {
+    this.setState({projects})
   }
   renderCards(key) {
     return <Card key={key} index={key} project={this.state.projects[key]} />
   }
+
   render() {
     return (
       <div className="content-container">

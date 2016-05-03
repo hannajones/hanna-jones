@@ -24,13 +24,16 @@ var dataToArray = function(data) {
 dataToArray(appData);
 
 var _projects = _catalog;
+console.log(_projects);
 
 const _findProject = (project) => {
   return _projects.find(myProject => myProject.id == project)
 }
 
-const _createProject = (project) => {
+const _createProject = (project, e) => {
   _projects.push(project)
+  console.log(project)
+  console.log(_projects)
   return _projects
 }
 
@@ -45,15 +48,15 @@ const _updateProject = (project) => {
 
 const ProjectStore = Object.assign(EventEmitter.prototype, {
   emitChange(){
-    this.emit( CHANGE_EVENT )
+    this.emit(CHANGE_EVENT)
   },
 
-  addChangeListener( callback ){
-    this.on( CHANGE_EVENT, callback )
+  addChangeListener(callback){
+    this.on(CHANGE_EVENT, callback)
   },
 
-  removeChangeListener( callback ){
-    this.removeListener( CHANGE_EVENT, callback )
+  removeChangeListener(callback){
+    this.removeListener(CHANGE_EVENT, callback)
   },
 
   getProjects() {
@@ -64,7 +67,7 @@ const ProjectStore = Object.assign(EventEmitter.prototype, {
     return _catalog;
   },
 
-  dispatcherIndex: register( function(action) {
+  dispatcherIndex: register(function(action) {
     switch(action.actionType) {
       case ProjectConstants.FIND_PROJECT:
         _findProject(action.project);
