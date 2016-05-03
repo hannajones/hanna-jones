@@ -5,14 +5,14 @@ import { Link } from 'react-router';
 import ProjectStore from '../stores/ProjectStore';
 import ProjectActions from '../actions/ProjectActions';
 
-function getCatalog() {
-  return { project: ProjectStore.getCatalog() }
+const project = () => {
+  return { project: ProjectStore.getProjects() }
 }
 
 class Project extends React.Component {
   constructor() {
     super()
-    this.state = getCatalog()
+    this.state = project();
     this.findProject = this.findProject.bind(this)
   }
   componentWillMount() {
@@ -21,7 +21,7 @@ class Project extends React.Component {
   findProject() {
     var id = this.props.params.id
     var project = this.state.project[id - 1]
-    this.setState({project: project})
+    this.setState({project})
   }
   render() {
     var data = this.state.project
