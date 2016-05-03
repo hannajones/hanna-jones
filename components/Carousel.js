@@ -27,7 +27,7 @@ class Carousel extends React.Component {
   }
   render() {
     return (
-      <div className="image-container">
+      <div className="image-container center-align">
         <img className="project-image" src={this.props.images[this.state.index]} alt="image"/>
           { this.props.images.length > 1 ? 
             <div id="buttons">

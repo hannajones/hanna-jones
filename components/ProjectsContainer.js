@@ -31,7 +31,7 @@ class ProjectsContainer extends React.Component {
 
   render() {
     return (
-      <div className="content-container">
+      <div className="content-container center-align">
         <div className="section-background z-depth-2 center-align">
           <h1>Projects</h1>
           <ul>
