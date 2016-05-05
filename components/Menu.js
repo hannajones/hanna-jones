@@ -36,15 +36,21 @@ class Menu extends React.Component {
           </Link>
         </div>
         <div id="social-icons" className="center-align">
-          <span className="fa-stack fa-lg">
-            <i className="fa fa fa-github-square fa-3x"></i>
-          </span>
-          <span className="fa-stack fa-lg">
-            <i className="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
-          </span>
-          <span className="fa-stack fa-lg">
-            <i className="fa fa-instagram fa-3x"></i>
-          </span>
+          <a href="https://github.com/hannajones" target="_blank">
+            <span className="fa-stack fa-lg">
+              <i className="fa fa-github-square fa-3x"></i>
+            </span>
+          </a>
+          <a href="https://ca.linkedin.com/in/hanna-jones-27345a20" target="_blank">
+            <span className="fa-stack fa-lg">
+              <i className="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+            </span>
+          </a>
+          <a href="https://www.instagram.com/jonesxhanna/" target="_blank">
+            <span className="fa-stack fa-lg">
+              <i className="fa fa-instagram fa-3x"></i>
+            </span>
+          </a>
         </div>
       </div>
     )
