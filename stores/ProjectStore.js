@@ -1,6 +1,10 @@
 import { dispatch, register } from '../dispatcher/AppDispatcher';
 import ProjectConstants from '../constants/ProjectConstants';
 import { EventEmitter } from 'events';
+import Firebase from 'firebase';
+import Rebase from 're-base';
+
+var base = Rebase.createClass('https://newnewtest.firebaseio.com/');
 
 const CHANGE_EVENT = 'change'
 
@@ -23,17 +27,21 @@ var dataToArray = function(data) {
 // calling function on dummy data
 dataToArray(appData);
 
-console.log(_projects);
-
 const _findProject = (project) => {
   return _projects.find(myProject => myProject.id == project)
 }
 
 const _createProject = (project) => {
-  _projects.push(project)
-  console.log(project)
-  console.log(_projects)
-  return _projects
+  // _projects.push(project)
+  // console.log(project)
+  // console.log(_projects)
+  // return _projects
+  // base.push('projects/project ' + project.id, {
+  //  data: {id: project.id, title: project.title, description: project.description, images: project.images}
+  // })
+  base.push('projects', {
+   data: {id: project.id, title: project.title, description: project.description, images: project.images}
+  })
 }
 
 const _deleteProject = (project) => {
@@ -46,6 +54,7 @@ const _updateProject = (project) => {
 }
 
 const ProjectStore = Object.assign(EventEmitter.prototype, {
+
   emitChange(){
     this.emit(CHANGE_EVENT)
   },

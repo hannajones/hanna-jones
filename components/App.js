@@ -6,20 +6,16 @@ import Rebase from 're-base';
 import ProjectActions from '../actions/ProjectActions';
 import ProjectStore from '../stores/ProjectStore'
 
-// function getCatalog() {
-//   return { projects: ProjectStore.getCatalog() }
-// }
+var base = Rebase.createClass('https://newnewtest.firebaseio.com/');
 
 class App extends React.Component {
   constructor() {
     super();
-    // this.state = getCatalog()
   }
   render() {
     return (
       <div id="container-flex">
         <Menu/>
-        {/*<ProjectsContainer projects={this.state.projects}/>*/}
         {this.props.children}
       </div>
     )
