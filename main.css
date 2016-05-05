@@ -1,7 +1,8 @@
 /* common elements */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Ubuntu'
+  font-family: 'Ubuntu';
+  font: #3c3c3c;
 }
 
 body {
@@ -12,7 +13,7 @@ body {
 }
 
 .container {
-  width: 80%;
+  width: 85%;
 }
 
 /* Particles.js */
@@ -51,8 +52,9 @@ body {
   width: 100%
 }
 
-.section-background {
+div.section-background {
   padding: 10px;
+  padding-left: 21px;
   margin: 0 auto;
   height: 90vh;
   width: 100%;
@@ -60,6 +62,10 @@ body {
   background-color: #fff;
   overflow: scroll;
 }
+
+/*.z-depth-2 {
+
+}*/
 
 /* Carousel */
 
@@ -117,11 +123,38 @@ button.waves-effect.waves-light.btn {
 
 /* Resume */
 
+#education-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+#resume-col-1 {
+  order: 1;
+}
+
+#resume-col-2 {
+  order: 2;
+}
+
+#resume-project-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume-project {
+  margin: 5px;
+}
+
 .header-bar {
   color: #fff;
   width: 100%;
   background-color: #0288D1;
-  padding: 5px 5px 5px 5px;
+  padding: 5px;
   margin-bottom: 15px;
 }
 
@@ -130,7 +163,7 @@ button.waves-effect.waves-light.btn {
 #menu-container {
   order: 1;
   flex: 1 auto;
-  width: 45%;
+  width: 40%;
   padding-right: 80px;
 }
 
@@ -174,7 +207,7 @@ span.fa-stack {
 }
 
 .fa {
-  color: #3c3c3c;
+  color: #b1b1b1;
 }
 /* hidden scrollbar */
 
