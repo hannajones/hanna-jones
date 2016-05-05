@@ -24,28 +24,27 @@ class ProjectForm extends React.Component {
     this.pushImage = this.pushImage.bind(this);
   }
   componentWillMount() {
-    var currentProject = this.state.project
+    var currentProject = this.state.project;
     currentProject.id = Date.now();
-    console.log(Date.now())
-    this.setState({project: currentProject});
+    this.setState({project: currentProject})
   }
   // make a reusable date function
   updateTitle() {
-    var currentProject = this.state.project
-    currentProject.title = this.refs.title.value
+    var currentProject = this.state.project;
+    currentProject.title = this.refs.title.value;
     this.setState({project: currentProject})
   }
   updateDescription() {
-    var currentProject = this.state.project
-    currentProject.description = this.refs.description.value
+    var currentProject = this.state.project;
+    currentProject.description = this.refs.description.value;
     this.setState({project: currentProject})
   }
   pushImage() {
-    var currentProject = this.state.project
+    var currentProject = this.state.project;
     if (this.refs.image.value != "" || null || undefined) {
      currentProject.images.push(this.refs.image.value) 
     }
-    this.setState({project: currentProject})
+    this.setState({project: currentProject});
     this.refs.image.value = ""
   }
   sendData(e) {

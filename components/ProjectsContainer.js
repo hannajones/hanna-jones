@@ -30,13 +30,6 @@ class ProjectsContainer extends React.Component {
   componentWillUnmount() {
     base.removeBinding(this.ref);
   }
-  // componentDidUpdate() {
-  //   console.log(this.state.projects);
-  //   var keys = Object.keys(this.state.projects)
-  //   console.log(keys)
-  //   console.log(this.state.projects[keys[0]])
-  //   console.log(this.state.projects[keys[1]])
-  // }
   renderCards(key) {
     return <Card key={key} index={key} project={this.state.projects[key]} />
   }

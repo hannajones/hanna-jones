@@ -131,7 +131,7 @@ button.waves-effect.waves-light.btn {
   order: 1;
   flex: 1 auto;
   width: 45%;
-  padding-right: 100px;
+  padding-right: 80px;
 }
 
 #menu {
@@ -167,6 +167,15 @@ button.waves-effect.waves-light.btn {
   color: #fff;
 }
 
+/* Social Icons */
+
+span.fa-stack {
+  margin: 10px;
+}
+
+.fa {
+  color: #3c3c3c;
+}
 /* hidden scrollbar */
 
 ::-webkit-scrollbar {

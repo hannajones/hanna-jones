@@ -35,6 +35,17 @@ class Menu extends React.Component {
             </div>
           </Link>
         </div>
+        <div id="social-icons" className="center-align">
+          <span className="fa-stack fa-lg">
+            <i className="fa fa fa-github-square fa-3x"></i>
+          </span>
+          <span className="fa-stack fa-lg">
+            <i className="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+          </span>
+          <span className="fa-stack fa-lg">
+            <i className="fa fa-instagram fa-3x"></i>
+          </span>
+        </div>
       </div>
     )
   }
