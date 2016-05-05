@@ -6,9 +6,9 @@ import ProjectStore from '../stores/ProjectStore';
 import ProjectActions from '../actions/ProjectActions';
 import Rebase from 're-base';
 
-const project = () => {
-  return { project: ProjectStore.getProjects() }
-}
+// const project = () => {
+//   return { project: ProjectStore.getProjects() }
+// }
 
 var base = Rebase.createClass('https://newnewtest.firebaseio.com/');
 
@@ -22,26 +22,18 @@ class Project extends React.Component {
     this.findProject = this.findProject.bind(this);
     this.fetchData = this.fetchData.bind(this);
   }
-  componentDidMount() {
+  componentWillMount() {
     this.fetchData();
   }
-  // componentDidUpdate() {
-  //   this.setState({project: this.state.projects.find(this.findProject)})
-  // }
   findProject(project) {
-    console.log(typeof(project.id))
-    console.log(typeof(this.props.params.id))
-    console.log(project.id == this.props.params.id)
     return project.id == this.props.params.id
   }
   fetchData() {
-    console.log(this.state.projects)
     this.ref = base.listenTo('projects', {
       context: this,
       state: 'projects',
       asArray: true,
       then(data){
-        console.log(data);
         this.setState({project: data.find(this.findProject)})
       }
     });
