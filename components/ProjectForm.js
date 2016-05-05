@@ -23,6 +23,7 @@ class ProjectForm extends React.Component {
   componentWillMount() {
     var currentProject = this.state.project
     currentProject.id = Date.now();
+    console.log(Date.now())
     this.setState({project: currentProject});
   }
   updateTitle() {

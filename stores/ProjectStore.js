@@ -32,13 +32,6 @@ const _findProject = (project) => {
 }
 
 const _createProject = (project) => {
-  // _projects.push(project)
-  // console.log(project)
-  // console.log(_projects)
-  // return _projects
-  // base.push('projects/project ' + project.id, {
-  //  data: {id: project.id, title: project.title, description: project.description, images: project.images}
-  // })
   base.push('projects', {
    data: {id: project.id, title: project.title, description: project.description, images: project.images}
   })

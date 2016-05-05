@@ -19,50 +19,28 @@ class ProjectsContainer extends React.Component {
       projects: []
     }
     this.renderCards = this.renderCards.bind(this);
-    // this.renderData = this.renderData.bind(this);
-    // this._onChange = this._onChange.bind(this);
   }
   componentWillMount() {
-    base.bindToState('projects', {
+    this.ref = base.bindToState('projects', {
       context: this,
       state: 'projects',
       asArray: true
     });
   }
-  componentDidUpdate() {
-    console.log(this.state.projects);
-    var keys = Object.keys(this.state.projects)
-    console.log(keys)
-    console.log(this.state.projects[keys[0]])
-    console.log(this.state.projects[keys[1]])
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
   }
-  // renderData(projects) {
-  //   console.log(projects)
-  //   var myProjects = [];
-  //   var keys = Object.keys(projects);
-  //   console.log(keys);
-  //   for (var i = 0; i < keys.length; i++) {
-  //     var key = keys[i];
-  //     myProjects.push(projects[key])
-  //   }
-  // }
-
-
-  // componentWillMount() {
-  //   ProjectStore.addChangeListener(this._onChange)
-  // }
-  // componentWillUnmount() {
-  //   ProjectStore.removeChangeListener(this._onChange)
-  // }
-  // _onChange() {
-  //   this.setState({projects})
+  // componentDidUpdate() {
+  //   console.log(this.state.projects);
+  //   var keys = Object.keys(this.state.projects)
+  //   console.log(keys)
+  //   console.log(this.state.projects[keys[0]])
+  //   console.log(this.state.projects[keys[1]])
   // }
   renderCards(key) {
-    console.log(key)
     return <Card key={key} index={key} project={this.state.projects[key]} />
   }
   render() {
-    // var newKeys = Object.keys(project)
     return (
       <div className="content-container center-align">
         <div className="section-background z-depth-2 center-align">
@@ -73,9 +51,6 @@ class ProjectsContainer extends React.Component {
         </div>
       </div>
     )
-    // console.log(keys)
-    // console.log(project)
-    // console.log(newKeys)
   }
 }
 
