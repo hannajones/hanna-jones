@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class About extends React.Component {
   render() {
@@ -10,8 +11,8 @@ class About extends React.Component {
           </div>
           <h4 id="about-header" className="center-align">Hanna Jones</h4>
           <div id="description-content" className="center-align">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ornare neque elit, at maximus turpis sagittis nec. Proin aliquam, leo sit amet dictum ullamcorper, purus diam eleifend dolor, ut sagittis mi quam placerat arcu. Proin eu consequat mi. Vivamus iaculis venenatis odio ac luctus. Duis a tincidunt massa, sagittis pulvinar turpis. Nam maximus massa vel ultrices volutpat. Cras mattis, magna ac faucibus vulputate, justo nisl varius justo, ac elementum velit quam sit amet orci. In hac habitasse platea dictumst. Cras lectus felis, tempus in felis nec, ullamcorper facilisis ligula. Duis sed semper metus, vitae scelerisque felis. Donec bibendum tincidunt mollis.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ornare neque elit, at maximus turpis sagittis nec. Proin aliquam, leo sit amet dictum ullamcorper, purus diam eleifend dolor, ut sagittis mi quam placerat arcu. Proin eu consequat mi. Vivamus iaculis venenatis odio ac luctus. Duis a tincidunt massa, sagittis pulvinar turpis. Nam maximus massa vel ultrices volutpat. Cras mattis, magna ac faucibus vulputate, justo nisl varius justo, ac elementum velit quam sit amet orci. In hac habitasse platea dictumst. Cras lectus felis, tempus in felis nec, ullamcorper facilisis ligula. Duis sed semper metus, vitae scelerisque felis. Donec bibendum tincidunt mollis.</p>
+            <p>My name is Hanna Jones and I'm a front-end web developer and recent Toronto transplant by way of Montreal (and originally San Francisco) looking to build beautiful things on the World Wide Web. I'm interested in exploring the potential of JavaScript for building clean, intuitive, interactive user interfaces and delving deeper into data-driven applications. When I'm not sitting in cafes engrossed in my laptop, I'm an aspiring long distance cyclist, techno enthusiast, (and something).</p>
+              <p>I'm urrently looking to take on new projects and opportunities. Explore this site to learn more about my <Link to="resume">experience</Link> and <Link to="projects">projects</Link>, and feel free to get in touch.</p>
           </div>
         </div>
       </div>

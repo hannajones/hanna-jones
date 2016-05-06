@@ -28,7 +28,6 @@ class ProjectForm extends React.Component {
     currentProject.id = Date.now();
     this.setState({project: currentProject})
   }
-  // make a reusable date function
   updateTitle() {
     var currentProject = this.state.project;
     currentProject.title = this.refs.title.value;
