@@ -43,13 +43,20 @@ class Project extends React.Component {
   }
   render() {
     var data = this.state.project
+    var images = this.state.project.images
+    console.log(images)
     return (
       <div className="content-container">
-        <div className="section-background z-depth-2 center-align">
-          <Carousel images={data.images}/>
-          <h3>{data.title}</h3>
-          <p>{data.description}</p>
-          <HomeButton/>
+        <div className="card large z-depth-2">
+          <div className="card-image">
+            <Carousel images={data.images}/>
+          </div>
+          <div className="card-content center-align">
+            <h3>{data.title}</h3>
+            <p className="card-paragraph">
+              {data.description}
+            </p>
+          </div>
         </div>
       </div>
     )

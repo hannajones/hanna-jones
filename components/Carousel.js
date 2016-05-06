@@ -30,14 +30,18 @@ class Carousel extends React.Component {
       <div className="image-container center-align">
         { this.props.images ?
           <div>
-          <img className="project-image" src={this.props.images[this.state.index]} alt="image"/>
-          { this.props.images && this.props.images.length > 1 ? 
-            <div id="buttons">
-              <button className="waves-effect waves-light btn" onClick={this.setPreviousImage}>Back</button>
-              <button className="waves-effect waves-light btn" onClick={this.setNextImage}>Next</button>
+            <div>
+              <img className="carousel-image" src={this.props.images[this.state.index]} alt="image"/>
             </div>
-            : false
-          }
+            <div className="card-content">
+              { this.props.images && this.props.images.length > 1 ? 
+                <div id="buttons">
+                  <button className="waves-effect waves-light btn" onClick={this.setPreviousImage}>Back</button>
+                  <button className="waves-effect waves-light btn" onClick={this.setNextImage}>Next</button>
+                </div>
+                : false
+              }
+            </div>
           </div>
         : false
         }

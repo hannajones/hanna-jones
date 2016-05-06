@@ -33,7 +33,6 @@ class ProjectsContainer extends React.Component {
     return (
       <div className="content-container center-align">
         <div className="section-background z-depth-2 center-align">
-          <h3>Projects</h3>
           <div id="card-container">
             {Object.keys(this.state.projects).map(this.renderCards)}
           </div>
