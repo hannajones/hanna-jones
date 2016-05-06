@@ -29,7 +29,7 @@ class Menu extends React.Component {
               <h5>Résumé</h5>
             </div>
           </Link>
-          <Link className="menu-link" to="about">
+          <Link className="menu-link" to="contact">
             <div className="menu-item contact">
               <h5>Contact</h5>
             </div>

@@ -8,6 +8,7 @@ import ProjectForm from './components/ProjectForm';
 import NotFound from './components/NotFound';
 import Resume from './components/Resume';
 import About from './components/About';
+import Contact from './components/Contact';
 
 render((
   <Router history={browserHistory}>
@@ -17,6 +18,7 @@ render((
       <Route path="project/:id" component={Project}/>
       <Route path="new" component={ProjectForm}/>
       <Route path="resume" component={Resume}/>
+      <Route path="contact" component={Contact}/>
       <Route path="*" component={NotFound}/>
     </Route>
   </Router>

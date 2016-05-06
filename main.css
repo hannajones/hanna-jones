@@ -100,7 +100,7 @@ button.waves-effect.waves-light.btn {
 
 /* About */
 
-h4#about-header.center-align {
+h3#about-header.center-align {
   text-decoration: underline;
 }
 
@@ -185,6 +185,10 @@ h4#about-header.center-align {
 .menu-header {
   padding: 5px;
   color: #fff;
+}
+
+.menu-header > h3 {
+  text-decoration: underline;
 }
 
 .menu-item {
