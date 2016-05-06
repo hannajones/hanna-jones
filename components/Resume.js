@@ -3,7 +3,43 @@ import HomeButton from './HomeButton';
 import { Link } from 'react-router';
 
 class Resume extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      expanded: null
+    }
+    this.renderProjects = this.renderProjects.bind(this);
+    this.setExpanded = this.setExpanded.bind(this);
+  }
+  setExpanded(title) {
+    this.setState({expanded: title});
+  }
+  renderProjects() {
+    console.log('rendering')
+    return (
+      <div id="resume-project-flex">
+        <div className="resume-project">
+          <h6><a href="https://lhl-hopper.herokuapp.com/" target="_blank">Hopper</a></h6>
+          <p>- Web app dedicated to helping locals and tourists alike navigate Toronto’s nightlife by maintaining a database of community curated “bar hops”</p>
+          <p>- Built using Ruby on Rails, React, PostgreSQL, Google Maps API</p>
+        </div>
+        <div className="resume-project">
+          <h6><a href="http://imjm.ca/" target="_blank">Museum of Jewish Montreal</a></h6>
+          <p>- Basic UI / UX design for the Museum of Jewish Montreal to assist with their website
+          redesign and make navigating their home page more intuitive</p>
+          <p>- Created mockups and wireframes using Adobe Creative Suite and Balsamiq</p>
+        </div>
+        <div className="resume-project">
+          <h6>SFUSD Selects</h6>
+          <p>- Web and Android app to help parents make informed decisions about San Francisco public schools</p>
+          <p>- Building with React, Rails API, Google Maps API, Facebook & Twitter OAuth</p>
+        </div>
+      </div>
+    )
+  }
   render() {
+    console.log(this.state)
+    var self = this;
     return (
       <div className="content-container">
         <div className="section-background z-depth-2 center-align">
@@ -24,28 +60,13 @@ class Resume extends React.Component {
               <p>B.A. History & Art History</p>
             </div>
           </div>
-          <div className="header-bar">
+          <div className="header-bar" ref="projects" onClick={() => this.setExpanded('projects')}>
             <h5>Projects</h5>
           </div>
-            <div id="resume-project-flex">
-              <div className="resume-project">
-                <h6>SFUSD Selects</h6>
-                <p>- Web and Android app to help parents make informed decisions about San Francisco public schools</p>
-                <p>- Building with React, Rails API, Google Maps API, Facebook & Twitter OAuth</p>
-              </div>
-              <div className="resume-project">
-                <h6><a href="https://lhl-hopper.herokuapp.com/" target="_blank">Hopper</a></h6>
-                <p>- Web app dedicated to helping locals and tourists alike navigate Toronto’s nightlife by maintaining a database of community curated “bar hops”</p>
-                <p>- Built using Ruby on Rails, React, PostgreSQL, Google Maps API</p>
-              </div>
-              <div className="resume-project">
-                <h6><a href="http://imjm.ca/" target="_blank">Museum of Jewish Montreal</a></h6>
-                <p>- Basic UI / UX design for the Museum of Jewish Montreal to assist with their website
-                redesign and make navigating their home page more intuitive</p>
-                <p>- Created mockups and wireframes using Adobe Creative Suite and Balsamiq</p>
-              </div>
-            </div>
-          <div className="header-bar">
+          <div>
+            { this.state.expanded === 'projects' ? self.renderProjects() : false }
+          </div>
+          <div className="header-bar" onClick={() => this.setExpanded('resume')}>
             <h5>Professional Experience</h5>
           </div>
           <div className="resume-job left-align">
