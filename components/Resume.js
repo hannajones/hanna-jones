@@ -14,6 +14,22 @@ class Resume extends React.Component {
   setExpanded(title) {
     this.setState({expanded: title});
   }
+  renderSchools() {
+    return (
+      <div id="education-flex">
+        <div id="resume-col-1">
+          <h6>Lighthouse Labs, Toronto, ON</h6>
+          <em>January - March 2016</em>
+          <p>Web Development Bootcamp</p>
+        </div>
+        <div id="resume-col-2">
+          <h6>McGill University, Montréal, QC</h6>
+          <em>September 2009 - May 2013</em>
+          <p>B.A. History & Art History</p>
+        </div>
+      </div>
+    )
+  }
   renderProjects() {
     console.log('rendering')
     return (
@@ -37,6 +53,45 @@ class Resume extends React.Component {
       </div>
     )
   }
+  renderJobs() {
+    return (
+      <div>
+        <div className="resume-job">
+          <span><h6>Museum of Jewish Montreal, Montréal, QC</h6>
+          <strong>Development & Special Projects Manager</strong> <em>(December 2013 - December 2015)</em></span>
+          <p>- Third full-time employee of a start-up virtual museum dedicated to finding new ways
+         to preserve and share Montréal’s Jewish history.</p>
+          <p>- Worked with an external web developer to redesign the Museum’s website. Created
+          mockups using Photoshop and Illustrator that formed the basis for the finished site.</p>
+          <p>- Completed basic UI/UX design tasks for the Museum’s new Stories Project oral history
+          web app using Balsamiq Mockups and Photoshop.</p>
+        </div>
+        <div className="resume-job">
+          <h6>McGill University, Montréal, QC</h6>
+          <strong>Research Assistant, Art History Department</strong> <em>(May - July 2013)</em>
+          <p>- Conducted research for projects on 19th century French art and culture. Duties
+          consisted of compiling bibliographies, creating summary reports on sources, and
+          making image licensing inquiries to Art Resource and The Bridgeman Art Library.</p>
+        </div>
+        <div className="resume-job">
+          <h6>Development Intern: Institutional Giving<br/> New-York Historical Society, New York, NY</h6> <em>(June - August 2012)</em>
+          <p>- Conducted database research to develop profiles for grant-making organizations.</p>
+          <p>- Drafted letters of inquiry, wrote and edited sections of grant proposals, and
+          contributed to all aspects of donor-related correspondence.</p>
+        </div>
+      </div>
+    )
+  }
+  renderSkills() {
+    return (
+      <div id="resume-skills">
+        <h6>Programming</h6>
+          <p>JavaScript / React / Ruby / Rails / HTML / CSS / Sinatra / SQL</p>
+        <h6>Design</h6>
+          <p>Sketch / Adobe Creative Suite / Balsamiq</p>
+      </div>
+    )
+  }
   render() {
     console.log(this.state)
     var self = this;
@@ -45,61 +100,29 @@ class Resume extends React.Component {
         <div className="section-background z-depth-2 center-align">
           <h3>Hanna M. Jones</h3>
           <p>jones.hanna.m@gmail.com / (514) 649-2986</p>
-          <div className="header-bar">
+          <div className="header-bar" onClick={() => this.setExpanded('schools')}>
             <h5>Education</h5> 
           </div>
-          <div id="education-flex">
-            <div id="resume-col-1">
-              <h6>Lighthouse Labs, Toronto, ON</h6>
-              <em>January - March 2016</em>
-              <p>Web Development Bootcamp</p>
-            </div>
-            <div id="resume-col-2">
-              <h6>McGill University, Montréal, QC</h6>
-              <em>September 2009 - May 2013</em>
-              <p>B.A. History & Art History</p>
-            </div>
+          <div>
+            { this.state.expanded === 'schools' ? this.renderSchools() : false }
           </div>
-          <div className="header-bar" ref="projects" onClick={() => this.setExpanded('projects')}>
+          <div className="header-bar" onClick={() => this.setExpanded('projects')}>
             <h5>Projects</h5>
           </div>
           <div>
             { this.state.expanded === 'projects' ? self.renderProjects() : false }
           </div>
-          <div className="header-bar" onClick={() => this.setExpanded('resume')}>
+          <div className="header-bar" onClick={() => this.setExpanded('jobs')}>
             <h5>Professional Experience</h5>
           </div>
-          <div className="resume-job left-align">
-            <span><h6>Museum of Jewish Montreal, Montréal, QC</h6>
-            <strong>Development & Special Projects Manager</strong> <em>(December 2013 - December 2015)</em></span>
-            <p>- Third full-time employee of a start-up virtual museum dedicated to finding new ways
-           to preserve and share Montréal’s Jewish history.</p>
-            <p>- Worked with an external web developer to redesign the Museum’s website. Created
-            mockups using Photoshop and Illustrator that formed the basis for the finished site.</p>
-            <p>- Completed basic UI/UX design tasks for the Museum’s new Stories Project oral history
-            web app using Balsamiq Mockups and Photoshop.</p>
+          <div>
+            { this.state.expanded === 'jobs' ? self.renderJobs() : false}
           </div>
-          <div className="resume-job">
-            <h6>McGill University, Montréal, QC</h6>
-            <strong>Research Assistant, Art History Department</strong> <em>(May - July 2013)</em>
-            <p>- Conducted research for projects on 19th century French art and culture. Duties
-            consisted of compiling bibliographies, creating summary reports on sources, and
-            making image licensing inquiries to Art Resource and The Bridgeman Art Library.</p>
-          </div>
-          <div className="resume-job">
-            <h6>Development Intern: Institutional Giving</h6> <em>(June - August 2012)</em>
-            <p>- Conducted database research to develop profiles for grant-making organizations.</p>
-            <p>- Drafted letters of inquiry, wrote and edited sections of grant proposals, and
-            contributed to all aspects of donor-related correspondence.</p>
-          </div>
-          <div className="header-bar">
+          <div className="header-bar" onClick={() => this.setExpanded('skills')}>
             <h5>Skills & Abilities</h5>
           </div>
-          <div id="resume-skills">
-            <h6>Programming</h6>
-              <p>JavaScript / React / Ruby / Rails / HTML / CSS / Sinatra / SQL</p>
-            <h6>Design</h6>
-              <p>Sketch / Adobe Creative Suite / Balsamiq</p>
+            { this.state.expanded === 'skills' ? this.renderSkills() : false }
+          <div>
           </div>
           <HomeButton/>
         </div>
