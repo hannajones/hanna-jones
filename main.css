@@ -54,7 +54,7 @@ body {
 
 div.section-background {
   padding: 10px;
-  padding-left: 21px;
+  padding-left: 22px;
   margin: 0 auto;
   height: 90vh;
   width: 100%;
@@ -63,8 +63,13 @@ div.section-background {
   overflow: scroll;
 }
 
-/*.z-depth-2 {
+/* Projects Container */
 
+/*#project-cards-flex {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }*/
 
 /* Carousel */
@@ -82,10 +87,22 @@ div.section-background {
 
 /* Card */
 
+.card {
+  margin: 15px;
+}
+
+#card-container {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+/*  display: inline-flex;
+*/}
+
 .set-width {
-  width: 75%;
-  display: inline-block;
-  margin: 0 auto;
+  width: 48%;
+/*  display: inline-block;*/
+/*  margin: 0 auto;*/
 }
 
 .card-paragraph {
@@ -187,9 +204,9 @@ h3#about-header.center-align {
   color: #fff;
 }
 
-.menu-header > h3 {
+/*.menu-header > h3 {
   text-decoration: underline;
-}
+}*/
 
 .menu-item {
   padding: 5px;

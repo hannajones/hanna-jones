@@ -6,10 +6,6 @@ import ProjectActions from '../actions/ProjectActions';
 import ProjectStore from '../stores/ProjectStore'
 import Rebase from 're-base';
 
-// const projects = () => {
-//   return { projects: ProjectStore.getProjects() }
-// }
-
 var base = Rebase.createClass('https://newnewtest.firebaseio.com/');
 
 class ProjectsContainer extends React.Component {
@@ -38,9 +34,9 @@ class ProjectsContainer extends React.Component {
       <div className="content-container center-align">
         <div className="section-background z-depth-2 center-align">
           <h3>Projects</h3>
-          <ul>
+          <div id="card-container">
             {Object.keys(this.state.projects).map(this.renderCards)}
-          </ul>
+          </div>
         </div>
       </div>
     )
