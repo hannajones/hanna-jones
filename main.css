@@ -87,6 +87,18 @@ div.card.large {
   overflow: scroll;
 }
 
+.card-content.center-align {
+  padding: 0 20px 20px 20px;
+}
+
+.card-content.center-align > h3 {
+  padding-top: 0  ;
+}
+
+#large-paragraph {
+  overflow: scroll;
+}
+
 #carousel-container {
   height: 40%;
   width: 100%;
@@ -138,7 +150,7 @@ div.card.large {
 
 .card-paragraph {
   overflow: hidden; 
-  height: 60px;
+  /*height: 60px;*/
   line-height: 20px;
 }
 
