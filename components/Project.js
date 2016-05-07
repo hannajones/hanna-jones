@@ -17,10 +17,13 @@ class Project extends React.Component {
     super()
     this.state = {
       projects: [],
-      project: {}
+      project: {},
+      index: 0
     }
     this.findProject = this.findProject.bind(this);
     this.fetchData = this.fetchData.bind(this);
+    this.setNextImage = this.setNextImage.bind(this);
+    this.setPreviousImage = this.setPreviousImage.bind(this);
   }
   componentWillMount() {
     this.fetchData();
@@ -41,16 +44,36 @@ class Project extends React.Component {
   componentWillUnmount() {
     base.removeBinding(this.ref);
   }
+  setNextImage() {
+    if ((this.state.index + 1) < this.state.project.images.length) {
+      this.setState({index: this.state.index + 1})
+    }
+    else {
+      this.setState({index: 0})
+    }
+  }
+  setPreviousImage() {
+    if (this.state.index > 0) {
+      this.setState({index: this.state.index - 1})
+    }
+    else if (this.state.index === 0) {
+      this.setState({index: this.state.project.images.length - 1})
+    }
+  }
   render() {
     var data = this.state.project
-    var images = this.state.project.images
-    console.log(images)
     return (
       <div className="content-container">
         <div className="card large z-depth-2">
           <div className="card-image">
-            <Carousel images={data.images}/>
+            <Carousel images={data.images} index={this.state.index}/>
           </div>
+            { data.images && data.images.length > 1 ?
+              <div id="image-buttons" className="center-align">
+                <button className="waves-effect waves-light btn" onClick={this.setPreviousImage}>Back</button>
+                <button className="waves-effect waves-light btn" onClick={this.setNextImage}>Next</button>
+              </div> : false
+            }
           <div className="card-content center-align">
             <h3>{data.title}</h3>
             <p className="card-paragraph">

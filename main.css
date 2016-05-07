@@ -97,6 +97,15 @@ div.card.large {
   height: 100%;
 }
 
+#carousel-image-container {
+  max-height: 100%;
+}
+
+.carousel-image {
+  max-height: 100%;
+  max-width: 100%;
+}
+
 .fa-chevron-right {
   position: absolute;
   left: 30vh;
