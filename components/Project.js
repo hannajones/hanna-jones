@@ -64,8 +64,8 @@ class Project extends React.Component {
     var data = this.state.project
     return (
       <div className="content-container">
-        <div className="card large z-depth-2">
-          <div className="card-image">
+        <div className="section-background z-depth-2 center-align">
+          <div className="carousel-container">
             <Carousel images={data.images} index={this.state.index}/>
           </div>
             { data.images && data.images.length > 1 ?
@@ -74,9 +74,9 @@ class Project extends React.Component {
                 <button className="waves-effect waves-light btn" onClick={this.setNextImage}>Next</button>
               </div> : false
             }
-          <div className="card-content center-align">
+          <div className="project-content">
             <h3>{data.title}</h3>
-            <p className="card-paragraph">
+            <p className="project-description">
               {data.description}
             </p>
           </div>
