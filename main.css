@@ -218,6 +218,15 @@ h3#about-header.center-align {
   margin-bottom: 15px;
 }
 
+.resume-job {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.job-dates {
+  float: right;
+}
+
 /* Menu Component */
 
 #menu-container {

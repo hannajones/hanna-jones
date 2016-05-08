@@ -6,10 +6,6 @@ import ProjectStore from '../stores/ProjectStore';
 import ProjectActions from '../actions/ProjectActions';
 import Rebase from 're-base';
 
-// const project = () => {
-//   return { project: ProjectStore.getProjects() }
-// }
-
 var base = Rebase.createClass('https://newnewtest.firebaseio.com/');
 
 class Project extends React.Component {

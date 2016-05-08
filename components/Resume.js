@@ -56,9 +56,10 @@ class Resume extends React.Component {
   renderJobs() {
     return (
       <div>
-        <div className="resume-job">
-          <span><h6>Museum of Jewish Montreal, Montréal, QC</h6>
-          <strong>Development & Special Projects Manager</strong> <em>(December 2013 - December 2015)</em></span>
+        <div className="resume-job left-align">
+          <h5 className="job-title">Development & Special Projects Manager</h5>
+          <em className="job-dates">(December 2013 - December 2015)</em>
+          <h6>Museum of Jewish Montreal, Montréal, QC</h6>
           <p>- Third full-time employee of a start-up virtual museum dedicated to finding new ways
          to preserve and share Montréal’s Jewish history.</p>
           <p>- Worked with an external web developer to redesign the Museum’s website. Created
@@ -66,15 +67,18 @@ class Resume extends React.Component {
           <p>- Completed basic UI/UX design tasks for the Museum’s new Stories Project oral history
           web app using Balsamiq Mockups and Photoshop.</p>
         </div>
-        <div className="resume-job">
+        <div className="resume-job left-align">
+          <h5 className="job-title">Research Assistant - Art History Department</h5>
+          <em className="job-dates">(May - July 2013)</em>
           <h6>McGill University, Montréal, QC</h6>
-          <strong>Research Assistant, Art History Department</strong> <em>(May - July 2013)</em>
           <p>- Conducted research for projects on 19th century French art and culture. Duties
           consisted of compiling bibliographies, creating summary reports on sources, and
           making image licensing inquiries to Art Resource and The Bridgeman Art Library.</p>
         </div>
-        <div className="resume-job">
-          <h6>Development Intern: Institutional Giving<br/> New-York Historical Society, New York, NY</h6> <em>(June - August 2012)</em>
+        <div className="resume-job left-align">
+          <h5>Development Intern - Institutional Giving</h5> 
+          <em className="job-dates">(June - August 2012)</em>
+          <h6>New-York Historical Society, New York, NY</h6>
           <p>- Conducted database research to develop profiles for grant-making organizations.</p>
           <p>- Drafted letters of inquiry, wrote and edited sections of grant proposals, and
           contributed to all aspects of donor-related correspondence.</p>
