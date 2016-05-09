@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6 {
 body {
   font-family: 'Droid Sans Mono', 'Courier', monospace;
   font-size: 0.8em;
-  font: #3c3c3c;
+  color: #3c3c3c;
   line-height: 1.9em;
 }
 
@@ -53,7 +53,9 @@ body {
 }
 
 div.section-background {
-  padding: 10px;
+  border-top: 20px solid #fff;
+  border-bottom: 10px solid #fff;
+  padding: 0 10px 0 10px;
   padding-left: 22px;
   margin: 0 auto;
   height: 90vh;
@@ -71,6 +73,7 @@ div.section-background {
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 10px;
+  margin-left: 10px;
 /*  display: inline-flex;
 */}
 
@@ -98,6 +101,9 @@ div.section-background {
 #large-paragraph {
   overflow: scroll;
 }*/
+.project-description {
+  margin-bottom: 0;
+}
 
 .project-content {
   margin-top: -2vh;
@@ -122,12 +128,29 @@ div.section-background {
 .carousel-image {
 /*  max-height: 100%;
   max-width: 100%;*/
-  padding-top: 10px;
+  /*padding-top: 10px;*/
   max-height: 475px;
   width: 100%;
 }
 
 /* Card */
+
+.card-image-holder {
+  position: relative;
+  margin-right: 2vw;
+  margin-bottom: 2vh;
+}
+
+.image-label {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.card-border {
+  max-height: 250px;
+  max-width: 350px;
+}
 
 .card {
   margin: 15px;
@@ -139,9 +162,19 @@ div.section-background {
 /*  margin: 0 auto;*/
 }
 
-.card {
-  height: 20%;
+.card-image-container {
+  max-height: 200px;
+  max-width: 300px;
 }
+
+div.card-image {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/*.card {
+  height: 20%;
+}*/
 
 .card-paragraph {
   overflow: hidden; 
@@ -151,6 +184,14 @@ div.section-background {
 
 button.waves-effect.waves-light.btn {
   margin: 10px 10px 10px 0;
+}
+
+.small-image {
+  margin-top: -20px;
+}
+
+span.card-title {
+  line-height: 1.5em;
 }
 
 /* About */
@@ -265,6 +306,11 @@ h3#about-header.center-align {
   color: #0288D1;
 }
 
+.active {
+  background-color: #fff;
+  color: #0288D1;
+}
+
 .menu-item.contact:hover {
   border-bottom-right-radius: 12px;
   border-bottom-left-radius: 12px;
@@ -287,6 +333,23 @@ span.fa-stack {
 .fa:hover {
   color: #3c3c3c;
 }
+
+/* Project Form */
+
+.thumbnail-container {
+  max-width: 300px;
+  max-height: 200px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  display: inline-block;
+}
+
+.thumbnail {
+  height: 100%;
+  width: 100%;
+}
+
 /* hidden scrollbar */
 
 ::-webkit-scrollbar {

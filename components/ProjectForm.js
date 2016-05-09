@@ -14,6 +14,7 @@ class ProjectForm extends React.Component {
       project: {
         id: null,
         title: '',
+        tagline: '',
         description: '',
         images: []
       }
@@ -22,6 +23,7 @@ class ProjectForm extends React.Component {
     this.updateDescription = this.updateDescription.bind(this);
     this.sendData = this.sendData.bind(this);
     this.pushImage = this.pushImage.bind(this);
+    this.updateTagline = this.updateTagline.bind(this);
   }
   componentWillMount() {
     var currentProject = this.state.project;
@@ -31,6 +33,11 @@ class ProjectForm extends React.Component {
   updateTitle() {
     var currentProject = this.state.project;
     currentProject.title = this.refs.title.value;
+    this.setState({project: currentProject})
+  }
+  updateTagline() {
+    var currentProject = this.state.project;
+    currentProject.tagline = this.refs.tagline.value;
     this.setState({project: currentProject})
   }
   updateDescription() {
@@ -50,10 +57,11 @@ class ProjectForm extends React.Component {
     e.preventDefault();
     var project = this.state.project;
     base.push('projects', {
-     data: {id: project.id, title: project.title, description: project.description, images: project.images}
+     data: {id: project.id, title: project.title, description: project.description, images: project.images, tagline: project.tagline}
     });
     this.refs.title.value = ""
     this.refs.description.value = ""
+    this.refs.tagline.value = ""
     var currentProject = this.state.project;
     currentProject.images = [];
     currentProject.id = Date.now();
@@ -61,16 +69,30 @@ class ProjectForm extends React.Component {
     this.setState({project: currentProject})
   } 
   render() {
+    console.log(this.state.project.images);
     return (
       <div className="content-container">
         <div className="section-background z-depth-2">
           <form>
             <input type="text" ref="title" placeholder="title" onChange={this.updateTitle}/><br/>
+            <input type="text" ref="tagline" placeholder="tagline" onChange={this.updateTagline}/><br/>
             <textarea ref="description" name="description" id="description" cols="30" rows="10" onChange={this.updateDescription}></textarea><br/>
             <input type="text" ref="image" placeholder="image url"/><br/>
             <a className="waves-effect waves-light btn" onClick={this.pushImage}>Add Image</a><br/><br/>
             <button onClick={this.sendData}>Submit</button><br/>
           </form>
+          <div className="center-align">
+          { this.state.project && this.state.project.images.length > 0 ?
+            this.state.project.images.map(function(image) {
+              return (
+                <div key={image + 1} className="thumbnail-container">
+                  <img className="thumbnail" key={image} src={image} alt="image"/>
+                </div>
+              )
+            })
+            : false
+          }
+          </div>
         </div>
       </div>
     )
