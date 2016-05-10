@@ -233,27 +233,30 @@ h3#about-header.center-align {
 
 /* Resume */
 
+.details-enter:before {
+  display: none;
+  opacity: 0;
+}
+
 .details-enter {
-  transition: all 0.5s;
-  transform: translateX(-200%);
-  max-height: 0;
+  /*transform: translateY(-200%);*/
+  opacity: 0.01;
 }
 
 .details-enter.details-enter-active {
-  transform: translateX(0%);
-  max-height: 400px;
+  opacity: 1;
+  transition: opacity 0.3s linear;
+  transition-delay: 0.3s linear;
 }
 
 .details-leave {
-  transition: all 0.1s;
-  transform: translateY(0%);
-  max-height: 200px;
-  padding: 10px 0 !important;
+  opacity: 1;
 }
 
 .details-leave.details-leave-active {
-  transform: translateX(-200%);
-  max-height: 0;
+/*  transform: translateY(-200%);*/
+  opacity: 0.01;
+  transition: opacity 0.3s linear;
 }
 
 #education-flex {
@@ -294,8 +297,8 @@ h3#about-header.center-align {
 
 .header-bar:hover {
   background-color: #01517d;
-  -webkit-transition: background-color .3s ease-in-out;
-  transition: background-color .3s ease-in-out;
+  -webkit-transition: background-color .3s linear;
+  transition: background-color .3s linear;
 }
 
 .header-bar:active {
