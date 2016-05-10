@@ -79,28 +79,6 @@ div.section-background {
 
 /* Project */
 
-/*div.card.large {
-  padding: 10px;
-  padding-left: 22px;
-  margin: 0 auto;
-  height: 90vh;
-  width: 100%;
-  margin-top: 5vh;
-  background-color: #fff;
-  overflow: scroll;
-}
-
-.card-content.center-align {
-  padding: 0 20px 20px 20px;
-}
-
-.card-content.center-align > h3 {
-  padding-top: 0  ;
-}
-
-#large-paragraph {
-  overflow: scroll;
-}*/
 .project-description {
   margin-bottom: 0;
 }
@@ -110,25 +88,18 @@ div.section-background {
 }
 
 #carousel-container {
-/*  max-height: 400px;*/
   width: 100%;
 }
 
 .image-container {
   width: 100%;
-/*  max-height: 400px;*/
 }
 
 #carousel-image-container {
-  /*max-height: 100%;*/
-  /*max-height: 400px;*/
   width: 100%;
 }
 
 .carousel-image {
-/*  max-height: 100%;
-  max-width: 100%;*/
-  /*padding-top: 10px;*/
   max-height: 475px;
   width: 100%;
 }
@@ -148,50 +119,14 @@ div.section-background {
 }
 
 .card-border {
-  max-height: 250px;
-  max-width: 350px;
-}
-
-.card {
-  margin: 15px;
-}
-
-.set-width {
-  width: 48%;
-/*  display: inline-block;*/
-/*  margin: 0 auto;*/
-}
-
-.card-image-container {
-  max-height: 200px;
-  max-width: 300px;
-}
-
-div.card-image {
-  max-height: 100%;
-  max-width: 100%;
-}
-
-/*.card {
-  height: 20%;
-}*/
-
-.card-paragraph {
-  overflow: hidden; 
-  /*height: 60px;*/
-  line-height: 20px;
+ /* max-height: 250px;
+  max-width: 350px;*/
+  max-height: 30vh;
+  max-width: 25vw;
 }
 
 button.waves-effect.waves-light.btn {
   margin: 10px 10px 10px 0;
-}
-
-.small-image {
-  margin-top: -20px;
-}
-
-span.card-title {
-  line-height: 1.5em;
 }
 
 /* About */
@@ -257,6 +192,18 @@ h3#about-header.center-align {
   background-color: #0288D1;
   padding: 5px;
   margin-bottom: 15px;
+}
+
+.header-bar:hover {
+  background-color: #01517d;
+}
+
+.header-bar:active {
+  background-color: #01517d;
+}
+
+#expand-button {
+  margin-left: 50px;
 }
 
 .resume-job {

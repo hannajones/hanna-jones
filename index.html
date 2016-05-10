@@ -23,5 +23,17 @@
     <script src="/particles.js"></script>
     <script src="/app-particles.js"></script>
     <script src="/bundle.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".menu-item").on("click", function() {
+          $(".menu-item").removeClass("active");
+          $(this).addClass("active");
+        });
+        $(".menu-header").on("click", function() {
+          $(".menu-item").removeClass("active");
+          $(".menu-item").first().addClass("active");
+        });
+      });
+    </script>
   </body>
 </html>

@@ -6,7 +6,7 @@ class Resume extends React.Component {
   constructor() {
     super()
     this.state = {
-      expanded: null
+      expanded: 'projects'
     }
     this.renderProjects = this.renderProjects.bind(this);
     this.setExpanded = this.setExpanded.bind(this);
@@ -31,7 +31,6 @@ class Resume extends React.Component {
     )
   }
   renderProjects() {
-    console.log('rendering')
     return (
       <div id="resume-project-flex">
         <div className="resume-project">
@@ -59,7 +58,7 @@ class Resume extends React.Component {
         <div className="resume-job left-align">
           <h5 className="job-title">Development & Special Projects Manager</h5>
           <em className="job-dates">(December 2013 - December 2015)</em>
-          <h6>Museum of Jewish Montreal, Montréal, QC</h6>
+          <a href="http://imjm.ca/"><h6>Museum of Jewish Montreal, Montréal, QC</h6></a>
           <p>- Third full-time employee of a start-up virtual museum dedicated to finding new ways
          to preserve and share Montréal’s Jewish history.</p>
           <p>- Worked with an external web developer to redesign the Museum’s website. Created
@@ -97,7 +96,6 @@ class Resume extends React.Component {
     )
   }
   render() {
-    console.log(this.state)
     var self = this;
     return (
       <div className="content-container">
@@ -105,7 +103,7 @@ class Resume extends React.Component {
           <h3>Hanna M. Jones</h3>
           <p>jones.hanna.m@gmail.com / (514) 649-2986</p>
           <div className="header-bar" onClick={() => this.setExpanded('schools')}>
-            <h5>Education</h5> 
+            <h5>Education</h5>
           </div>
           <div>
             { this.state.expanded === 'schools' ? this.renderSchools() : false }
@@ -128,7 +126,6 @@ class Resume extends React.Component {
             { this.state.expanded === 'skills' ? this.renderSkills() : false }
           <div>
           </div>
-          <HomeButton/>
         </div>
       </div>
     )

@@ -58,8 +58,6 @@ class Project extends React.Component {
   }
   render() {
     var data = this.state.project
-    console.log(data)
-    console.log(data.images)
     return (
       <div className="content-container">
         <div className="section-background z-depth-2 center-align">
