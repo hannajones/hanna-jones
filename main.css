@@ -114,6 +114,7 @@ div.section-background {
 
 .card-image-holder:hover {
   color: yellow;
+  opacity: 1;
 }
 
 .image-label {
@@ -122,15 +123,38 @@ div.section-background {
   top: 10px;
 }
 
-.card-border {
+.card-image-holder .card-image-link img {
  /* max-height: 250px;
   max-width: 350px;*/
   max-height: 30vh;
   max-width: 25vw;
 }
 
+.card-image-holder .card-image-link img.card-border {
+  max-height: 30vh;
+  max-width: 25vw;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  filter: gray;
+  -webkit-transition: all .2s ease;
+}
+
+.card-image-holder .card-image-link img.card-border:hover {
+  filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+  filter: none;
+  transform: scale(1.1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+
+}
+
 button.waves-effect.waves-light.btn {
   margin: 10px 10px 10px 0;
+}
+
+.hidden {
+  display: none;
 }
 
 /* About */

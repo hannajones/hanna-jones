@@ -7,8 +7,8 @@ class Card extends React.Component {
     return (
       <div className="card-image-holder">
         <Link className="card-image-link" to={`/project/${this.props.project.id}`}>
-          <span className="image-label"><mark>{this.props.project.title}</mark></span>
           <img className="card-border" src={this.props.project.images[0]} alt="project-image" />
+          <span className="image-label"><mark>{this.props.project.title}</mark></span>
         </Link>
       </div>
     )
