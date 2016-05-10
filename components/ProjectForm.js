@@ -14,8 +14,8 @@ class ProjectForm extends React.Component {
       project: {
         id: null,
         title: '',
-        tagline: '',
         description: '',
+        url: null,
         images: []
       }
     }
@@ -23,7 +23,8 @@ class ProjectForm extends React.Component {
     this.updateDescription = this.updateDescription.bind(this);
     this.sendData = this.sendData.bind(this);
     this.pushImage = this.pushImage.bind(this);
-    this.updateTagline = this.updateTagline.bind(this);
+    this.updateUrl = this.updateUrl.bind(this);
+    this.resetValues = this.resetValues.bind(this);
   }
   componentWillMount() {
     var currentProject = this.state.project;
@@ -35,9 +36,10 @@ class ProjectForm extends React.Component {
     currentProject.title = this.refs.title.value;
     this.setState({project: currentProject})
   }
-  updateTagline() {
+  updateUrl() {
     var currentProject = this.state.project;
-    currentProject.tagline = this.refs.tagline.value;
+    currentProject.url = this.refs.url.value;
+    console.log(currentProject.url);
     this.setState({project: currentProject})
   }
   updateDescription() {
@@ -53,29 +55,30 @@ class ProjectForm extends React.Component {
     this.setState({project: currentProject});
     this.refs.image.value = ""
   }
+  resetValues() {
+    this.refs.title.value = ""
+    this.refs.description.value = ""
+    this.refs.url.value = ""
+  }
   sendData(e) {
     e.preventDefault();
     var project = this.state.project;
     base.push('projects', {
-     data: {id: project.id, title: project.title, description: project.description, images: project.images, tagline: project.tagline}
+     data: {id: project.id, title: project.title, description: project.description, images: project.images, url: project.url}
     });
-    this.refs.title.value = ""
-    this.refs.description.value = ""
-    this.refs.tagline.value = ""
+    this.resetValues();
     var currentProject = this.state.project;
     currentProject.images = [];
     currentProject.id = Date.now();
-    console.log(currentProject);
     this.setState({project: currentProject})
   } 
   render() {
-    console.log(this.state.project.images);
     return (
       <div className="content-container">
         <div className="section-background z-depth-2">
           <form>
             <input type="text" ref="title" placeholder="title" onChange={this.updateTitle}/><br/>
-            <input type="text" ref="tagline" placeholder="tagline" onChange={this.updateTagline}/><br/>
+            <input type="text" ref="url" placeholder="url" onChange={this.updateUrl}/><br/>
             <textarea ref="description" name="description" id="description" cols="30" rows="10" onChange={this.updateDescription}></textarea><br/>
             <input type="text" ref="image" placeholder="image url"/><br/>
             <a className="waves-effect waves-light btn" onClick={this.pushImage}>Add Image</a><br/><br/>

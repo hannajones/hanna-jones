@@ -100,7 +100,7 @@ div.section-background {
 }
 
 .carousel-image {
-  max-height: 475px;
+  max-height: 500px;
   width: 100%;
 }
 
@@ -109,7 +109,11 @@ div.section-background {
 .card-image-holder {
   position: relative;
   margin-right: 2vw;
-  margin-bottom: 2vh;
+  margin-bottom: 3vh;
+}
+
+.card-image-holder:hover {
+  color: yellow;
 }
 
 .image-label {

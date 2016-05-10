@@ -71,7 +71,7 @@ class Project extends React.Component {
               </div> : false
             }
           <div className="project-content">
-            <h3>{data.title}</h3>
+            <a href={data.url} target="_blank"><h3>{data.title}</h3></a>
             <p className="project-description">
               {data.description}
             </p>
