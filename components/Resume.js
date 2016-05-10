@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeButton from './HomeButton';
 import { Link } from 'react-router';
+import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 
 class Resume extends React.Component {
   constructor() {
@@ -34,12 +35,12 @@ class Resume extends React.Component {
     return (
       <div id="resume-project-flex">
         <div className="resume-project">
-          <h6><a href="https://lhl-hopper.herokuapp.com/" target="_blank">Hopper</a></h6>
+          <h6><a id="underline" href="https://lhl-hopper.herokuapp.com/" target="_blank">Hopper</a></h6>
           <p>- Web app dedicated to helping locals and tourists alike navigate Toronto’s nightlife by maintaining a database of community curated “bar hops”</p>
           <p>- Built using Ruby on Rails, React, PostgreSQL, Google Maps API</p>
         </div>
         <div className="resume-project">
-          <h6><a href="http://imjm.ca/" target="_blank">Museum of Jewish Montreal</a></h6>
+          <h6><a id="underline" href="http://imjm.ca/" target="_blank">Museum of Jewish Montreal</a></h6>
           <p>- Basic UI / UX design for the Museum of Jewish Montreal to assist with their website
           redesign and make navigating their home page more intuitive</p>
           <p>- Created mockups and wireframes using Adobe Creative Suite and Balsamiq</p>
@@ -105,27 +106,51 @@ class Resume extends React.Component {
           <div className="header-bar" onClick={() => this.setExpanded('schools')}>
             <h5>Education</h5>
           </div>
-          <div>
+          <ReactCSSTransitionGroup
+            className="details"
+            component="div"
+            transitionName="details"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={100}
+          >
             { this.state.expanded === 'schools' ? this.renderSchools() : false }
-          </div>
+          </ReactCSSTransitionGroup>
           <div className="header-bar" onClick={() => this.setExpanded('projects')}>
             <h5>Projects</h5>
           </div>
-          <div>
+          <ReactCSSTransitionGroup
+            className="details"
+            component="div"
+            transitionName="details"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={100}
+          >
             { this.state.expanded === 'projects' ? self.renderProjects() : false }
-          </div>
+          </ReactCSSTransitionGroup>
           <div className="header-bar" onClick={() => this.setExpanded('jobs')}>
             <h5>Professional Experience</h5>
           </div>
-          <div>
+          <ReactCSSTransitionGroup
+            className="details"
+            component="div"
+            transitionName="details"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={100}
+          >
             { this.state.expanded === 'jobs' ? self.renderJobs() : false}
-          </div>
+          </ReactCSSTransitionGroup>
           <div className="header-bar" onClick={() => this.setExpanded('skills')}>
             <h5>Skills & Abilities</h5>
           </div>
+          <ReactCSSTransitionGroup
+            className="details"
+            component="div"
+            transitionName="details"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={100}
+          >
             { this.state.expanded === 'skills' ? this.renderSkills() : false }
-          <div>
-          </div>
+          </ReactCSSTransitionGroup>
         </div>
       </div>
     )

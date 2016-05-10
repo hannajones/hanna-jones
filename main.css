@@ -11,6 +11,47 @@ body {
   line-height: 1.9em;
 }
 
+a:hover {
+  color: #000;
+  /*text-decoration: underline;*/
+  -webkit-transition: all .5s linear;
+  transition: all .5s linear;
+}
+
+/* set animation link underline */
+/* give it ID of underline */
+
+/*#underline {
+  position: relative;
+  color: #0288D1;
+  text-decoration: none;
+}
+
+#underline:hover {
+  color: #0288D1;
+}
+
+#underline:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0288D1;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+#underline:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+*/
 .container {
   width: 85%;
 }
@@ -143,14 +184,16 @@ div.section-background {
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
   filter: gray;
-  -webkit-transition: all .2s ease;
-  transition: all .2 ease-in-out;
+  -webkit-transition: all .3s ease;
+  transition: all .3 ease-in-out;
 }
 
 .card-image-holder .card-image-link img.card-border:hover {
   filter: grayscale(0%);
   -webkit-filter: grayscale(0%);
   filter: none;
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
   transform: scale(1.1);
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
@@ -189,6 +232,29 @@ h3#about-header.center-align {
 }
 
 /* Resume */
+
+.details-enter {
+  transition: all 0.5s;
+  transform: translateX(-200%);
+  max-height: 0;
+}
+
+.details-enter.details-enter-active {
+  transform: translateX(0%);
+  max-height: 400px;
+}
+
+.details-leave {
+  transition: all 0.1s;
+  transform: translateY(0%);
+  max-height: 200px;
+  padding: 10px 0 !important;
+}
+
+.details-leave.details-leave-active {
+  transform: translateX(-200%);
+  max-height: 0;
+}
 
 #education-flex {
   display: flex;
@@ -281,8 +347,8 @@ h3#about-header.center-align {
 .menu-item:hover {
   background-color: #fff;
   color: #0288D1;
-  -webkit-transition: all .2s linear;
-  transition: all .2s linear;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
 }
 
 .active {
@@ -311,6 +377,8 @@ span.fa-stack {
 
 .fa:hover {
   color: #3c3c3c;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
 }
 
 /* Project Form */
