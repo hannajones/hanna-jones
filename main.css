@@ -13,45 +13,10 @@ body {
 
 a:hover {
   color: #000;
-  /*text-decoration: underline;*/
   -webkit-transition: all .5s linear;
   transition: all .5s linear;
 }
 
-/* set animation link underline */
-/* give it ID of underline */
-
-/*#underline {
-  position: relative;
-  color: #0288D1;
-  text-decoration: none;
-}
-
-#underline:hover {
-  color: #0288D1;
-}
-
-#underline:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #0288D1;
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
-}
-
-#underline:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-}
-*/
 .container {
   width: 85%;
 }
@@ -113,9 +78,7 @@ div.section-background {
   justify-content: space-around;
   margin-top: 1vh;
   align-content: center;
-/*  margin-left: 1vw;*/
-/*  display: inline-flex;
-*/}
+}
 
 /* Project */
 
@@ -148,8 +111,6 @@ div.section-background {
 
 .card-image-holder {
   position: relative;
-/*  margin-right: 2vw;*/
-/*  margin-bottom: 3vh;*/
   margin: .5vw;
 }
 
@@ -160,8 +121,6 @@ div.section-background {
 
 .image-label {
   position: absolute;
-  /*right: 15px;
-  top: 15px;*/
   right: 5%;
   top: 7%;
 }
@@ -236,7 +195,6 @@ h3#about-header.center-align {
 }
 
 .details-enter {
-  /*transform: translateY(-200%);*/
   opacity: 0.01;
 }
 
@@ -251,7 +209,6 @@ h3#about-header.center-align {
 }
 
 .details-leave.details-leave-active {
-/*  transform: translateY(-200%);*/
   opacity: 0.01;
   transition: opacity 0.3s linear;
 }
