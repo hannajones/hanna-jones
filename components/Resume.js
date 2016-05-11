@@ -7,7 +7,7 @@ class Resume extends React.Component {
   constructor() {
     super()
     this.state = {
-      expanded: 'projects'
+      expanded: 'jobs'
     }
     this.renderProjects = this.renderProjects.bind(this);
     this.setExpanded = this.setExpanded.bind(this);
@@ -115,6 +115,18 @@ class Resume extends React.Component {
           >
             { this.state.expanded === 'schools' ? this.renderSchools() : false }
           </ReactCSSTransitionGroup>
+          <div className="header-bar" onClick={() => this.setExpanded('skills')}>
+            <h5>Skills & Abilities</h5>
+          </div>
+          <ReactCSSTransitionGroup
+            className="details"
+            component="div"
+            transitionName="details"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={100}
+          >
+            { this.state.expanded === 'skills' ? this.renderSkills() : false }
+          </ReactCSSTransitionGroup>
           <div className="header-bar" onClick={() => this.setExpanded('projects')}>
             <h5>Projects</h5>
           </div>
@@ -138,18 +150,6 @@ class Resume extends React.Component {
             transitionLeaveTimeout={100}
           >
             { this.state.expanded === 'jobs' ? self.renderJobs() : false}
-          </ReactCSSTransitionGroup>
-          <div className="header-bar" onClick={() => this.setExpanded('skills')}>
-            <h5>Skills & Abilities</h5>
-          </div>
-          <ReactCSSTransitionGroup
-            className="details"
-            component="div"
-            transitionName="details"
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={100}
-          >
-            { this.state.expanded === 'skills' ? this.renderSkills() : false }
           </ReactCSSTransitionGroup>
         </div>
       </div>

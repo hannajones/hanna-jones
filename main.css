@@ -6,7 +6,7 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
   font-family: 'Droid Sans Mono', 'Courier', monospace;
-  font-size: 0.8em;
+  font-size: 0.9em;
   color: #3c3c3c;
   line-height: 1.9em;
 }
@@ -93,10 +93,9 @@ a:hover {
 }
 
 div.section-background {
-  border-top: 20px solid #fff;
-  border-bottom: 10px solid #fff;
-  padding: 0 10px 0 10px;
-  padding-left: 22px;
+  border-top: 1.5vw solid #fff;
+  border-bottom: 1.5vw solid #fff;
+  padding: 0 1.5vw 0 1.5vw;
   margin: 0 auto;
   height: 90vh;
   width: 100%;
@@ -111,9 +110,10 @@ div.section-background {
   width: 100%;
   display: inline-flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 10px;
-  margin-left: 10px;
+  justify-content: space-around;
+  margin-top: 1vh;
+  align-content: center;
+/*  margin-left: 1vw;*/
 /*  display: inline-flex;
 */}
 
@@ -148,8 +148,9 @@ div.section-background {
 
 .card-image-holder {
   position: relative;
-  margin-right: 2vw;
-  margin-bottom: 3vh;
+/*  margin-right: 2vw;*/
+/*  margin-bottom: 3vh;*/
+  margin: .5vw;
 }
 
 .card-image-holder:hover {
@@ -171,21 +172,14 @@ div.section-background {
   line-height: 1.5em;
 }
 
-.card-image-holder .card-image-link img {
- /* max-height: 250px;
-  max-width: 350px;*/
-  max-height: 30vh;
-  max-width: 25vw;
-}
-
 .card-image-holder .card-image-link img.card-border {
-  max-height: 30vh;
-  max-width: 25vw;
+  max-height: 31vh;
+  max-width: 26.5vw;
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
   filter: gray;
-  -webkit-transition: all .3s ease;
-  transition: all .3 ease-in-out;
+  -webkit-transition: all .3s linear;
+  transition: all .3 linear;
 }
 
 .card-image-holder .card-image-link img.card-border:hover {
@@ -195,19 +189,21 @@ div.section-background {
   -ms-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
 
 }
 
 button.waves-effect.waves-light.btn {
-  margin: 10px 10px 10px 0;
+  margin: 1vh 1vw 0 0;
+  font-family: 'Droid Sans Mono', 'Courier', monospace;
 }
 
 /* About */
 
 h3#about-header.center-align {
   text-decoration: underline;
+  margin: 2vw;
 }
 
 #about-header {
@@ -216,8 +212,9 @@ h3#about-header.center-align {
 
 #about-image-container {
   margin: 0 auto;
-  height: 300px;
-  width: 300px;
+  margin-top: 2vh;
+  height: 35vh;
+  width: 35vh;
 }
 
 #about-image {
@@ -228,7 +225,7 @@ h3#about-header.center-align {
 
 #description-content {
   margin: 0 auto;
-  padding: 5px 40px 5px 40px;
+  padding: 0.5vh 4vw 0.5vh 4vw;
 }
 
 /* Resume */
@@ -292,7 +289,7 @@ h3#about-header.center-align {
   width: 100%;
   background-color: #0288D1;
   padding: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 2vh;
 }
 
 .header-bar:hover {
@@ -303,10 +300,6 @@ h3#about-header.center-align {
 
 .header-bar:active {
   background-color: #01517d;
-}
-
-#expand-button {
-  margin-left: 50px;
 }
 
 .resume-job {
@@ -324,7 +317,7 @@ h3#about-header.center-align {
   order: 1;
   flex: 1 auto;
   width: 40%;
-  padding-right: 80px;
+  padding-right: 5vw;
 }
 
 #menu {
@@ -334,7 +327,7 @@ h3#about-header.center-align {
   border-radius: 15px;
   margin-top: 5vh;
   margin-bottom: 1vh;
-  font-family: 'Ubuntu'
+  font-family: 'Ubuntu', 'sans-serif'
 }
 
 .menu-header {
@@ -403,7 +396,7 @@ span.fa-stack {
 /* hidden scrollbar */
 
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 0px;
 }
 
 ::-webkit-scrollbar-track {
