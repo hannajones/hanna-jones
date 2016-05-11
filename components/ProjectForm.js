@@ -2,22 +2,24 @@ import React from 'react';
 import ProjectActions from '../actions/ProjectActions';
 import Rebase from 're-base';
 import { Link } from 'react-router';
+import firebase from 'firebase';
 
 // probably don't need to be using store anymore
-var base = Rebase.createClass('https://newnewtest.firebaseio.com/');
+const ref = new Firebase('https://hannajones.firebaseio.com/');
+const base = Rebase.createClass('https://hannajones.firebaseio.com/');
 
 class ProjectForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      projects: [],
       project: {
         id: null,
         title: '',
         description: '',
         url: null,
         images: []
-      }
+      },
+      uid: ''
     }
     this.updateTitle = this.updateTitle.bind(this);
     this.updateDescription = this.updateDescription.bind(this);
@@ -60,6 +62,25 @@ class ProjectForm extends React.Component {
     this.refs.description.value = ""
     this.refs.url.value = ""
   }
+  authHandler(err, authData) {
+    console.log("in auth handler");
+    if(err) {
+      console.err(err);
+      return;
+    }
+
+    const projectsRef = ref.child(this.props.params)
+  }
+  authenticate(provider) {
+    console.log(provider);
+  }
+  renderLogin() {
+    return (
+      <div className="section-background z-depth-2">
+        <button className="github" onClick={this.authenticate.bind(this, 'github')}>Login</button>
+      </div>
+    )
+  }
   sendData(e) {
     e.preventDefault();
     var project = this.state.project;
@@ -73,6 +94,22 @@ class ProjectForm extends React.Component {
     this.setState({project: currentProject})
   } 
   render() {
+    let logoutButton = <button>Log Out</button>
+    if(!this.state.uid) {
+      return (
+        <div className="content-container">
+          <div>{this.renderLogin()}</div>
+        </div>
+      )
+    }
+    if(this.state.uid !== this.state.owner) {
+      return (
+        <div className="content-container">
+          <p>permission denied.</p>
+          {logoutButton}
+        </div>
+      )
+    }
     return (
       <div className="content-container">
         <div className="section-background z-depth-2">
@@ -83,6 +120,7 @@ class ProjectForm extends React.Component {
             <input type="text" ref="image" placeholder="image url"/><br/>
             <a className="waves-effect waves-light btn" onClick={this.pushImage}>Add Image</a><br/><br/>
             <button onClick={this.sendData}>Submit</button><br/>
+            {logoutButton}
           </form>
           <div className="center-align">
           { this.state.project && this.state.project.images.length > 0 ?
