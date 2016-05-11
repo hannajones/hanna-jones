@@ -13,8 +13,9 @@ import Contact from './components/Contact';
 render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={About}/>
+      <IndexRoute component={ProjectsContainer}/>
       <Route path="projects" component={ProjectsContainer}/>
+      <Route path="about" component={About}/>
       <Route path="project/:id" component={Project}/>
       <Route path="new" component={ProjectForm}/>
       <Route path="resume" component={Resume}/>
