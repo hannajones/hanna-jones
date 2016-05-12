@@ -12,7 +12,7 @@ body {
 }
 
 a:hover {
-  color: #000;
+  color: #3c3c3c;
   -webkit-transition: all .5s linear;
   transition: all .5s linear;
 }
@@ -88,4 +88,10 @@ div.section-background {
 
 ::-webkit-scrollbar-corner {
   border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+  #container-flex {
+    flex-direction: column;
+  } 
 }

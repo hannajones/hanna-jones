@@ -62,3 +62,41 @@ span.fa-stack {
   -webkit-transition: all .2s linear;
   transition: all .2s linear;
 }
+
+@media only screen and (max-width: 800px) {
+  #menu-container {
+/*    align-self: flex-start;
+*/  position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    padding: 0;
+  }
+
+  #menu {
+    width: 100%;
+    border-radius: 0;
+    margin-top: 0;
+    margin-bottom: 1vh;
+    display: inline-block;
+  }
+
+  #menu a div h3:before {
+    content: "\2003";
+  }
+
+  #menu a div h3 {
+    font-size: 2em;
+    display: inline;
+  }
+
+  .menu-header {
+    width: 33%;
+    border-right: 1px solid #fff;
+  }
+
+  .menu-item {
+    display: none;
+  }
+}
