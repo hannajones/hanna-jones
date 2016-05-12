@@ -1,6 +1,5 @@
 import css from '../stylesheets/projectForm.css';
 import React from 'react';
-import ProjectActions from '../actions/ProjectActions';
 import Rebase from 're-base';
 import { Link } from 'react-router';
 import firebase from 'firebase';

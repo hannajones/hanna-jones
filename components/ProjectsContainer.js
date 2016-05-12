@@ -4,8 +4,6 @@ import React from 'react';
 import Project from './Project';
 import Card from './Card';
 import { Link } from 'react-router';
-import ProjectActions from '../actions/ProjectActions';
-import ProjectStore from '../stores/ProjectStore'
 import Rebase from 're-base';
 
 var base = Rebase.createClass('https://newnewtest.firebaseio.com/');
