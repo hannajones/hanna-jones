@@ -1,5 +1,4 @@
 import React from 'react';
-import HomeButton from './HomeButton';
 import { Link } from 'react-router';
 
 class NotFound extends React.Component {
@@ -10,7 +9,6 @@ class NotFound extends React.Component {
           <div className="not-found">
             <h2>Oops, Something Went Wrong...</h2>
             <h4>http://hanna-jones.com/{this.props.params.splat} does not exist. Please try a different route.</h4>
-            <HomeButton/>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import css from '../stylesheets/carousel.css';
 import React from 'react';
 
 class Carousel extends React.Component {

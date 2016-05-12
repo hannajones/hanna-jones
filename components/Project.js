@@ -1,6 +1,6 @@
+import css from '../stylesheets/project.css';
 import React from 'react';
 import Carousel from './Carousel';
-import HomeButton from './HomeButton';
 import { Link } from 'react-router';
 import ProjectStore from '../stores/ProjectStore';
 import ProjectActions from '../actions/ProjectActions';

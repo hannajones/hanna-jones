@@ -1,5 +1,5 @@
+import css from '../stylesheets/resume.css';
 import React from 'react';
-import HomeButton from './HomeButton';
 import { Link } from 'react-router';
 import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 

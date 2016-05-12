@@ -1,3 +1,4 @@
+import css from '../stylesheets/menu.css';
 import React from 'react';
 import Project from './Project';
 import { Link } from 'react-router';

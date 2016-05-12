@@ -1,0 +1,22 @@
+#card-container {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 1vh;
+  align-content: center;
+}
+
+/* Project */
+
+.project-description {
+  margin-bottom: 0;
+}
+
+.project-content {
+  margin-top: -2vh;
+}
+
+#carousel-container {
+  width: 100%;
+}

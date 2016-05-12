@@ -1,3 +1,5 @@
+import css from '../stylesheets/project.css';
+import mainCss from '../stylesheets/card.css';
 import React from 'react';
 import Project from './Project';
 import Card from './Card';

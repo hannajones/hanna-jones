@@ -1,0 +1,64 @@
+
+#menu-container {
+  order: 1;
+  flex: 1 auto;
+  width: 40%;
+  padding-right: 5vw;
+}
+
+#menu {
+  background-color: #0288D1;
+  color: #fff;
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 5vh;
+  margin-bottom: 1vh;
+  font-family: 'Ubuntu', 'sans-serif'
+}
+
+.menu-header {
+  padding: 5px;
+  color: #fff;
+}
+
+.menu-item {
+  padding: 5px;
+  border-top: 1px solid #fff;
+}
+
+.menu-item:hover {
+  background-color: #fff;
+  color: #0288D1;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.active {
+  background-color: #fff;
+  color: #0288D1;
+}
+
+.menu-item.contact:hover {
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.menu-link {
+  color: #fff;
+}
+
+/* Social Icons */
+
+span.fa-stack {
+  margin: 10px;
+}
+
+.fa {
+  color: #b1b1b1;
+}
+
+.fa:hover {
+  color: #3c3c3c;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}

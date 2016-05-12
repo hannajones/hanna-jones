@@ -1,0 +1,49 @@
+
+.card-image-holder {
+  position: relative;
+  margin: .5vw;
+}
+
+.card-image-holder:hover {
+  color: yellow;
+  opacity: 1;
+}
+
+.image-label {
+  position: absolute;
+  right: 5%;
+  top: 7%;
+}
+
+.image-label mark {
+  font-size: 1.2em;
+  padding: 0.25vw;
+  line-height: 1.5em;
+}
+
+.card-image-holder .card-image-link img.card-border {
+  max-height: 31vh;
+  max-width: 26.5vw;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  filter: gray;
+  -webkit-transition: all .3s linear;
+  transition: all .3 linear;
+}
+
+.card-image-holder .card-image-link img.card-border:hover {
+  filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+  filter: none;
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+
+}
+
+button.waves-effect.waves-light.btn {
+  margin: 1vh 1vw 0 0;
+  font-family: 'Droid Sans Mono', 'Courier', monospace;
+}
