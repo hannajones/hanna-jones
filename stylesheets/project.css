@@ -20,3 +20,15 @@
 #carousel-container {
   width: 100%;
 }
+
+@media screen and (max-width: 800px) {
+  #card-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 1vh;
+    align-content: center;
+  }
+}

@@ -63,10 +63,17 @@ span.fa-stack {
   transition: all .2s linear;
 }
 
+.mobile-nav {
+  display: none;
+}
+
 @media only screen and (max-width: 800px) {
+  .menu-item {
+    display: none;
+  }
+
   #menu-container {
-/*    align-self: flex-start;
-*/  position: fixed;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 99;
@@ -78,12 +85,11 @@ span.fa-stack {
     width: 100%;
     border-radius: 0;
     margin-top: 0;
-    margin-bottom: 1vh;
     display: inline-block;
   }
 
   #menu a div h3:before {
-    content: "\2003";
+    content: "\2002";
   }
 
   #menu a div h3 {
@@ -91,12 +97,96 @@ span.fa-stack {
     display: inline;
   }
 
+  #social-icons {
+    position: fixed;
+    font-size: 0.6em;
+    top: 0;
+    left: 40%;
+  }
+
+  .fa {
+    color: #fff;
+  }
+
   .menu-header {
     width: 33%;
+    height: 5vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
     border-right: 1px solid #fff;
   }
 
-  .menu-item {
-    display: none;
+  .menu-btn div {
+   position: absolute;
+   left: 100%;
+   top: 64%;
+   padding-right: 8px;
+   margin-top: -0.50em;
+   line-height: 1.2;
+   font-size: 18px;
+   font-weight: 200;
+   vertical-align: middle;
+   z-index: 99;
+  }
+   
+  .menu-btn span {
+   display: block;
+   width: 19px;
+   height: 3px;
+   margin: 4px 0;
+   background: rgb(0,0,0);
+   z-index: 99;
+  }
+   
+  .responsive-menu{
+   display: none;
+  }
+   
+  .expand {
+   display: block !important; 
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #menu a div h3 {
+    font-size: 1.3em;
+  }
+
+  .menu-header {
+    width: 40%;
+  }
+
+  #social-icons {
+    position: fixed;
+    font-size: 0.4em;
+    top: -0.1vh;
+    left: 40%;
+  }
+
+  .fa {
+    margin-left: 5vw;
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  #social-icons {
+    position: fixed;
+    font-size: 0.4em;
+    top: -0.5vh;
+    left: 40%;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  #menu a div h3 {
+    font-size: 1em;
+  }
+
+  .menu-header {
+    width: 33%;
+    height: 5vh;
+    padding-top: 1vh;
+    padding-bottom: 5vh;
+    border-right: 1px solid #fff;
   }
 }

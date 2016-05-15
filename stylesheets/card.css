@@ -4,11 +4,6 @@
   margin: .5vw;
 }
 
-.card-image-holder:hover {
-  color: yellow;
-  opacity: 1;
-}
-
 .image-label {
   position: absolute;
   right: 5%;
@@ -46,4 +41,11 @@
 button.waves-effect.waves-light.btn {
   margin: 1vh 1vw 0 0;
   font-family: 'Droid Sans Mono', 'Courier', monospace;
+}
+
+@media screen and (max-width: 800px) {
+  .card-image-holder .card-image-link img.card-border {
+    max-width: 80vw;
+    max-height: 50vh;
+  }
 }

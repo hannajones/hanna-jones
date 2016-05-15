@@ -53,6 +53,20 @@ class Menu extends React.Component {
             </span>
           </a>
         </div>
+        <div className="mobile-nav">
+          <div className="menu-btn" id="menu-btn">
+          <div></div>
+          <span></span>
+          <span></span>
+          <span></span>
+            </div>
+            <div className="responsive-menu">
+              <ul>
+                <li>One</li>
+                <li>Two</li>
+              </ul>
+            </div>
+        </div>
       </div>
     )
   }
