@@ -65,7 +65,12 @@ class Project extends React.Component {
       color: '#b1b1b1'
     }
     var activeStyle = {
-      color: '#3c3c3c'
+      color: '#3c3c3c',
+      transform: 'scale(1.1)',
+      WebkitTransform: 'scale(1.1)',
+      msTransform: 'scale(1.1)',
+      WebkitTransition: 'all .3s ease-in-out',
+      msTransition: 'all .3s ease-in-out'
     }
     if (key === this.state.index) {
       return activeStyle
