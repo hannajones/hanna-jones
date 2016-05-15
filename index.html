@@ -32,13 +32,11 @@
         $(".menu-header").on("click", function() {
           $(".menu-item").removeClass("active");
         });
-        $(".menu-btn").click(function() {
-          $(".responsive-menu").addClass('expand');
-          $(".menu-btn").addClass("btn-none");
-        });
-        $(".close-btn").click(function() {
-          $(".responsive-menu").removeClass("expand");
-          $(".menu-btn").addClass("btn-none");
+        // $("#mobile-nav").on('click', function(e) {
+        //   $("#mobile-menu").slideToggle("slow");
+        // })
+        $("#mobile-nav").click(function() {
+          $("#mobile-menu").toggle("slide");
         });
       });
     </script>

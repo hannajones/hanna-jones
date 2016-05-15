@@ -9,7 +9,7 @@ class Menu extends React.Component {
     return (
       <div id="menu-container">
         <div id="menu" className="center-align">
-          <Link to="/" activeClassName="active">
+          <Link to="/">
             <div className="menu-header">
               <h3>Hanna</h3>
               <h3>Jones</h3>
@@ -53,19 +53,38 @@ class Menu extends React.Component {
             </span>
           </a>
         </div>
-        <div className="mobile-nav">
-          <div className="menu-btn" id="menu-btn">
-          <div></div>
-          <span></span>
-          <span></span>
-          <span></span>
+        <div id="mobile-nav">
+          <div id="nav-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div id="mobile-menu" className="center-align">
+            <Link className="menu-link" to="about">
+              <div className="mobile-menu-item">
+                <h5>About</h5>
+              </div>
+            </Link>
+            <Link className="menu-link" to="/">
+              <div className="mobile-menu-item">
+                <h5>Projects</h5>
+              </div>
+            </Link>
+            <Link className="menu-link" to="resume">
+              <div className="mobile-menu-item">
+                <h5>Résumé</h5>
+              </div>
+            </Link>
+            <Link className="menu-link" to="contact">
+              <div className="mobile-menu-item contact">
+                <h5>Contact</h5>
+              </div>
+            </Link>
+            <div id="footer" className="center-align">
+              <p>&copy; Hanna Jones 2016</p>
+              <p><a href="mailto:jones.hanna.m@gmail.com?Subject=Hello.">jones.hanna.m@gmail.com</a></p>
             </div>
-            <div className="responsive-menu">
-              <ul>
-                <li>One</li>
-                <li>Two</li>
-              </ul>
-            </div>
+          </div>
         </div>
       </div>
     )
