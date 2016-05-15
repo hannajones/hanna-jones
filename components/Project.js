@@ -18,6 +18,8 @@ class Project extends React.Component {
     this.fetchData = this.fetchData.bind(this);
     this.setNextImage = this.setNextImage.bind(this);
     this.setPreviousImage = this.setPreviousImage.bind(this);
+    this.setIndex = this.setIndex.bind(this);
+    this.applyActiveStyle = this.applyActiveStyle.bind(this);
   }
   componentWillMount() {
     this.fetchData();
@@ -54,8 +56,27 @@ class Project extends React.Component {
       this.setState({index: this.state.project.images.length - 1})
     }
   }
+  setIndex(key) {
+    this.setState({index: key})
+  }
+  applyActiveStyle(key) {
+    console.log(key);
+    var style = {
+      color: '#b1b1b1'
+    }
+    var activeStyle = {
+      color: '#3c3c3c'
+    }
+    if (key === this.state.index) {
+      return activeStyle
+    }
+    else {
+      return style
+    }
+  }
   render() {
-    var data = this.state.project
+    var data = this.state.project;
+    var self = this;
     return (
       <div className="content-container">
         <div className="section-background z-depth-2 center-align">
@@ -63,9 +84,20 @@ class Project extends React.Component {
             <Carousel images={data.images} index={this.state.index}/>
           </div>
             { data.images && data.images.length > 1 ?
-              <div id="image-buttons" className="center-align">
-                <button className="waves-effect waves-light btn" onClick={this.setPreviousImage}>Back</button>
-                <button className="waves-effect waves-light btn" onClick={this.setNextImage}>Next</button>
+              <div className="center-align">
+                <span onClick={this.setPreviousImage} className="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i className="fa fa-angle-left fa-2x"></i>
+                </span>
+                { data.images.map(function(image, i) {
+                  return (
+                    <i key={i} onClick={() => self.setIndex(i)}style={self.applyActiveStyle(i)} className="fa fa-circle" aria-hidden="true" id="counter"></i>
+                  )
+                })}
+                <span onClick={this.setNextImage} className="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i className="fa fa-angle-right fa-2x"></i>
+                </span>
               </div> : false
             }
           <div className="project-content">

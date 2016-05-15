@@ -17,3 +17,12 @@ class Carousel extends React.Component {
 }
 
 export default Carousel
+
+// { this.props.images && this.props.images.length > 1 ?
+//   <div id="image-counter">
+//     { for (var i = 0; i < this.props.images.length; i++) {
+//       console.log(i);
+//     }}
+//   </div>
+// : false
+// }

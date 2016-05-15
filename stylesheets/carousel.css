@@ -10,3 +10,8 @@
   max-height: 500px;
   width: 100%;
 }
+
+#counter {
+  color: #b1b1b1;
+  margin-right: 2.5%;
+}
