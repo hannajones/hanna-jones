@@ -7,13 +7,22 @@ class Resume extends React.Component {
   constructor() {
     super()
     this.state = {
-      expanded: 'jobs'
+      expanded: []
     }
     this.renderProjects = this.renderProjects.bind(this);
     this.setExpanded = this.setExpanded.bind(this);
   }
   setExpanded(title) {
-    this.setState({expanded: title});
+    var newExpanded = this.state.expanded;
+    if (newExpanded.indexOf(title) != -1) {
+      console.log('found');
+      newExpanded.splice(newExpanded.indexOf(title), 1);
+      console.log(newExpanded);
+    }
+    else {
+      newExpanded.push(title);
+    }
+    this.setState({expanded: newExpanded});
   }
   renderSchools() {
     return (
@@ -98,6 +107,7 @@ class Resume extends React.Component {
   }
   render() {
     var self = this;
+    console.log(this.state.expanded);
     return (
       <div className="content-container">
         <div className="section-background z-depth-2 center-align">
@@ -113,7 +123,7 @@ class Resume extends React.Component {
             transitionEnterTimeout={500}
             transitionLeaveTimeout={100}
           >
-            { this.state.expanded === 'schools' ? this.renderSchools() : false }
+            { this.state.expanded.indexOf('schools') != -1  ? this.renderSchools() : false }
           </ReactCSSTransitionGroup>
           <div className="header-bar" onClick={() => this.setExpanded('skills')}>
             <h5>Skills & Abilities</h5>
@@ -125,7 +135,7 @@ class Resume extends React.Component {
             transitionEnterTimeout={500}
             transitionLeaveTimeout={100}
           >
-            { this.state.expanded === 'skills' ? this.renderSkills() : false }
+            { this.state.expanded.indexOf('skills') != -1  ? this.renderSkills() : false }
           </ReactCSSTransitionGroup>
           <div className="header-bar" onClick={() => this.setExpanded('projects')}>
             <h5>Projects</h5>
@@ -137,7 +147,7 @@ class Resume extends React.Component {
             transitionEnterTimeout={500}
             transitionLeaveTimeout={100}
           >
-            { this.state.expanded === 'projects' ? self.renderProjects() : false }
+            { this.state.expanded.indexOf('projects') != -1  ? this.renderProjects() : false }
           </ReactCSSTransitionGroup>
           <div className="header-bar" onClick={() => this.setExpanded('jobs')}>
             <h5>Professional Experience</h5>
@@ -149,7 +159,7 @@ class Resume extends React.Component {
             transitionEnterTimeout={500}
             transitionLeaveTimeout={100}
           >
-            { this.state.expanded === 'jobs' ? self.renderJobs() : false}
+            { this.state.expanded.indexOf('jobs') != -1  ? this.renderJobs() : false }
           </ReactCSSTransitionGroup>
         </div>
       </div>

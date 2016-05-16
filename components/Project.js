@@ -63,7 +63,6 @@ class Project extends React.Component {
   }
   setProject() {
     this.setState({projectIndex: this.state.projectIndex++})
-    console.log(this.state.projectIndex);
     this.setState({project: this.state.projects[this.state.projectIndex]})
   }
   setIndex(key) {
