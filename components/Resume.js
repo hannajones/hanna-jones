@@ -102,7 +102,7 @@ class Resume extends React.Component {
       <div className="content-container">
         <div className="section-background z-depth-2 center-align">
           <h3>Hanna M. Jones</h3>
-          <p>jones.hanna.m@gmail.com / (514) 649-2986</p>
+          <p><a href="mailto:jones.hanna.m@gmail.com?Subject=Hello.">jones.hanna.m@gmail.com</a> / (514) 649-2986</p>
           <div className="header-bar" onClick={() => this.setExpanded('schools')}>
             <h5>Education</h5>
           </div>

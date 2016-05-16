@@ -9,6 +9,7 @@
 .carousel-image {
   max-height: 500px;
   width: 100%;
+  cursor: e-resize;
 }
 
 #counter {

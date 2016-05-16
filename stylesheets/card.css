@@ -18,7 +18,7 @@
 
 .card-image-holder .card-image-link img.card-border {
   max-height: 31vh;
-  max-width: 26.5vw;
+  max-width: 25vw;
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
   filter: gray;

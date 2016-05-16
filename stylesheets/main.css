@@ -101,12 +101,10 @@ div.section-background {
   div.section-background {
     border-top: 1.5vw solid #fff;
     border-bottom: 1.5vw solid #fff;
-    padding: 0 1.5vw 0 1.5vw;
+    padding: 0 2vw 0 2vw;
     margin: 0 auto;
     height: 85vh;
     width: 100%;
     margin-top: 10vh;
-    background-color: #fff;
-    overflow: scroll;
   }
 }

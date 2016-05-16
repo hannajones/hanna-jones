@@ -12,6 +12,7 @@ class Project extends React.Component {
     this.state = {
       projects: [],
       project: {},
+      projectIndex: null,
       index: 0
     }
     this.findProject = this.findProject.bind(this);
@@ -20,6 +21,7 @@ class Project extends React.Component {
     this.setPreviousImage = this.setPreviousImage.bind(this);
     this.setIndex = this.setIndex.bind(this);
     this.applyActiveStyle = this.applyActiveStyle.bind(this);
+    this.setProject = this.setProject.bind(this);
   }
   componentWillMount() {
     this.fetchData();
@@ -33,7 +35,10 @@ class Project extends React.Component {
       state: 'projects',
       asArray: true,
       then(data){
+        this.setState({projects: data})
         this.setState({project: data.find(this.findProject)})
+        console.log(this.state.projects.indexOf(this.state.project))
+        this.setState({projectIndex: data.indexOf(this.state.project)})
       }
     });
   }
@@ -56,11 +61,15 @@ class Project extends React.Component {
       this.setState({index: this.state.project.images.length - 1})
     }
   }
+  setProject() {
+    this.setState({projectIndex: this.state.projectIndex++})
+    console.log(this.state.projectIndex);
+    this.setState({project: this.state.projects[this.state.projectIndex]})
+  }
   setIndex(key) {
     this.setState({index: key})
   }
   applyActiveStyle(key) {
-    console.log(key);
     var style = {
       color: '#b1b1b1'
     }
@@ -82,16 +91,18 @@ class Project extends React.Component {
   render() {
     var data = this.state.project;
     var self = this;
+    console.log(this.state.projects);
+    console.log(this.state.project);
+    console.log(this.state.projectIndex);
     return (
       <div className="content-container">
         <div className="section-background z-depth-2 center-align">
           <div className="carousel-container">
-            <Carousel images={data.images} index={this.state.index}/>
+            <Carousel setNextImage={this.setNextImage} images={data.images} index={this.state.index}/>
           </div>
             { data.images && data.images.length > 1 ?
               <div className="center-align">
                 <span onClick={this.setPreviousImage} className="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
                   <i className="fa fa-angle-left fa-2x"></i>
                 </span>
                 { data.images.map(function(image, i) {
@@ -100,16 +111,20 @@ class Project extends React.Component {
                   )
                 })}
                 <span onClick={this.setNextImage} className="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
                   <i className="fa fa-angle-right fa-2x"></i>
                 </span>
               </div> : false
             }
           <div className="project-content">
-            <a href={data.url} target="_blank"><h3>{data.title}</h3></a>
+            { data.url ?
+              <a href={data.url} target="_blank"><h3>{data.title}</h3></a>
+              : <h3>{data.title}</h3>
+            }
             <p className="project-description">
               {data.description}
             </p>
+            <a className="waves-effect waves-light btn">Last Project</a>
+            <a onClick={this.setProject} className="waves-effect waves-light btn">Next Project</a>
           </div>
         </div>
       </div>

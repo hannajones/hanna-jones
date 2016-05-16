@@ -31,6 +31,7 @@
 i.fa {
   margin-top: 0;
   margin-bottom: 0;
+  cursor: pointer;
 }
 
 span.fa-stack.fa-lg {
@@ -41,6 +42,11 @@ span.fa-stack.fa-lg {
 
 span.fa-stack.fa-lg:hover {
   color: #3c3c3c;
+}
+
+.waves-effect.waves-light.btn {
+  font-size: 0.8em;
+  margin: 2vh;
 }
 
 @media screen and (max-width: 800px) {
