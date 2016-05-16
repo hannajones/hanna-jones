@@ -15,9 +15,7 @@ class Resume extends React.Component {
   setExpanded(title) {
     var newExpanded = this.state.expanded;
     if (newExpanded.indexOf(title) != -1) {
-      console.log('found');
       newExpanded.splice(newExpanded.indexOf(title), 1);
-      console.log(newExpanded);
     }
     else {
       newExpanded.push(title);
@@ -107,7 +105,6 @@ class Resume extends React.Component {
   }
   render() {
     var self = this;
-    console.log(this.state.expanded);
     return (
       <div className="content-container">
         <div className="section-background z-depth-2 center-align">
@@ -162,6 +159,9 @@ class Resume extends React.Component {
             { this.state.expanded.indexOf('jobs') != -1  ? this.renderJobs() : false }
           </ReactCSSTransitionGroup>
         </div>
+        <a href="file:///Users/hannajones/Desktop/Hanna_Jones_CV.pdf" download>
+          <p>DOWNLOAD</p>
+        </a>
       </div>
     )
   }
