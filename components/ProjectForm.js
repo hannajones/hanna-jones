@@ -64,15 +64,6 @@ class ProjectForm extends React.Component {
     this.refs.description.value = ""
     this.refs.url.value = ""
   }
-  authHandler(err, authData) {
-    console.log("in auth handler");
-    if(err) {
-      console.err(err);
-      return;
-    }
-
-    const projectsRef = ref.child(this.props.params)
-  }
   authenticate(email, password) {
     event.preventDefault();
     var self = this;
@@ -82,9 +73,10 @@ class ProjectForm extends React.Component {
     }, function(error, authData) {
       if (error) {
         console.log(error);
-        self.renderFailure();
+        alert("NO.")
       } else {
         console.log("Success", authData);
+        self.setState({uid: authData.uid})
       }
     });
   }
