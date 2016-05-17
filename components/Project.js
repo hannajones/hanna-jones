@@ -12,7 +12,6 @@ class Project extends React.Component {
     this.state = {
       projects: [],
       project: {},
-      projectIndex: null,
       index: 0
     }
     this.findProject = this.findProject.bind(this);
@@ -21,7 +20,6 @@ class Project extends React.Component {
     this.setPreviousImage = this.setPreviousImage.bind(this);
     this.setIndex = this.setIndex.bind(this);
     this.applyActiveStyle = this.applyActiveStyle.bind(this);
-    this.setProject = this.setProject.bind(this);
   }
   componentWillMount() {
     this.fetchData();
@@ -37,8 +35,6 @@ class Project extends React.Component {
       then(data){
         this.setState({projects: data})
         this.setState({project: data.find(this.findProject)})
-        console.log(this.state.projects.indexOf(this.state.project))
-        this.setState({projectIndex: data.indexOf(this.state.project)})
       }
     });
   }
@@ -60,10 +56,6 @@ class Project extends React.Component {
     else if (this.state.index === 0) {
       this.setState({index: this.state.project.images.length - 1})
     }
-  }
-  setProject() {
-    this.setState({projectIndex: this.state.projectIndex++})
-    this.setState({project: this.state.projects[this.state.projectIndex]})
   }
   setIndex(key) {
     this.setState({index: key})
@@ -90,9 +82,6 @@ class Project extends React.Component {
   render() {
     var data = this.state.project;
     var self = this;
-    console.log(this.state.projects);
-    console.log(this.state.project);
-    console.log(this.state.projectIndex);
     return (
       <div className="content-container">
         <div className="section-background z-depth-2 center-align">
@@ -122,8 +111,7 @@ class Project extends React.Component {
             <p className="project-description">
               {data.description}
             </p>
-            <a className="waves-effect waves-light btn">Last Project</a>
-            <a onClick={this.setProject} className="waves-effect waves-light btn">Next Project</a>
+            <Link to="/"><a className="waves-effect waves-light btn">Back to Projects</a></Link>
           </div>
         </div>
       </div>

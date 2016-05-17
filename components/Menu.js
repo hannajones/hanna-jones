@@ -15,14 +15,14 @@ class Menu extends React.Component {
               <h3>Jones</h3>
             </div>
           </Link>
-          <Link className="menu-link" to="about">
-            <div className="menu-item">
-              <h5>About</h5>
-            </div>
-          </Link>
           <Link className="menu-link" to="/">
             <div className="menu-item">
               <h5>Projects</h5>
+            </div>
+          </Link>
+          <Link className="menu-link" to="about">
+            <div className="menu-item">
+              <h5>About</h5>
             </div>
           </Link>
           <Link className="menu-link" to="resume">

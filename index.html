@@ -25,6 +25,7 @@
     <script src="/bundle.js"></script>
     <script>
       $(document).ready(function() {
+        $(".menu-item").first().addClass("active");
         $(".menu-item").on("click", function() {
           $(".menu-item").removeClass("active");
           $(this).addClass("active");
@@ -32,9 +33,6 @@
         $(".menu-header").on("click", function() {
           $(".menu-item").removeClass("active");
         });
-        // $("#mobile-nav").on('click', function(e) {
-        //   $("#mobile-menu").slideToggle("slow");
-        // })
         $("#mobile-nav").click(function() {
           $("#mobile-menu").toggle("slide");
         });
