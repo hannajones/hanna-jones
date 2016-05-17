@@ -2,9 +2,8 @@ import css from '../stylesheets/projectForm.css';
 import React from 'react';
 import Rebase from 're-base';
 import { Link } from 'react-router';
-import firebase from 'firebase';
+import Firebase from 'firebase';
 
-// probably don't need to be using store anymore
 const ref = new Firebase('https://hannajones.firebaseio.com/');
 const base = Rebase.createClass('https://hannajones.firebaseio.com/');
 
@@ -17,9 +16,9 @@ class ProjectForm extends React.Component {
         title: '',
         description: '',
         url: null,
-        images: []
+        images: [],
+        uid: ''
       },
-      uid: ''
     }
     this.updateTitle = this.updateTitle.bind(this);
     this.updateDescription = this.updateDescription.bind(this);
@@ -27,6 +26,9 @@ class ProjectForm extends React.Component {
     this.pushImage = this.pushImage.bind(this);
     this.updateUrl = this.updateUrl.bind(this);
     this.resetValues = this.resetValues.bind(this);
+    this.renderLogin = this.renderLogin.bind(this);
+    this.renderFailure = this.renderFailure.bind(this);
+    this.authenticate = this.authenticate.bind(this);
   }
   componentWillMount() {
     var currentProject = this.state.project;
@@ -71,13 +73,38 @@ class ProjectForm extends React.Component {
 
     const projectsRef = ref.child(this.props.params)
   }
-  authenticate(provider) {
-    console.log(provider);
+  authenticate(email, password) {
+    event.preventDefault();
+    var self = this;
+    ref.authWithPassword({
+      email: email,
+      password: password
+    }, function(error, authData) {
+      if (error) {
+        console.log(error);
+        self.renderFailure();
+      } else {
+        console.log("Success", authData);
+      }
+    });
   }
   renderLogin() {
     return (
       <div className="section-background z-depth-2">
-        <button className="github" onClick={this.authenticate.bind(this, 'github')}>Login</button>
+        <form>
+          <input type="text" ref="email" placeholder="email"/>
+          <input type="password" ref="password" placeholder="password"/>
+          <div className="password" onClick={() => this.authenticate(this.refs.email.value, this.refs.password.value)}>Login</div>
+        </form>
+      </div>
+    )
+  }
+  renderFailure() {
+    return (
+      <div className="section-background z-depth-2">
+        <div className="content-container">
+          <p>permission denied.</p>
+        </div>
       </div>
     )
   }
@@ -99,14 +126,6 @@ class ProjectForm extends React.Component {
       return (
         <div className="content-container">
           <div>{this.renderLogin()}</div>
-        </div>
-      )
-    }
-    if(this.state.uid !== this.state.owner) {
-      return (
-        <div className="content-container">
-          <p>permission denied.</p>
-          {logoutButton}
         </div>
       )
     }
