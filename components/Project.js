@@ -25,7 +25,7 @@ class Project extends React.Component {
     this.fetchData();
   }
   findProject(project) {
-    return project.id == this.props.params.id
+    return project.title.replace(/ /g, '') == this.props.params.id
   }
   fetchData() {
     this.ref = base.listenTo('projects', {
@@ -111,7 +111,7 @@ class Project extends React.Component {
             <p className="project-description">
               {data.description}
             </p>
-            <Link to="/"><a className="waves-effect waves-light btn">Back to Projects</a></Link>
+            <Link to="/"><div className="waves-effect waves-light btn">Back to Projects</div></Link>
           </div>
         </div>
       </div>
