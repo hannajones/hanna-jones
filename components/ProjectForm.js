@@ -72,10 +72,8 @@ class ProjectForm extends React.Component {
       password: password
     }, function(error, authData) {
       if (error) {
-        console.log(error);
         alert("NO.")
       } else {
-        console.log("Success", authData);
         self.setState({uid: authData.uid})
       }
     });
