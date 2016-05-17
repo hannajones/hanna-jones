@@ -2,8 +2,6 @@ import css from '../stylesheets/menu.css';
 import React from 'react';
 import { Link } from 'react-router';
 
-// refactor these stateless components using const
-
 class Menu extends React.Component {
   render() {
     return (
