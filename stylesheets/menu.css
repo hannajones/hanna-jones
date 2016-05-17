@@ -85,16 +85,16 @@ span.fa-stack {
     height: 4.5vh;
     width: 7vw;
     vertical-align: middle;
-    margin: 0.9em 1em 0.8em 0.8em;
+    margin: 0.5em 1em 0.8em 0.8em;
   }
 
   #nav-btn span {
     display: block;
     width: 30px;
-    height: 5px;
+    height: 4px;
     margin: 0 auto;
     margin-top: 3px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     background: #fff;
     border-radius: 5%;
   }
@@ -178,14 +178,14 @@ span.fa-stack {
 
   i.fa {
     color: #fff;
-    margin-top: 1.75vh;
+    margin-top: 1.5vh;
   }
 
   .menu-header {
     width: 33%;
     height: 5vh;
     margin: 0.8em;
-    padding-top: 1vh;
+    padding-top: 0.5vh;
     border-right: 1px solid #fff;
   }
 
