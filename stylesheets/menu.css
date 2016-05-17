@@ -71,6 +71,8 @@ span.fa-stack {
   display: none;
 }
 
+/* Responsive */
+
 @media only screen and (max-width: 800px) {
   #mobile-nav {
     display: inline-block;
@@ -78,7 +80,7 @@ span.fa-stack {
 
   #nav-btn {
     position: fixed;
-    top: 0;
+    top: 1vh;
     right: 0;
     height: 4.5vh;
     width: 7vw;
@@ -104,7 +106,6 @@ span.fa-stack {
     top: 7.9vh;
     height: 100%;
     width: 70%;
-    /*display: block;*/
     -webkit-box-shadow: -4px 0px 5px 0px rgba(60, 60, 60, 0.45);
     -moz-box-shadow:    -4px 0px 5px 0px rgba(60, 60, 60, 0.45);
     box-shadow:         -4px 0px 5px 0px rgba(60, 60, 60, 0.45);
@@ -117,7 +118,7 @@ span.fa-stack {
   }
 
   #mobile-menu a div h5 {
-    padding-top: 4%;
+    padding-top: 5%;
   }
 
   #footer {
@@ -175,21 +176,43 @@ span.fa-stack {
     left: 40%;
   }
 
-  .fa {
+  i.fa {
     color: #fff;
-    margin: 0.09em;
+    margin-top: 1.75vh;
   }
 
   .menu-header {
     width: 33%;
     height: 5vh;
     margin: 0.8em;
+    padding-top: 1vh;
     border-right: 1px solid #fff;
   }
 
 }
 
 @media only screen and (max-width: 500px) {
+  #nav-btn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 4.5vh;
+    width: 7vw;
+    vertical-align: middle;
+    margin: 1em 1em 0.8em 0.8em;
+  }
+
+  #nav-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 0 auto;
+    margin-top: 4px;
+    margin-bottom: 6px;
+    background: #fff;
+    border-radius: 5%;
+  }
+
   #menu a div h3 {
     font-size: 1.3em;
   }
@@ -198,25 +221,22 @@ span.fa-stack {
     width: 40%;
   }
 
-/*  #social-icons {
-    position: fixed;
-    font-size: 0.4em;
-    top: -0.1vh;
-    left: 40%;
-  }*/
-
   .fa {
     margin-left: 5vw;
   }
-}
 
-@media only screen and (max-width: 412px) {
- /* #social-icons {
-    position: fixed;
-    font-size: 0.4em;
-    top: -0.5vh;
-    left: 40%;
-  }*/
+  .menu-header {
+    width: 40%;
+    height: 5vh;
+    margin: 0.8em;
+    padding-top: 0.75vh;
+    border-right: 1px solid #fff;
+  }
+
+  i.fa {
+    color: #fff;
+    margin-top: 1.35vh;
+  }
 }
 
 @media only screen and (max-width: 330px) {
@@ -225,10 +245,10 @@ span.fa-stack {
   }
 
   .menu-header {
-    width: 33%;
+    width: 40%;
     height: 5vh;
-/*    padding-top: 1vh;
-    padding-bottom: 5vh;*/
+    margin: 0.8em;
+    padding-top: 0.5vh;
     border-right: 1px solid #fff;
   }
 }
