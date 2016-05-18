@@ -4,16 +4,35 @@ class Contact extends React.Component {
   render() {
     return (
       <div className="content-container">
-        <div className="section-background z-depth-2">
+        <div className="section-background z-depth-2 center-align">
           <div id="contact-text">
-            <p>I'm always looking to take on new projects...something less trite possibly. Not going to be much text one way or another.</p>
+            <p>I'm always looking to take on new projects / get a coffee / whatever.</p>
+            <p>Email: <a href="mailto:jones.hanna.m@gmail.com?Subject=Hello.">jones.hanna.m@gmail.com</a></p>
+            <p>Find me on the Internet:</p>
             <div id="contact-info-flex">
-              <div id="email"><a href="mailto:jones.hanna.m@gmail.com?Subject=Hello.">jones.hanna.m@gmail.com</a></div>
-              <div id="phone">(514) 649-2986</div>
-              <div id="social-media">Facebook, Instagram, GitHub, LinkedIn</div>
+              <a href="https://github.com/hannajones" target="_blank">
+                <span className="fa-stack fa-lg">
+                  <i className="fa fa-github-square fa-3x"></i>
+                </span>
+              </a>
+              <a href="https://ca.linkedin.com/in/hanna-jones-27345a20" target="_blank">
+                <span className="fa-stack fa-lg">
+                  <i className="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+                </span>
+              </a>
+              <a href="https://www.instagram.com/jonesxhanna/" target="_blank">
+                <span className="fa-stack fa-lg">
+                  <i className="fa fa-instagram fa-3x"></i>
+                </span>
+              </a>
+              <a href="https://www.facebook.com/xxyzzzzzzzzz" target="_blank">
+                <span className="fa-stack fa-lg">
+                  <i className="fa fa-facebook-square fa-3x"></i>
+                </span>
+              </a>
             </div>
             <div id="about-site"> 
-              <p>This site was built in Toronto in April 2016 with the help of 50+ cups of coffee.</p>
+              <p>This site was built in Toronto & Montreal April - May 2016.</p>
               <p>&copy; 2016 Hanna Jones</p>
             </div>
           </div>

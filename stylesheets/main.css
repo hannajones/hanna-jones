@@ -75,6 +75,13 @@ div.section-background {
   z-index: -1;
 }
 
+#about-site {
+  position: fixed;
+  bottom: 7.5vh;
+  left: 45%;
+  right: 20%;
+}
+
 /* hidden scrollbar */
 
 ::-webkit-scrollbar {
@@ -106,5 +113,12 @@ div.section-background {
     height: 85vh;
     width: 100%;
     margin-top: 11vh;
+  }
+
+  #about-site {
+    position: fixed;
+    bottom: 5vh;
+    left: 25%;
+    right: 25%;
   }
 }

@@ -110,6 +110,7 @@ class Resume extends React.Component {
         <div className="section-background z-depth-2 center-align">
           <h3>Hanna M. Jones</h3>
           <p><a href="mailto:jones.hanna.m@gmail.com?Subject=Hello.">jones.hanna.m@gmail.com</a> / (514) 649-2986</p>
+          <p>[ click on sections below for details ]</p>
           <div className="header-bar" onClick={() => this.setExpanded('schools')}>
             <h5>Education</h5>
           </div>
@@ -158,10 +159,10 @@ class Resume extends React.Component {
           >
             { this.state.expanded.indexOf('jobs') != -1  ? this.renderJobs() : false }
           </ReactCSSTransitionGroup>
+          <div>
+            <Link to="/"><div className="waves-effect waves-light btn">Download Resume</div></Link>
+          </div>
         </div>
-        <a href="file:///Users/hannajones/Desktop/Hanna_Jones_CV.pdf" download>
-          <p>DOWNLOAD</p>
-        </a>
       </div>
     )
   }
