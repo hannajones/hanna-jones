@@ -1,10 +1,11 @@
 #card-container {
   width: 100%;
-  display: inline-flex;
+  display: flex;
+  align-content: flex-start;
+  align-items: flex-start;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 1vh;
-  align-content: center;
 }
 
 /* Project */

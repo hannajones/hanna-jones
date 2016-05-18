@@ -4,7 +4,7 @@ import Carousel from './Carousel';
 import { Link } from 'react-router';
 import Rebase from 're-base';
 
-var base = Rebase.createClass('https://newnewtest.firebaseio.com/');
+const base = Rebase.createClass('https://hannajones.firebaseio.com/');
 
 class Project extends React.Component {
   constructor() {

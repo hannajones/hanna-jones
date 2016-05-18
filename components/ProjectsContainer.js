@@ -6,7 +6,7 @@ import Card from './Card';
 import { Link } from 'react-router';
 import Rebase from 're-base';
 
-var base = Rebase.createClass('https://newnewtest.firebaseio.com/');
+const base = Rebase.createClass('https://hannajones.firebaseio.com/');
 
 class ProjectsContainer extends React.Component {
   constructor() {
@@ -31,8 +31,8 @@ class ProjectsContainer extends React.Component {
   }
   render() {
     return (
-      <div className="content-container center-align">
-        <div className="section-background z-depth-2 center-align">
+      <div className="content-container">
+        <div className="section-background z-depth-2">
           <div id="card-container">
             {Object.keys(this.state.projects).map(this.renderCards)}
           </div>
