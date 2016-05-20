@@ -1,26 +1,37 @@
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const APP = __dirname + '/app';
+const BUILD = __dirname + '/build';
+const STYLE = __dirname + '/app/style.css';
+
 module.exports = {
-  entry: './main.js',
+  entry: {
+    app: APP,
+    style: STYLE
+  },
   output: {
-    filename: './bundle.js'
+    path: BUILD,
+    filename: '[name].js'
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx', '.json', '.css', '.scss', '.html']
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
+        loaders: ['babel?cacheDdirectory'],
+        include: APP,
         query: {
           presets: ['react', 'es2015']
         }
       },
       {
         test: /\.css$/, 
-        loader: 'style-loader!css-loader'
-      },
-      {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract("style","css!sass")
+        loader: 'style-loader!css-loader',
+        include: APP
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/,
@@ -28,10 +39,26 @@ module.exports = {
       }
     ]
   },
-  resolve: {
-    extensions: ['', '.js', '.jsx', '.json', '.css', '.scss', '.html']
+  devtool: 'eval-source-map',
+
+  devServer: {
+    historyApiFallback: true,
+    hot: true,
+    inline: true,
+    progress: true,
+
+    stats: 'errors-only',
+
+    host: process.env.HOST,
+    port: process.env.PORT
   },
   plugins: [
-    new ExtractTextPlugin("app.css")
+    new HtmlWebpackPlugin({
+      template: 'node_modules/html-webpack-template/index.ejs',
+      title: 'Hanna-Jones',
+      appMountId: 'app',
+      inject: false
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
-}
+};

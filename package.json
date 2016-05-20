@@ -8,7 +8,8 @@
     "url": "https://github.com/hannajones/hanna-jones"
   },
   "scripts": {
-    "start": "webpack-dev-server --inline --content-base . --history-api-fallback --progress --colors"
+    "start": "NODE_ENV=development webpack-dev-server",
+    "build": "NODE_ENV=production webpack"
   },
   "author": "Hanna Jones",
   "license": "ISC",
