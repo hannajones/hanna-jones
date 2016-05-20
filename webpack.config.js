@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const APP = __dirname + '/app';
 const BUILD = __dirname + '/build';
-const STYLE = __dirname + '/app/style.css';
+const STYLE = __dirname + '/app/styles.css';
 
 module.exports = {
   entry: {
@@ -20,17 +20,13 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        loaders: ['babel?cacheDdirectory'],
-        include: APP,
-        query: {
-          presets: ['react', 'es2015']
-        }
+        test: /\.jsx$/,
+        loaders: ['babel?cacheDirectory'],
+        include: APP
       },
       {
         test: /\.css$/, 
-        loader: 'style-loader!css-loader',
+        loaders: ['style', 'css'],
         include: APP
       },
       {

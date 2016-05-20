@@ -61,10 +61,4 @@
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   }
-  // "babel": {
-  //   "presets": [
-  //     "react",
-  //     "es2015"
-  //   ]
-  // }
 }
