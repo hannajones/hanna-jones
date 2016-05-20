@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A simple personal portfolio website built using React and Firebase.",
   "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hannajones/hanna-jones"
+  },
   "scripts": {
     "start": "webpack-dev-server --inline --content-base . --history-api-fallback --progress --colors"
   },
