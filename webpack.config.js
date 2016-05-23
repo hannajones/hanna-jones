@@ -1,9 +1,12 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const APP = __dirname + '/app';
 const BUILD = __dirname + '/build';
 const STYLE = __dirname + '/app/styles.css';
+const PUBLIC = __dirname + '/app/public';
+const TEMPLATE =  __dirname + '/app/templates/index_default.html'
 
 module.exports = {
   entry: {
@@ -50,11 +53,17 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'node_modules/html-webpack-template/index.ejs',
-      title: 'Hanna-Jones',
-      appMountId: 'app',
-      inject: false
+      template: TEMPLATE,
+      inject: 'body'
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new CopyWebpackPlugin([
+      { from: PUBLIC, to: BUILD }
+    ],
+    {
+      ignore: [
+        '.DS_Store'
+      ]
+    })
   ]
 };
