@@ -1,6 +1,8 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const precss       = require('precss');
+const autoprefixer = require('autoprefixer');
 
 const APP = __dirname + '/app';
 const BUILD = __dirname + '/build';
@@ -38,8 +40,10 @@ module.exports = {
       }
     ]
   },
+  postcss: function () {
+    return [precss, autoprefixer];
+  },
   devtool: 'eval-source-map',
-
   devServer: {
     historyApiFallback: true,
     hot: true,

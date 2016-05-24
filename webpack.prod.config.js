@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const precss       = require('precss');
+const autoprefixer = require('autoprefixer');
 
 const APP = __dirname + '/app';
 const BUILD = __dirname + '/build';
@@ -39,6 +41,10 @@ module.exports = {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style', 'css'),
         include: APP
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/,
+        loader: 'url-loader'
       }
     ]
   },
