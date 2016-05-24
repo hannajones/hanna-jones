@@ -51,9 +51,9 @@ button.waves-effect.waves-light.btn {
   }
 
   .card-image-holder .card-image-link img.card-border:hover {
-    -ms-transform: scale(0);
-    -webkit-transform: scale(0);
-    transform: scale(0);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
 

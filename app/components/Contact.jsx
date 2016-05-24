@@ -12,22 +12,22 @@ class Contact extends React.Component {
             <div id="contact-info-flex">
               <a href="https://github.com/hannajones" target="_blank">
                 <span className="fa-stack fa-lg">
-                  <i className="fa fa-github-square fa-3x"></i>
+                  <i className="fa fa-github-square fa-3x" id="contact-social-icon"></i>
                 </span>
               </a>
               <a href="https://ca.linkedin.com/in/hanna-jones-27345a20" target="_blank">
                 <span className="fa-stack fa-lg">
-                  <i className="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+                  <i className="fa fa-linkedin-square fa-3x" id="contact-social-icon" aria-hidden="true"></i>
                 </span>
               </a>
               <a href="https://www.instagram.com/jonesxhanna/" target="_blank">
                 <span className="fa-stack fa-lg">
-                  <i className="fa fa-instagram fa-3x"></i>
+                  <i className="fa fa-instagram fa-3x" id="contact-social-icon"></i>
                 </span>
               </a>
               <a href="https://www.facebook.com/xxyzzzzzzzzz" target="_blank">
                 <span className="fa-stack fa-lg">
-                  <i className="fa fa-facebook-square fa-3x"></i>
+                  <i className="fa fa-facebook-square fa-3x" id="contact-social-icon"></i>
                 </span>
               </a>
             </div>

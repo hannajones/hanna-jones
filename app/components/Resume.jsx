@@ -55,7 +55,7 @@ class Resume extends React.Component {
         <div className="resume-project">
           <h6>SFUSD Selects</h6>
           <p>- Web and Android app to help parents make informed decisions about San Francisco public schools</p>
-          <p>- Building with React, Rails API, Google Maps API, Facebook & Twitter OAuth</p>
+          <p>- Building with React, Rails API, Google Maps API, Facebook & Twitter OAuth - coming soon</p>
         </div>
       </div>
     )
