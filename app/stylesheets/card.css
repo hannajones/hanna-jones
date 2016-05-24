@@ -14,6 +14,7 @@
   font-size: 1.2em;
   padding: 0.25vw;
   line-height: 1.5em;
+  background-color: #FFEB3B;
 }
 
 .card-image-holder .card-image-link img.card-border {
@@ -48,11 +49,17 @@ button.waves-effect.waves-light.btn {
     max-width: 80vw;
     max-height: 50vh;
   }
+
+  .card-image-holder .card-image-link img.card-border:hover {
+    -ms-transform: scale(0);
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
 }
 
 @media screen and (max-width: 800px) and (orientation: landscape) {
   .card-image-holder .card-image-link img.card-border {
-    max-height: 50vh;
-    max-width: 75vw;
+    max-height: 85vh;
+    max-width: 80vw;
   }
 }
