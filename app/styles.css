@@ -107,7 +107,9 @@ div.section-background {
 
   div.section-background {
     border-top: 1.5vw solid #fff;
-    border-bottom: 1.5vw solid #fff;
+    border-bottom: .5vw solid #fff;
+    border-left: 3vw solid #fff;
+    border-right: 3vw solid #fff;
     padding: 0 2vw 0 2vw;
     margin: 0 auto;
     height: 85vh;
