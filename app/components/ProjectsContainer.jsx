@@ -37,6 +37,7 @@ class ProjectsContainer extends React.Component {
             {Object.keys(this.state.projects).map(this.renderCards)}
           </div>
         </div>
+        {this.props.children}
       </div>
     )
   }

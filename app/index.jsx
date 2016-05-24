@@ -16,7 +16,7 @@ render((
       <IndexRoute component={ProjectsContainer}/>
       <Route path="about" component={About}/>
       <Route path="projects" component={ProjectsContainer}/>
-      <Route path="projects/:id" component={Project}/>
+      <Route path="project/:id" component={Project}/>
       <Route path="new" component={ProjectForm}/>
       <Route path="resume" component={Resume}/>
       <Route path="contact" component={Contact}/>
