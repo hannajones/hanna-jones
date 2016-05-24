@@ -49,3 +49,10 @@ button.waves-effect.waves-light.btn {
     max-height: 50vh;
   }
 }
+
+@media screen and (max-width: 800px) and (orientation: landscape) {
+  .card-image-holder .card-image-link img.card-border {
+    max-height: 50vh;
+    max-width: 75vw;
+  }
+}

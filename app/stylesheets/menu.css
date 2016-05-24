@@ -191,6 +191,24 @@ span.fa-stack {
 
 }
 
+@media screen and (max-width: 800px) and (orientation: landscape) {
+  .menu-header {
+    height: 8vh;
+  }
+
+  i.fa {
+    margin-top: 2vh;
+  }
+
+  #mobile-menu {
+    top: 13.5vh;
+  }
+
+  #mobile-menu a div h5 {
+    padding-top: 0;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   #nav-btn {
     position: fixed;

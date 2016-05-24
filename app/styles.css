@@ -122,3 +122,15 @@ div.section-background {
     right: 25%;
   }
 }
+
+@media screen and (max-width: 800px) and (orientation: landscape) {
+  div.section-background {
+    border-top: 1.5vw solid #fff;
+    border-bottom: 1.5vw solid #fff;
+    padding: 0 2vw 0 2vw;
+    margin: 0 auto;
+    height: 80vh;
+    width: 100%;
+    margin-top: 20vh;
+  }
+}
