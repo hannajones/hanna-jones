@@ -65,8 +65,10 @@ class Resume extends React.Component {
       <div>
         <div className="resume-job left-align">
           <h5 className="job-title">Development & Special Projects Manager</h5>
-          <em className="job-dates">(December 2013 - December 2015)</em>
-          <a href="http://imjm.ca/"><h6>Museum of Jewish Montreal, Montréal, QC</h6></a>
+          <div id="job-flex">
+            <a href="http://imjm.ca/"><h6 className="employer">Museum of Jewish Montreal, Montréal, QC</h6></a>
+            <em className="job-dates">(December 2013 - December 2015)</em>
+          </div>
           <p>- Third full-time employee of a start-up virtual museum dedicated to finding new ways
          to preserve and share Montréal’s Jewish history.</p>
           <p>- Worked with an external web developer to redesign the Museum’s website. Created
@@ -76,16 +78,20 @@ class Resume extends React.Component {
         </div>
         <div className="resume-job left-align">
           <h5 className="job-title">Research Assistant - Art History Department</h5>
-          <em className="job-dates">(May - July 2013)</em>
-          <h6>McGill University, Montréal, QC</h6>
+          <div id="job-flex">
+            <h6 className="employer">McGill University, Montréal, QC</h6>
+            <em className="job-dates">(May - July 2013)</em>
+          </div>
           <p>- Conducted research for projects on 19th century French art and culture. Duties
           consisted of compiling bibliographies, creating summary reports on sources, and
           making image licensing inquiries to Art Resource and The Bridgeman Art Library.</p>
         </div>
         <div className="resume-job left-align">
           <h5>Development Intern - Institutional Giving</h5> 
-          <em className="job-dates">(June - August 2012)</em>
-          <h6>New-York Historical Society, New York, NY</h6>
+          <div id="job-flex">
+            <h6 className="employer">New-York Historical Society, New York, NY</h6>
+            <em className="job-dates">(June - August 2012)</em>
+          </div>
           <p>- Conducted database research to develop profiles for grant-making organizations.</p>
           <p>- Drafted letters of inquiry, wrote and edited sections of grant proposals, and
           contributed to all aspects of donor-related correspondence.</p>
@@ -160,7 +166,7 @@ class Resume extends React.Component {
             { this.state.expanded.indexOf('jobs') != -1  ? this.renderJobs() : false }
           </ReactCSSTransitionGroup>
           <div>
-            <Link to="/"><div className="waves-effect waves-light btn">Download Resume</div></Link>
+            <a href="https://s3.amazonaws.com/hanna-jones-photos/Hanna_Jones_CV.pdf" download="Hanna_Jones_CV"><div className="waves-effect waves-light btn">Download Resume</div></a>
           </div>
         </div>
       </div>

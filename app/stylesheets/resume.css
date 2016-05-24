@@ -74,6 +74,45 @@
   justify-content: flex-start;
 }
 
+#job-flex {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.employer {
+  order: 1;
+}
+
 .job-dates {
-  float: right;
+  order: 2;
+  margin-left: 1vw;
+}
+
+@media screen and (max-width: 800px) {
+  #education-flex {
+    flex-direction: column;
+  }
+
+  #resume-project-flex {
+    flex-direction: column;
+  }
+
+  .resume-project {
+    margin: 5px;
+    width: 100%;
+  }
+
+  #job-flex {
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .resume-job {
+    text-align: center;
+  }
+
+  .job-dates {
+    margin-left: none;
+  }
 }
