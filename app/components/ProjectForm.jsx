@@ -20,51 +20,49 @@ class ProjectForm extends React.Component {
         uid: ''
       },
     }
-    this.updateTitle = this.updateTitle.bind(this);
-    this.updateDescription = this.updateDescription.bind(this);
-    this.sendData = this.sendData.bind(this);
-    this.pushImage = this.pushImage.bind(this);
-    this.updateUrl = this.updateUrl.bind(this);
-    this.resetValues = this.resetValues.bind(this);
-    this.renderLogin = this.renderLogin.bind(this);
-    this.renderFailure = this.renderFailure.bind(this);
-    this.authenticate = this.authenticate.bind(this);
-  }
+  };
+
   componentWillMount() {
     var currentProject = this.state.project;
     currentProject.id = Date.now();
     this.setState({project: currentProject})
-  }
-  updateTitle() {
+  };
+
+  updateTitle = () => {
     var currentProject = this.state.project;
     currentProject.title = this.refs.title.value;
     this.setState({project: currentProject})
-  }
-  updateUrl() {
+  };
+
+  updateUrl = () => {
     var currentProject = this.state.project;
     currentProject.url = this.refs.url.value;
     console.log(currentProject.url);
     this.setState({project: currentProject})
-  }
-  updateDescription() {
+  };
+
+  updateDescription = () => {
     var currentProject = this.state.project;
     currentProject.description = this.refs.description.value;
     this.setState({project: currentProject})
-  }
-  pushImage() {
+  };
+
+  pushImage = () => {
     var currentProject = this.state.project;
     if (this.refs.image.value != "" || null || undefined) {
      currentProject.images.push(this.refs.image.value) 
     }
     this.setState({project: currentProject});
     this.refs.image.value = ""
-  }
-  resetValues() {
+  };
+
+  resetValues = () => {
     this.refs.title.value = ""
     this.refs.description.value = ""
     this.refs.url.value = ""
-  }
-  authenticate(email, password) {
+  };
+
+  authenticate = (email, password) => {
     event.preventDefault();
     var self = this;
     ref.authWithPassword({
@@ -77,8 +75,9 @@ class ProjectForm extends React.Component {
         self.setState({uid: authData.uid})
       }
     });
-  }
-  renderLogin() {
+  };
+
+  renderLogin = () => {
     return (
       <div className="section-background z-depth-2">
         <form>
@@ -88,8 +87,9 @@ class ProjectForm extends React.Component {
         </form>
       </div>
     )
-  }
-  renderFailure() {
+  };
+
+  renderFailure = () => {
     return (
       <div className="section-background z-depth-2">
         <div className="content-container">
@@ -97,8 +97,9 @@ class ProjectForm extends React.Component {
         </div>
       </div>
     )
-  }
-  sendData(e) {
+  };
+
+  sendData = (e) => {
     e.preventDefault();
     var project = this.state.project;
     base.push('projects', {
@@ -109,7 +110,8 @@ class ProjectForm extends React.Component {
     currentProject.images = [];
     currentProject.id = Date.now();
     this.setState({project: currentProject})
-  } 
+  };
+
   render() {
     let logoutButton = <button>Log Out</button>
     if(!this.state.uid) {
@@ -146,7 +148,7 @@ class ProjectForm extends React.Component {
         </div>
       </div>
     )
-  }
+  };
 }
 
 export default ProjectForm

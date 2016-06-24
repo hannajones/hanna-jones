@@ -13,7 +13,7 @@ class NotFound extends React.Component {
         </div>
       </div>
     )
-  }
+  };
 }
 
 export default NotFound

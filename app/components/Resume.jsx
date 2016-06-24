@@ -9,10 +9,9 @@ class Resume extends React.Component {
     this.state = {
       expanded: []
     }
-    this.renderProjects = this.renderProjects.bind(this);
-    this.setExpanded = this.setExpanded.bind(this);
-  }
-  setExpanded(title) {
+  };
+
+  setExpanded = (title) => {
     var newExpanded = this.state.expanded;
     if (newExpanded.indexOf(title) != -1) {
       newExpanded.splice(newExpanded.indexOf(title), 1);
@@ -21,8 +20,9 @@ class Resume extends React.Component {
       newExpanded.push(title);
     }
     this.setState({expanded: newExpanded});
-  }
-  renderSchools() {
+  };
+
+  renderSchools = () => {
     return (
       <div id="education-flex">
         <div id="resume-col-1">
@@ -37,8 +37,9 @@ class Resume extends React.Component {
         </div>
       </div>
     )
-  }
-  renderProjects() {
+  };
+
+  renderProjects = () => {
     return (
       <div id="resume-project-flex">
         <div className="resume-project">
@@ -59,8 +60,9 @@ class Resume extends React.Component {
         </div>
       </div>
     )
-  }
-  renderJobs() {
+  };
+
+  renderJobs = () => {
     return (
       <div>
         <div className="resume-job left-align">
@@ -98,8 +100,9 @@ class Resume extends React.Component {
         </div>
       </div>
     )
-  }
-  renderSkills() {
+  };
+
+  renderSkills = () => {
     return (
       <div id="resume-skills">
         <h6>Programming</h6>
@@ -108,7 +111,8 @@ class Resume extends React.Component {
           <p>Sketch / Adobe Creative Suite / Balsamiq</p>
       </div>
     )
-  }
+  };
+
   render() {
     var self = this;
     return (
@@ -171,7 +175,7 @@ class Resume extends React.Component {
         </div>
       </div>
     )
-  }
+  };
 }
 
 export default Resume

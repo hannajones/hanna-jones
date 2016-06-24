@@ -14,20 +14,21 @@ class Project extends React.Component {
       project: {},
       index: 0
     }
-    this.findProject = this.findProject.bind(this);
-    this.fetchData = this.fetchData.bind(this);
-    this.setNextImage = this.setNextImage.bind(this);
-    this.setPreviousImage = this.setPreviousImage.bind(this);
-    this.setIndex = this.setIndex.bind(this);
-    this.applyActiveStyle = this.applyActiveStyle.bind(this);
-  }
+  };
+
   componentWillMount() {
     this.fetchData();
-  }
-  findProject(project) {
+  };
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
+  };
+
+  findProject = (project) => {
     return project.title.replace(/ /g, '') == this.props.params.id
-  }
-  fetchData() {
+  };
+
+  fetchData = () => {
     this.ref = base.listenTo('projects', {
       context: this,
       state: 'projects',
@@ -37,30 +38,31 @@ class Project extends React.Component {
         this.setState({project: data.find(this.findProject)})
       }
     });
-  }
-  componentWillUnmount() {
-    base.removeBinding(this.ref);
-  }
-  setNextImage() {
+  };
+
+  setNextImage = () => {
     if ((this.state.index + 1) < this.state.project.images.length) {
       this.setState({index: this.state.index + 1})
     }
     else {
       this.setState({index: 0})
     }
-  }
-  setPreviousImage() {
+  };
+
+  setPreviousImage = () => {
     if (this.state.index > 0) {
       this.setState({index: this.state.index - 1})
     }
     else if (this.state.index === 0) {
       this.setState({index: this.state.project.images.length - 1})
     }
-  }
-  setIndex(key) {
+  };
+
+  setIndex = (key) => {
     this.setState({index: key})
-  }
-  applyActiveStyle(key) {
+  };
+
+  applyActiveStyle = (key) => {
     var style = {
       color: '#b1b1b1'
     }
@@ -78,7 +80,8 @@ class Project extends React.Component {
     else {
       return style
     }
-  }
+  };
+
   render() {
     var data = this.state.project;
     var self = this;
@@ -116,7 +119,7 @@ class Project extends React.Component {
         </div>
       </div>
     )
-  }
+  };
 }
 
 export default Project

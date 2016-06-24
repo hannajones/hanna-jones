@@ -13,7 +13,7 @@ class Card extends React.Component {
         </Link>
       </div>
     )
-  }
+  };
 }
 
 export default Card
