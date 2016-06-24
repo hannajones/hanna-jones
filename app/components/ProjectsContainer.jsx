@@ -14,8 +14,15 @@ class ProjectsContainer extends React.Component {
     this.state = {
       projects: []
     }
-    this.renderCards = this.renderCards.bind(this);
+    // this.renderCards = this.renderCards.bind(this);
   }
+
+  renderCards = (key) => {
+    return (
+      <Card key={key} index={key} project={this.state.projects[key]} />
+    )
+  }
+
   componentWillMount() {
     this.ref = base.bindToState('projects', {
       context: this,
@@ -23,12 +30,11 @@ class ProjectsContainer extends React.Component {
       asArray: true
     });
   }
+
   componentWillUnmount() {
     base.removeBinding(this.ref);
   }
-  renderCards(key) {
-    return <Card key={key} index={key} project={this.state.projects[key]} />
-  }
+
   render() {
     return (
       <div className="content-container">
