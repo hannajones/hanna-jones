@@ -1,14 +1,14 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const precss       = require('precss');
+const precss = require('precss');
 const autoprefixer = require('autoprefixer');
 
 const APP = __dirname + '/app';
 const BUILD = __dirname + '/build';
 const STYLE = __dirname + '/app/styles.css';
 const PUBLIC = __dirname + '/app/public';
-const TEMPLATE =  __dirname + '/app/templates/index_default.html'
+const TEMPLATE = __dirname + '/app/templates/index_default.html'
 
 module.exports = {
   entry: {
@@ -30,7 +30,7 @@ module.exports = {
         include: APP
       },
       {
-        test: /\.css$/, 
+        test: /\.css$/,
         loaders: ['style', 'css'],
         include: APP
       },
@@ -49,9 +49,7 @@ module.exports = {
     hot: true,
     inline: true,
     progress: true,
-
     stats: 'errors-only',
-
     host: process.env.HOST,
     port: process.env.PORT
   },

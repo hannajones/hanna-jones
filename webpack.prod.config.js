@@ -3,14 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const precss       = require('precss');
+const precss = require('precss');
 const autoprefixer = require('autoprefixer');
 
 const APP = __dirname + '/app';
 const BUILD = __dirname + '/build';
 const STYLE = __dirname + '/app/styles.css';
 const PUBLIC = __dirname + '/app/public';
-const TEMPLATE =  __dirname + '/app/templates/index_default.html'
+const TEMPLATE = __dirname + '/app/templates/index_default.html'
 
 const PACKAGE = Object.keys(
   require('./package.json').dependencies
