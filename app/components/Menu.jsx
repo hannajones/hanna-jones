@@ -1,37 +1,42 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 import css from '../stylesheets/menu.css';
+
+import NavLink from './NavLink';
 
 export default class Menu extends React.Component {
   render = () => {
+    console.log('router', this.context);
+    const { router } = this.context
+    const { index, onlyActiveOnIndex, to, children, ...props } = this.props
     return <div id="menu-container">
       <div id="menu" className="center-align">
-        <Link to="/">
+        <NavLink to="/">
           <div className="menu-header">
             <h3>Hanna</h3>
             <h3>Jones</h3>
           </div>
-        </Link>
-        <Link className="menu-link" to="/">
+        </NavLink>
+        <NavLink className="menu-link" to="/">
           <div className="menu-item">
             <h5>Projects</h5>
           </div>
-        </Link>
-        <Link className="menu-link" to="about">
+        </NavLink>
+        <NavLink className="menu-link" to="about">
           <div className="menu-item">
             <h5>About</h5>
           </div>
-        </Link>
-        <Link className="menu-link" to="resume">
+        </NavLink>
+        <NavLink className="menu-link" to="resume">
           <div className="menu-item">
             <h5>Résumé</h5>
           </div>
-        </Link>
-        <Link className="menu-link" to="contact">
+        </NavLink>
+        <NavLink className="menu-link" to="contact">
           <div className="menu-item contact">
             <h5>Contact</h5>
           </div>
-        </Link>
+        </NavLink>
       </div>
       <div id="social-icons" className="center-align">
         <a href="https://github.com/hannajones" target="_blank">
@@ -57,26 +62,26 @@ export default class Menu extends React.Component {
           <span></span>
         </div>
         <div id="mobile-menu" className="center-align">
-          <Link className="menu-link" to="about">
+          <NavLink className="menu-link" to="about">
             <div className="mobile-menu-item">
               <h5>About</h5>
             </div>
-          </Link>
-          <Link className="menu-link" to="/">
+          </NavLink>
+          <NavLink className="menu-link" to="/">
             <div className="mobile-menu-item">
               <h5>Projects</h5>
             </div>
-          </Link>
-          <Link className="menu-link" to="resume">
+          </NavLink>
+          <NavLink className="menu-link" to="resume">
             <div className="mobile-menu-item">
               <h5>Résumé</h5>
             </div>
-          </Link>
-          <Link className="menu-link" to="contact">
+          </NavLink>
+          <NavLink className="menu-link" to="contact">
             <div className="mobile-menu-item contact">
               <h5>Contact</h5>
             </div>
-          </Link>
+          </NavLink>
           <div id="footer" className="center-align">
             <p>&copy; Hanna Jones 2016</p>
             <p><a href="mailto:jones.hanna.m@gmail.com?Subject=Hello.">jones.hanna.m@gmail.com</a></p>
