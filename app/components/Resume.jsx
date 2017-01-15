@@ -66,7 +66,7 @@ export default class Resume extends React.Component {
         <div className="resume-job left-align">
           <h5 className="job-title">Web & iOS Developer</h5>
           <div id="job-flex">
-            <a href="http://edusight.co"><h6 className="employer">Edusight, Toronto, ON</h6></a>
+            <a href="http://edusight.co" target="_blank"><h6 className="employer">Edusight, Toronto, ON</h6></a>
             <em className="job-dates">(September 2016 - February 2017)</em>
           </div>
           <p>- Junior web developer and designer at an education technology startup.</p>
@@ -190,5 +190,3 @@ export default class Resume extends React.Component {
     )
   };
 }
-
-export default Resume
