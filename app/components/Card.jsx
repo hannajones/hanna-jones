@@ -12,9 +12,9 @@ export default class Card extends React.Component {
   render = () => {
     const { props: { project } } = this;
     return <div className="card-image-holder">
-      <Link className="card-image-link" to={`/projects/project/${this.props.project.title.replace(/ /g, '')}`}>
-        <img className="card-border" src={this.props.project.images[0]} alt="project-image" />
-        <span className="image-label"><mark>{this.props.project.title}</mark></span>
+      <Link className="card-image-link" to={`projects/${project.title.replace(/ /g, '')}`}>
+        <img className="card-border" src={project.images[0]} alt="project-image" />
+        <span className="image-label"><mark>{project.title}</mark></span>
       </Link>
     </div>
   };

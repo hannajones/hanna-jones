@@ -14,9 +14,8 @@ render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRedirect to="/projects" />
-      <Route path="projects" component={ProjectsContainer}>
-        <Route path="projects/project/:id" component={Project}/>
-      </Route>
+      <Route path="projects" component={ProjectsContainer}/>
+      <Route path="projects/:id" component={Project}/>
       <Route path="about" component={About}/>
       <Route path="new" component={ProjectForm}/>
       <Route path="resume" component={Resume}/>
