@@ -119,7 +119,7 @@ export default class Resume extends React.Component {
     return (
       <div id="resume-skills">
         <h6>Programming</h6>
-          <p>JavaScript / React / React Native / Redux /Ruby / Rails / HTML / CSS / SQL</p>
+          <p>JavaScript / React / React Native / Redux / Ruby / Rails / HTML / CSS / SQL</p>
         <h6>Design</h6>
           <p>Sketch / Adobe Creative Suite / Balsamiq</p>
       </div>
