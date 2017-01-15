@@ -3,12 +3,9 @@ import React from 'react';
 import { Link } from 'react-router';
 import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 
-class Resume extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      expanded: []
-    }
+export default class Resume extends React.Component {
+  state = {
+    expanded: []
   };
 
   setExpanded = (title) => {
@@ -43,20 +40,21 @@ class Resume extends React.Component {
     return (
       <div id="resume-project-flex">
         <div className="resume-project">
+          <h6><a id="underline" href="http://edusight.co" target="_blank">Edusight</a></h6>
+          <p>- Designed and implemented a website for Edusight Magic (<a href="http://edusight.co/magic/" target="_blank">edusight.co/magic</a>).</p>
+          <p>- Redesigned and rebuilt iOS classroom timelines to make interface more user-friendly.</p>
+          <p>- Implemented the front end of a comment bank feature using React, HTML, CSS.</p>
+        </div>
+        <div className="resume-project">
           <h6><a id="underline" href="https://lhl-hopper.herokuapp.com/" target="_blank">Hopper</a></h6>
-          <p>- Web app dedicated to helping locals and tourists alike navigate Toronto’s nightlife by maintaining a database of community curated “bar hops”</p>
-          <p>- Built using Ruby on Rails, React, PostgreSQL, Google Maps API</p>
+          <p>- Web app dedicated to helping locals and tourists alike navigate Toronto’s nightlife by maintaining a database of community curated “bar hops.” Final group project at Lighthouse Labs.</p>
+          <p>- Built using Ruby on Rails, React, PostgreSQL, and the Google Maps API.</p>
         </div>
         <div className="resume-project">
-          <h6><a id="underline" href="http://imjm.ca/" target="_blank">Museum of Jewish Montreal</a></h6>
+          <h6><a id="underline" href="http://imjm.ca/" target="_blank">Museum of Jewish Montreal.</a></h6>
           <p>- Basic UI / UX design for the Museum of Jewish Montreal to assist with their website
-          redesign and make navigating their home page more intuitive</p>
-          <p>- Created mockups and wireframes using Adobe Creative Suite and Balsamiq</p>
-        </div>
-        <div className="resume-project">
-          <h6>SFUSD Selects</h6>
-          <p>- Web and Android app to help parents make informed decisions about San Francisco public schools</p>
-          <p>- Building with React, Rails API, Google Maps API, Facebook & Twitter OAuth - coming soon</p>
+          redesign and make their home page more contemporary, intuitive, and user-friendly.</p>
+          <p>- Created mockups and wireframes using Adobe Creative Suite, Balsamiq, and Sketch.</p>
         </div>
       </div>
     )
@@ -66,10 +64,25 @@ class Resume extends React.Component {
     return (
       <div>
         <div className="resume-job left-align">
+          <h5 className="job-title">Web & iOS Developer</h5>
+          <div id="job-flex">
+            <a href="http://edusight.co"><h6 className="employer">Edusight, Toronto, ON</h6></a>
+            <em className="job-dates">(September 2016 - February 2017)</em>
+          </div>
+          <p>- Junior web developer and designer at an education technology startup.</p>
+          <p>- Designed and built web app and iOS features using HTML, CSS, React, React Native,
+          Redux, and a variety of other JavaScript tools and libraries.</p>
+          <p>- Used Sketch to create detailed mockups for new iOS and web app components with a
+          focus on clean, intuitive interfaces.</p>
+          <p>- Managed iOS app while becoming familiar with React Native and mobile development.</p>
+          <p>- Assisted the customer support team, interfacing with Edusight’s user base to
+          provide technical support and respond to feedback.</p>
+        </div>
+        <div className="resume-job left-align">
           <h5 className="job-title">Development & Special Projects Manager</h5>
           <div id="job-flex">
             <a href="http://imjm.ca/"><h6 className="employer">Museum of Jewish Montreal, Montréal, QC</h6></a>
-            <em className="job-dates">(December 2013 - December 2015)</em>
+            <em className="job-dates">(December 2013 - December 2015, March - May 2016)</em>
           </div>
           <p>- Third full-time employee of a start-up virtual museum dedicated to finding new ways
          to preserve and share Montréal’s Jewish history.</p>
@@ -89,7 +102,7 @@ class Resume extends React.Component {
           making image licensing inquiries to Art Resource and The Bridgeman Art Library.</p>
         </div>
         <div className="resume-job left-align">
-          <h5>Development Intern - Institutional Giving</h5> 
+          <h5>Development Intern - Institutional Giving</h5>
           <div id="job-flex">
             <h6 className="employer">New-York Historical Society, New York, NY</h6>
             <em className="job-dates">(June - August 2012)</em>
@@ -106,7 +119,7 @@ class Resume extends React.Component {
     return (
       <div id="resume-skills">
         <h6>Programming</h6>
-          <p>JavaScript / React / Ruby / Rails / HTML / CSS / Sinatra / SQL</p>
+          <p>JavaScript / React / React Native / Redux /Ruby / Rails / HTML / CSS / SQL</p>
         <h6>Design</h6>
           <p>Sketch / Adobe Creative Suite / Balsamiq</p>
       </div>
@@ -170,7 +183,7 @@ class Resume extends React.Component {
             { this.state.expanded.indexOf('jobs') != -1  ? this.renderJobs() : false }
           </ReactCSSTransitionGroup>
           <div>
-            <a href="https://s3.amazonaws.com/hanna-jones-photos/Hanna_Jones_CV.pdf" download="Hanna_Jones_CV"><div className="waves-effect waves-light btn">Download Resume</div></a>
+            <a href="https://s3.amazonaws.com/hanna-jones-resumes/Hanna_Jones_CV.pdf" download="Hanna_Jones_CV"><div className="waves-effect waves-light btn">Download Resume</div></a>
           </div>
         </div>
       </div>
