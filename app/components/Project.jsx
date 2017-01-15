@@ -80,6 +80,7 @@ export default class Project extends React.Component {
   };
 
   render = () => {
+    console.log('active');
     const { state: { project, index } } = this;
 
     // hack to see if the project has been found

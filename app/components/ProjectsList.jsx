@@ -17,7 +17,7 @@ export default class ProjectsList extends React.Component {
     />
   };
   render = () => {
-    const {
+      const {
       renderCards,
       props: {
         projects,

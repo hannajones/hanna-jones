@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { Router, Route, browserHistory, IndexRoute, IndexRedirect } from 'react-router';
 import App from './components/App';
 import Project from './components/Project';
 import ProjectsContainer from './components/ProjectsContainer';
@@ -13,10 +13,11 @@ import Contact from './components/Contact';
 render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={ProjectsContainer}/>
+      <IndexRedirect to="/projects" />
+      <Route path="projects" component={ProjectsContainer}>
+        <Route path="projects/project/:id" component={Project}/>
+      </Route>
       <Route path="about" component={About}/>
-      {/* <Route path="projects" component={ProjectsContainer}/> */}
-      <Route path="project/:id" component={Project}/>
       <Route path="new" component={ProjectForm}/>
       <Route path="resume" component={Resume}/>
       <Route path="contact" component={Contact}/>

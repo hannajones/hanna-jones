@@ -11,13 +11,13 @@ export default class Menu extends React.Component {
     const { index, onlyActiveOnIndex, to, children, ...props } = this.props
     return <div id="menu-container">
       <div id="menu" className="center-align">
-        <NavLink to="/">
+        <Link to="/">
           <div className="menu-header">
             <h3>Hanna</h3>
             <h3>Jones</h3>
           </div>
-        </NavLink>
-        <NavLink className="menu-link" to="/">
+        </Link>
+        <NavLink className="menu-link" to="projects">
           <div className="menu-item">
             <h5>Projects</h5>
           </div>
