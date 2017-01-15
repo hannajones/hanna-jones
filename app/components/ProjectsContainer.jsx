@@ -1,51 +1,50 @@
+import React from 'react';
 import css from '../stylesheets/project.css';
 import mainCss from '../stylesheets/card.css';
-import React from 'react';
-import Project from './Project';
-import Card from './Card';
 import { Link } from 'react-router';
 import Rebase from 're-base';
 
+// Components
+import ProjectsList from './ProjectsList';
+import LoadingPage from './LoadingPage';
+
+// data from Firebase is pulled into the app here
 const base = Rebase.createClass('https://hannajones.firebaseio.com/');
 
-class ProjectsContainer extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      projects: []
-    }
+export default class ProjectsContainer extends React.Component {
+  state = {
+    projects: [],
   };
-
-  renderCards = (key) => {
-    return (
-      <Card key={key} index={key} project={this.state.projects[key]} />
-    )
-  };
-
-  componentWillMount() {
+  // loading data fetched from Firebase into state
+  componentWillMount = () => {
     this.ref = base.bindToState('projects', {
       context: this,
       state: 'projects',
       asArray: true
     });
   };
-
-  componentWillUnmount() {
+  componentWillUnmount = () => {
     base.removeBinding(this.ref);
   };
 
-  render() {
-    return (
-      <div className="content-container">
-        <div className="section-background z-depth-2">
-          <div id="card-container">
-            {Object.keys(this.state.projects).map(this.renderCards)}
-          </div>
-        </div>
-        {this.props.children}
-      </div>
-    )
+  render = () => {
+    // use object destructuring to pull properties off state
+    // length property of projects aliased as projectsCount
+    const {
+      state: {
+        projects,
+        projects: {length: projectsCount},
+      },
+    } = this;
+
+    // if project data in state, render presentational component
+    if (projectsCount > 0) {
+      return <ProjectsList
+        projects={projects}
+      />
+    }
+
+    // otherwise, displays loading page
+    return <LoadingPage/>
   };
 }
-
-export default ProjectsContainer

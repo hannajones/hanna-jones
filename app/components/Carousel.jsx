@@ -1,19 +1,32 @@
+import React, { PropTypes } from 'react';
 import css from '../stylesheets/carousel.css';
-import React from 'react';
 
-class Carousel extends React.Component {
-  render() {
-    return (
-      <div className="image-container center-align">
-        { this.props.images ?
-          <div id="carousel-image-container">
-            <img onClick={this.props.setNextImage} className="carousel-image" src={this.props.images[this.props.index]} alt="image"/>
-          </div>
-        : false
-        }
-      </div>
-    )
+export default class Carousel extends React.Component {
+  static PropTypes = {
+    setNextImage: PropTypes.func.isRequired,
+    images: PropTypes.array,
+    index: PropTypes.number,
+  };
+  render = () => {
+    const {
+      props: {
+        setNextImage,
+        images,
+        index,
+      }
+    } = this;
+    return <div className="image-container center-align">
+      {
+        this.props.images &&
+        <div id="carousel-image-container">
+          <img
+            onClick={setNextImage}
+            className="carousel-image"
+            src={images[index]}
+            alt="image"
+          />
+        </div>
+      }
+    </div>
   };
 }
-
-export default Carousel
