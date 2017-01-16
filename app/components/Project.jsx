@@ -10,36 +10,37 @@ import LoadingPage from './LoadingPage';
 const base = Rebase.createClass('https://hannajones.firebaseio.com/');
 
 export default class Project extends React.Component {
+  // project now passed in as props
   state = {
-    projects: [],
-    project: {},
+    // projects: [],
+    // project: {},
     index: 0
-  }
-  componentWillMount = () => {
-    this.fetchData();
   };
-  componentWillUnmount = () => {
-    base.removeBinding(this.ref);
-  };
-  findProject = (project) => {
-    return project.title.replace(/ /g, '') == this.props.params.id
-  };
-
-  // right now, I am finding the particular project in a very convoluted way
-  // by first loading in all of the projects
-  // then finding the correct project by comparing title to route params
-  // there is definitely a better way to do this
-  fetchData = () => {
-    this.ref = base.listenTo('projects', {
-      context: this,
-      state: 'projects',
-      asArray: true,
-      then(data){
-        this.setState({projects: data})
-        this.setState({project: data.find(this.findProject)})
-      }
-    });
-  };
+  // componentWillMount = () => {
+  //   this.fetchData();
+  // };
+  // componentWillUnmount = () => {
+  //   base.removeBinding(this.ref);
+  // };
+  // findProject = (project) => {
+  //   return project.title.replace(/ /g, '') == this.props.params.id
+  // };
+  //
+  // // right now, I am finding the particular project in a very convoluted way
+  // // by first loading in all of the projects
+  // // then finding the correct project by comparing title to route params
+  // // there is definitely a better way to do this
+  // fetchData = () => {
+  //   this.ref = base.listenTo('projects', {
+  //     context: this,
+  //     state: 'projects',
+  //     asArray: true,
+  //     then(data){
+  //       this.setState({projects: data})
+  //       this.setState({project: data.find(this.findProject)})
+  //     }
+  //   });
+  // };
   setNextImage = () => {
     if ((this.state.index + 1) < this.state.project.images.length) {
       this.setState({index: this.state.index + 1})
@@ -80,15 +81,22 @@ export default class Project extends React.Component {
   };
 
   render = () => {
-    const { state: { project, index } } = this;
+    const {
+      state: {
+        index,
+      },
+      props: {
+        project,
+      },
+    } = this;
 
     // hack to see if the project has been found
     const projectLoaded = Object.keys(project).length > 0;
 
     // if project has finished loading, display details
     if (projectLoaded) {
-      return <div className="content-container">
-        <div className="section-background z-depth-2 center-align">
+      return <div className="center-align">
+        <div>
           <div className="carousel-container">
             <Carousel
               setNextImage={this.setNextImage}

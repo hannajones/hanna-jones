@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
-import css from '../stylesheets/project.css';
 import { Link } from 'react-router';
+import css from '../stylesheets/project.css';
 
 // Components
 import Card from './Card';

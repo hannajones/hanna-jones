@@ -1,7 +1,10 @@
 import React from 'react';
 import css from '../stylesheets/modal.css';
 
+import Project from './Project';
+
 const styles = {
+  order: -1,
   flex: "1 auto",
   borderBottom: "1.5vw solid #fff",
   padding: "0 1.5vw 0 1.5vw",
@@ -9,7 +12,7 @@ const styles = {
   height: "90vh",
   backgroundColor: "white",
   overflow: "scroll",
-}
+};
 
 export default class ProjectModal extends React.Component {
 
@@ -27,8 +30,12 @@ export default class ProjectModal extends React.Component {
   };
 
   render = () => {
+    // need to get rid of the word project
+    const { props: { project } } = this;
     return <div style={styles}>
-      I'm the modal
+      <Project
+        project={project}
+      />
     </div>
   }
 };
