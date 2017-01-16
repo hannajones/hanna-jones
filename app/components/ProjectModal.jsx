@@ -1,6 +1,16 @@
 import React from 'react';
 import css from '../stylesheets/modal.css';
 
+const styles = {
+  flex: "1 auto",
+  borderBottom: "1.5vw solid #fff",
+  padding: "0 1.5vw 0 1.5vw",
+  width: "100%",
+  height: "90vh",
+  backgroundColor: "white",
+  overflow: "scroll",
+}
+
 export default class ProjectModal extends React.Component {
 
   // could move this logic up to the next component
@@ -17,10 +27,8 @@ export default class ProjectModal extends React.Component {
   };
 
   render = () => {
-    return <div className="content-container">
-      <div className="section-background z-depth-2">
-        I'm the modal
-      </div>
+    return <div style={styles}>
+      I'm the modal
     </div>
   }
 };
