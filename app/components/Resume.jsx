@@ -41,7 +41,7 @@ export default class Resume extends React.Component {
       <div id="resume-project-flex">
         <div className="resume-project">
           <h6><a id="underline" href="http://edusight.co" target="_blank">Edusight</a></h6>
-          <p>- Designed and implemented a website for Edusight Magic (<a href="http://edusight.co/magic/" target="_blank">edusight.co/magic</a>).</p>
+          <p>- Designed and implemented a website for Edusight's new Magic consulting service.</p>
           <p>- Redesigned and rebuilt iOS classroom timelines to make interface more user-friendly.</p>
           <p>- Implemented the front end of a comment bank feature using React, HTML, CSS.</p>
         </div>
