@@ -2,7 +2,7 @@
 .card-image-holder {
   position: relative;
   margin: .5vw;
-  order: 2,
+  /*order: 2,*/
 }
 
 .image-label {

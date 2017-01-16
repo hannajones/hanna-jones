@@ -9,9 +9,8 @@ const styles = {
   borderBottom: "1.5vw solid #fff",
   padding: "0 1.5vw 0 1.5vw",
   width: "100%",
-  height: "90vh",
   backgroundColor: "white",
-  overflow: "scroll",
+  overflow: "visible",
 };
 
 export default class ProjectModal extends React.Component {
