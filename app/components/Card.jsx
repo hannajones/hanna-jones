@@ -10,20 +10,19 @@ export default class Card extends React.Component {
   static PropTypes = {
     project: PropTypes.object.isRequired,
   };
-  state = {
-    modalOpen: false,
-  };
-  handleOpenModal = () => {
-    this.setState({
-      modalOpen: true,
-    });
-    console.log(this.state);
-  };
-  handleCloseModal = () => {
-    this.setState({
-      modalOpen: false,
-    });
-  };
+  // state = {
+  //   modalOpen: false,
+  // };
+  // handleOpenModal = () => {
+  //   this.setState({
+  //     modalOpen: true,
+  //   });
+  // };
+  // handleCloseModal = () => {
+  //   this.setState({
+  //     modalOpen: false,
+  //   });
+  // };
   render = () => {
     const {
       state: {
