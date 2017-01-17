@@ -6,7 +6,6 @@ import NavLink from './NavLink';
 
 export default class Menu extends React.Component {
   render = () => {
-    console.log('router', this.context);
     const { router } = this.context
     const { index, onlyActiveOnIndex, to, children, ...props } = this.props
     return <div id="menu-container">

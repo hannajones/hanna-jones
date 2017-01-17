@@ -34,7 +34,6 @@ export default class ProjectForm extends React.Component {
   updateUrl = () => {
     const currentProject = this.state.project;
     currentProject.url = this.refs.url.value;
-    console.log(currentProject.url);
     this.setState({project: currentProject})
   };
 
