@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import css from '../stylesheets/modal.css';
 
 // Components
 import Project from './Project';
 
+// ideally want to move to inline styles in the future
+// or at least have styling encapsulated in components
 const styles = {
   order: -1,
   flex: "1 auto",
@@ -15,8 +17,10 @@ const styles = {
 };
 
 export default class ProjectModal extends React.Component {
-
-  // could move this logic up to the next component
+  static PropTypes = {
+    project: PropTypes.object.isRequired,
+    closeModal: PropTypes.func.isRequired,
+  };
   componentDidMount = () => {
     window.addEventListener('keydown', this.handleKeydown);
   };
@@ -28,13 +32,12 @@ export default class ProjectModal extends React.Component {
       this.props.closeModal();
     }
   };
-
   render = () => {
-    // need to get rid of the word project
-    const { props: { project } } = this;
+    const { props: { project, closeModal } } = this;
     return <div style={styles}>
       <Project
         project={project}
+        closeModal={closeModal}
       />
     </div>
   }

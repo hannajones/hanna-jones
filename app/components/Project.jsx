@@ -1,48 +1,21 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import css from '../stylesheets/project.css';
-import { Link } from 'react-router';
-import Rebase from 're-base';
 
 // Components
 import Carousel from './Carousel';
 import LoadingPage from './LoadingPage';
 
-const base = Rebase.createClass('https://hannajones.firebaseio.com/');
-
+// could probably move all this logic into ProjectModal
 export default class Project extends React.Component {
-  // project now passed in as props
+  static PropTypes = {
+    project: PropTypes.object.isRequired,
+    closeModal: PropTypes.func.isRequired,
+  };
   state = {
-    // projects: [],
-    // project: {},
     index: 0
   };
-  // componentWillMount = () => {
-  //   this.fetchData();
-  // };
-  // componentWillUnmount = () => {
-  //   base.removeBinding(this.ref);
-  // };
-  // findProject = (project) => {
-  //   return project.title.replace(/ /g, '') == this.props.params.id
-  // };
-  //
-  // // right now, I am finding the particular project in a very convoluted way
-  // // by first loading in all of the projects
-  // // then finding the correct project by comparing title to route params
-  // // there is definitely a better way to do this
-  // fetchData = () => {
-  //   this.ref = base.listenTo('projects', {
-  //     context: this,
-  //     state: 'projects',
-  //     asArray: true,
-  //     then(data){
-  //       this.setState({projects: data})
-  //       this.setState({project: data.find(this.findProject)})
-  //     }
-  //   });
-  // };
   setNextImage = () => {
-    if ((this.state.index + 1) < this.state.project.images.length) {
+    if ((this.state.index + 1) < this.props.project.images.length) {
       this.setState({index: this.state.index + 1})
     }
     else {
@@ -54,7 +27,7 @@ export default class Project extends React.Component {
       this.setState({index: this.state.index - 1})
     }
     else if (this.state.index === 0) {
-      this.setState({index: this.state.project.images.length - 1})
+      this.setState({index: this.props.project.images.length - 1})
     }
   };
   setIndex = (key) => {
@@ -87,6 +60,7 @@ export default class Project extends React.Component {
       },
       props: {
         project,
+        closeModal,
       },
     } = this;
 
@@ -136,7 +110,7 @@ export default class Project extends React.Component {
             <p className="project-description">
               {project.description}
             </p>
-            <Link to="/"><div className="waves-effect waves-light btn">Back to Projects</div></Link>
+            <a onClick={closeModal}><div className="waves-effect waves-light btn">Close Project (ESC)</div></a>
           </div>
         </div>
       </div>
