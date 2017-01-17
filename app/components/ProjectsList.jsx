@@ -9,11 +9,30 @@ export default class ProjectsList extends React.Component {
   static PropTypes = {
     projects: PropTypes.array.isRequired,
   };
+  state = {
+    selectedProjectId: null,
+  };
+  handleOpenModal = (projectId) => {
+    this.setState({ selectedProjectId: projectId });
+  };
+  handleCloseModal = () => {
+    this.setState({ selectedProjectId: null });
+  };
   renderCards = (key) => {
-    const { projects } = this.props;
+    const {
+      state: {
+        selectedProjectId,
+      },
+      props: {
+        projects,
+      },
+    } = this;
     return <Card
       key={key}
       project={projects[key]}
+      selectedProjectId={selectedProjectId}
+      handleCloseModal={this.handleCloseModal}
+      handleOpenModal={this.handleOpenModal}
     />
   };
   render = () => {

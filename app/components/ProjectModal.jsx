@@ -1,6 +1,7 @@
 import React from 'react';
 import css from '../stylesheets/modal.css';
 
+// Components
 import Project from './Project';
 
 const styles = {
