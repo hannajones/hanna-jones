@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
 import css from '../stylesheets/project.css';
 
@@ -11,6 +12,11 @@ export default class ProjectsList extends React.Component {
   };
   state = {
     selectedProjectId: null,
+  };
+  handleResetScrollPosition = () => {
+    const topElement = document.getElementById("card-container");
+    const topPosition = topElement.scrollTop;
+    document.getElementById("scroll-div").scrollTop = topPosition;
   };
   handleOpenModal = (projectId) => {
     this.setState({ selectedProjectId: projectId });
@@ -31,8 +37,9 @@ export default class ProjectsList extends React.Component {
       key={key}
       project={projects[key]}
       selectedProjectId={selectedProjectId}
-      handleCloseModal={this.handleCloseModal}
-      handleOpenModal={this.handleOpenModal}
+      closeModal={this.handleCloseModal}
+      openModal={this.handleOpenModal}
+      resetScroll={this.handleResetScrollPosition}
     />
   };
   render = () => {
@@ -43,7 +50,7 @@ export default class ProjectsList extends React.Component {
       }
     } = this;
     return <div className="content-container">
-      <div className="section-background z-depth-2">
+      <div className="section-background z-depth-2" id="scroll-div">
         <div id="card-container">
           {Object.keys(projects).map(renderCards)}
         </div>

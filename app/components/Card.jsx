@@ -10,32 +10,29 @@ export default class Card extends React.Component {
   static PropTypes = {
     project: PropTypes.object.isRequired,
     selectedProjectId: PropTypes.number,
-    handleCloseModal: PropTypes.func.isRequired,
-    handleOpenModal: PropTypes.func.isRequired,
+    closeModal: PropTypes.func.isRequired,
+    openModal: PropTypes.func.isRequired,
+    resetScroll: PropTypes.func.isRequired,
   };
   handleClick = () => {
-    const { selectedProjectId, project } = this.props;
-    if (selectedProjectId === project.id) {
-      this.props.handleCloseModal();
-    }
-    this.props.handleOpenModal(project.id);
+    this.props.resetScroll();
+    this.props.openModal(this.props.project.id);
   };
 
   render = () => {
-    console.log('project', this.props);
     const {
       props: {
         project,
         selectedProjectId,
-        onCloseModal,
-        onOpenModal,
+        closeModal,
+        openModal,
       },
     } = this;
 
     if (selectedProjectId === project.id) {
       return <ProjectModal
         project={project}
-        closeModal={onCloseModal}
+        closeModal={closeModal}
       />
     }
 
