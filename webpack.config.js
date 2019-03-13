@@ -1,14 +1,11 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const precss = require('precss');
-const autoprefixer = require('autoprefixer');
+var dotenv = require('dotenv').config({path: __dirname + '/.env'});
 
-const APP = __dirname + '/app';
+const APP = __dirname + '/src';
 const BUILD = __dirname + '/build';
-const STYLE = __dirname + '/app/styles.css';
-const PUBLIC = __dirname + '/app/public';
-const TEMPLATE = __dirname + '/app/templates/index_default.html'
+const STYLE = __dirname + '/src/styles.css';
+const TEMPLATE = __dirname + '/src/templates/index_default.html'
 
 module.exports = {
   entry: {
@@ -20,19 +17,31 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.json', '.css', '.scss', '.html']
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.css', '.scss', '.html', '.svg']
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.jsx$/,
-        loaders: ['babel?cacheDirectory'],
-        include: APP
+        test: /\.(tsx?)|(jsx?)$/,
+        exclude: [
+          /node_modules/
+        ],
+        loader: 'ts-loader'
       },
       {
-        test: /\.css$/,
-        loaders: ['style', 'css'],
-        include: APP
+        test: /\.scss$/,
+        use: [
+            'style-loader',
+            'css-loader',
+            'sass-loader'
+        ]
+      },
+      {
+          test: /\.css$/,
+          use: [
+              'style-loader',
+              'css-loader'
+          ]
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/,
@@ -40,32 +49,20 @@ module.exports = {
       }
     ]
   },
-  postcss: function () {
-    return [precss, autoprefixer];
-  },
-  devtool: 'eval-source-map',
+  devtool: 'inline-source-map',
   devServer: {
-    historyApiFallback: true,
+    contentBase: './build',
     hot: true,
-    inline: true,
+    historyApiFallback: true,
     progress: true,
-    stats: 'errors-only',
-    host: process.env.HOST,
-    port: process.env.PORT
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: TEMPLATE,
       inject: 'body'
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new CopyWebpackPlugin([
-      { from: PUBLIC, to: BUILD }
-    ],
-    {
-      ignore: [
-        '.DS_Store'
-      ]
-    })
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify(dotenv.parsed)
+    }),
   ]
 };

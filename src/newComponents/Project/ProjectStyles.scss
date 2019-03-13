@@ -1,0 +1,38 @@
+@import '../../_variables';
+
+.Project {
+  position: relative;
+
+  // TODO: autoprefixer
+  &__img {
+    max-height: 31vh;
+    max-width: 25vw;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    filter: $gray-primary;
+    -webkit-transition: all .3s linear;
+    transition: all .3 linear;
+
+    &:hover {
+      filter: grayscale(0%);
+      -webkit-filter: grayscale(0%);
+      filter: none;
+      -ms-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+      -webkit-transition: all .3s linear;
+      transition: all .3s linear;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    left: 5%;
+    top: 7%;
+
+    &__mark {
+      padding: 4px;
+      background-color: $yellow-highlight;
+    }
+  }
+}
