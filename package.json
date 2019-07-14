@@ -68,9 +68,10 @@
     "style-loader": "^0.23.1",
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",
+    "svgo-loader": "^2.2.1",
     "ts-loader": "^5.3.3",
     "typescript": "^3.3.3333",
-    "url-loader": "^1.1.2",
+    "url-loader": "^2.0.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"

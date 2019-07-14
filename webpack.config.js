@@ -14,6 +14,7 @@ module.exports = {
   },
   output: {
     path: BUILD,
+    publicPath: '/',
     filename: '[name].js'
   },
   resolve: {
@@ -46,7 +47,25 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif)$/,
         loader: 'url-loader'
-      }
+      },
+      {
+        test: /\.svg$/,
+        use: [
+            {
+                loader: 'url-loader?limit=1&mimetype=image/svg+xml'
+            },
+            {
+                loader: 'svgo-loader',
+                options: {
+                    plugins: [
+                      {removeTitle: true},
+                      {convertColors: {shorthex: false}},
+                      {convertPathData: false}
+                    ]
+                  }
+            }
+        ]
+      },
     ]
   },
   devtool: 'inline-source-map',

@@ -4,7 +4,7 @@ import './LoadingIndicator.scss';
 
 interface LoadingIndicatorProps {}
 
-const LoadingIndicatorComponent: React.StatelessComponent<LoadingIndicatorProps> = () => (
+const LoadingIndicatorComponent: React.FunctionComponent<LoadingIndicatorProps> = () => (
   <div className="LoadingIndicator">
     <div></div>
     <div></div>

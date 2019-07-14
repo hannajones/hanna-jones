@@ -23,7 +23,7 @@ module.exports = {
     vendor: PACKAGE
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.json', '.css', '.scss', '.html']
+    extensions: ['', '.js', '.jsx', '.json', '.css', '.scss', '.html', '.svg']
   },
   output: {
     path: BUILD,

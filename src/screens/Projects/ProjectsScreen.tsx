@@ -1,29 +1,25 @@
 import * as React from 'react';
+import { useContext } from 'react';
 
 // containers
-import useProjectsReducer from './ProjectsScreenContainer';
+// import useProjectsReducer from './ProjectsScreenContainer';
+import { ProjectsContext } from '../../store/Projects';
 
 // components
-import Card from '../../newComponents/Card';
-import LoadingIndicator from '../../newComponents/LoadingIndicator';
-import ProjectList from '../../newComponents/ProjectList';
+import Card from '../../components/Card';
+import LoadingIndicator from '../../components/LoadingIndicator';
+import ProjectList from '../../components/ProjectList';
 
 interface ProjectsScreenProps {};
 
-const ProjectsScreen: React.StatelessComponent<ProjectsScreenProps> = () => {
-  const { projectsState } = useProjectsReducer();
+const ProjectsScreen: React.FunctionComponent<ProjectsScreenProps> = () => {
+  const { projectsState } = useContext(ProjectsContext);
 
-  if (projectsState.loading) {
-    return ( // TODO: wrap everything in a card
-      <Card>
-        <LoadingIndicator />
-      </Card>
-    )
-  }
+  const innerContent = projectsState.loading ? <LoadingIndicator/> : <ProjectList projects={projectsState.projects} />
 
   return (
     <Card>
-      <ProjectList projects={projectsState.projects} />
+      {innerContent}
     </Card>
   )
 }

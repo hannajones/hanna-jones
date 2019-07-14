@@ -8,7 +8,7 @@ interface ErrorPayload {
   message: string;
 }
 
-interface ProjectItem {
+export interface ProjectItem {
   description: string;
   id: number;
   images?: string[];
@@ -16,19 +16,22 @@ interface ProjectItem {
   url?: string;
 }
 
-export type ProjectsList = ProjectItem[];
+export interface ProjectsList {
+  [key: number]: ProjectItem;
+}
 
 export interface ProjectsState {
   projects: ProjectsList;
   loading: boolean;
   error?: ErrorPayload;
-  activeProject?: number;
+  selectedProject?: number;
 }
 
 export enum ProjectReducerActions {
   LOADING = 'loading',
   LOADED = 'loaded',
-  ERROR = 'error'
+  ERROR = 'error',
+  SELECT = 'select'
 }
 
 export type ProjectReducerAction = ReducerAction<ProjectReducerActions>;
