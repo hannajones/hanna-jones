@@ -15,7 +15,7 @@ interface ProjectListProps {
 };
 
 const ProjectListComponent: React.FunctionComponent<ProjectListProps> = ({ projects }) => (
-  <div className="ProjectsList">
+  <div className="projectsList">
     {
       Object.keys(projects).map(key => {
         const project = projects[key];

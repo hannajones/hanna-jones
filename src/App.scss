@@ -1,55 +1,67 @@
 @import 'variables';
 
-*, *:before, *:after {
-  box-sizing: border-box;
-}
+/* Base Styles */
 
 html, body {
-  width: 100%;
   height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after { 
+  box-sizing: inherit; 
 }
 
 body {
-  font-family: 'Droid Sans Mono', 'Courier', monospace;
-  font-size: 0.9em;
-  color: $gray-primary;
-  line-height: 1.9em;
-}
-
-/* Particles.js */
-
-#particles-js{
-  width: 100%;
+  margin: 0;
+  padding: 0;
   height: 100%;
-  background-color: #fff;
-  opacity: .90;
-  z-index: -1;
+  width: 100%;
+  overflow: hidden;
+  font-family: $font-family;
+  color: $color-gray;
+  font-weight: lighter;
+  font-size: 16px;
+  line-height: 20px;
 }
 
-#canvas, #container, #particles-js {
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+  margin: 0; 
+  padding: 0;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+}
+
+.particles {
   position: absolute;
-}
-
-#canvas {
-  opacity: .90;
+  display: block;
+  top: 0;
+  left: 0;
   z-index: -1;
 }
 
-#about-site {
-  position: fixed;
-  bottom: 7.5vh;
-  left: 45%;
-  right: 20%;
-}
-
-/* App */
-
-.AppContainer {
+.app {
   display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
 
   &__screens {
-    order: 2;
-    width: 100%;
+    width: 80%;
     height: 100%;
+    overflow: hidden;
+  }
+
+  &__menu {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

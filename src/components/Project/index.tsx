@@ -7,7 +7,9 @@ const withLink = <P extends ProjectComponentProps>(WrappedComponent: React.Compo
   class LinkedProject extends React.Component<P> {
     render() {
       const { link } = this.props;
-      return link ? <Link to={link}><WrappedComponent {...this.props}/></Link> : <WrappedComponent {...this.props} />;
+      return (
+        link ? <Link to={link} className="project__link"><WrappedComponent {...this.props} /></Link> : <WrappedComponent {...this.props} />
+      )
     }
 };
 

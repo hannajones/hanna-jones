@@ -12,6 +12,7 @@ node_modules
 # hidden files
 **/.*
 .env
+.firebaserc
 
 # build directory
 build/*

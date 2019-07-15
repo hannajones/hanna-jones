@@ -10,7 +10,7 @@ const APP = __dirname + '/app';
 const BUILD = __dirname + '/build';
 const STYLE = __dirname + '/app/styles.css';
 const PUBLIC = __dirname + '/app/public';
-const TEMPLATE = __dirname + '/app/templates/index_default.html'
+const TEMPLATE = __dirname + '/app/index.html'
 
 const PACKAGE = Object.keys(
   require('./package.json').dependencies

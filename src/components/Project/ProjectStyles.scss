@@ -1,38 +1,43 @@
-@import '../../_variables';
+@import '../../variables';
 
-.Project {
+.project {
   position: relative;
 
+  &__link {
+    color: $color-gray;
+  }
+
   // TODO: autoprefixer
-  &__img {
-    max-height: 31vh;
+  // FIXME: image sizing
+  &__image {
     max-width: 25vw;
     filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    filter: $gray-primary;
-    -webkit-transition: all .3s linear;
-    transition: all .3 linear;
-
-    &:hover {
-      filter: grayscale(0%);
-      -webkit-filter: grayscale(0%);
-      filter: none;
-      -ms-transform: scale(1.1);
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
-      -webkit-transition: all .3s linear;
-      transition: all .3s linear;
-    }
+    filter: $color-gray;
+    position: relative;
+    border: 5px solid $color-white;
+    border-bottom: 0px;
   }
 
   &__title {
     position: absolute;
-    left: 5%;
-    top: 7%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
 
-    &__mark {
-      padding: 4px;
-      background-color: $yellow-highlight;
+    &__background {
+      height: 100%;
+      padding: 15px;
+      font-weight: 800;
+      font-size: 36px;
+      line-height: 1.5;
+      background-color: $color-yellow;
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+
+      &:hover {
+        opacity: 0.75;
+      }
     }
   }
 }

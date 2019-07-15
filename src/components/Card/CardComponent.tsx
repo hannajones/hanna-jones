@@ -1,12 +1,15 @@
 import * as React from 'react';
+import * as cx from 'classnames';
 
 import './CardStyles.scss';
 
-interface CardComponentProps {};
+interface CardComponentProps {
+  className?: string;
+};
 
-const CardComponent: React.FunctionComponent<CardComponentProps> = ({ children }) => (
-  <div className="Card">
-    <div className="Card__background">
+const CardComponent: React.FunctionComponent<CardComponentProps> = ({ className, children }) => (
+  <div className={cx('card', className)}>
+    <div className="card__background">
       {children}
     </div>
   </div>

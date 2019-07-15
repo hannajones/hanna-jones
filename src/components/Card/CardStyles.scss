@@ -1,16 +1,17 @@
-.Card {
+@import '../../variables';
+
+.card {
   height: 100%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &__background {
-    border-top: 1.5vw solid #fff;
-    border-bottom: 1.5vw solid #fff;
-    padding: 0 1.5vw 0 1.5vw;
-    margin: 0 auto;
-    height: 90vh;
-    width: 100%;
-    margin-top: 5vh;
-    background-color: #fff;
+    height: 90%;
+    width: 90%;
+    background-color: $color-white;
     overflow: scroll;
+    border: 5px solid $color-blue;
   }
 }

@@ -1,4 +1,4 @@
-@import '../../_variables';
+@import '../../variables';
 
 // adapted from https://loading.io/css/
 @keyframes loading {
@@ -23,10 +23,10 @@
   width: 51px;
   height: 51px;
   margin: 6px;
-  border: 6px solid $blue-primary;
+  border: 6px solid $color-blue;
   border-radius: 50%;
   animation: loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: $blue-primary transparent transparent transparent;
+  border-color: $color-blue transparent transparent transparent;
 }
 
 .LoadingIndicator div:nth-child(1) {

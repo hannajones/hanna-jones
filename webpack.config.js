@@ -5,7 +5,7 @@ var dotenv = require('dotenv').config({path: __dirname + '/.env'});
 const APP = __dirname + '/src';
 const BUILD = __dirname + '/build';
 const STYLE = __dirname + '/src/styles.css';
-const TEMPLATE = __dirname + '/src/templates/index_default.html'
+const TEMPLATE = __dirname + '/src/index.html'
 
 module.exports = {
   entry: {
