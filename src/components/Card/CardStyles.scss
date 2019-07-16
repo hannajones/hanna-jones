@@ -1,17 +1,14 @@
 @import '../../variables';
 
-.card {
+.card, .card__background {
   height: 100%;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+.card {
+  overflow: hidden;
 
   &__background {
-    height: 90%;
-    width: 90%;
-    background-color: $color-white;
     overflow: scroll;
-    border: 5px solid $color-blue;
   }
 }

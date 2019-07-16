@@ -1,7 +1,7 @@
 enum Routes {
-  PROJECTS = '/',
+  ABOUT = '/',
+  PROJECTS = '/projects',
   PROJECT = '/project/:id',
-  ABOUT = '/about',
   RESUME = '/resume'
 }
 

@@ -8,7 +8,6 @@ const autoprefixer = require('autoprefixer');
 
 const APP = __dirname + '/app';
 const BUILD = __dirname + '/build';
-const STYLE = __dirname + '/app/styles.css';
 const PUBLIC = __dirname + '/app/public';
 const TEMPLATE = __dirname + '/app/index.html'
 
@@ -19,7 +18,6 @@ const PACKAGE = Object.keys(
 module.exports = {
   entry: {
     app: APP,
-    style: STYLE,
     vendor: PACKAGE
   },
   resolve: {

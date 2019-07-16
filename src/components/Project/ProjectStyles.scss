@@ -7,37 +7,33 @@
     color: $color-gray;
   }
 
-  // TODO: autoprefixer
-  // FIXME: image sizing
   &__image {
-    max-width: 25vw;
-    filter: grayscale(100%);
-    filter: $color-gray;
+    max-width: 350px;
     position: relative;
-    border: 5px solid $color-white;
+    filter: grayscale(100%);
+    filter: $color-gray-accent;
     border-bottom: 0px;
+    background: $color-white;
+    position: relative;
+
+    &:hover {
+      filter: grayscale(0%);
+      filter: none;
+    }
   }
 
   &__title {
     position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
+    left: 5%;
+    top: 5%;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 1.5;
 
-    &__background {
-      height: 100%;
-      padding: 15px;
-      font-weight: 800;
-      font-size: 36px;
-      line-height: 1.5;
-      background-color: $color-yellow;
-      opacity: 1;
-      transition: opacity 0.3s ease-in-out;
-
-      &:hover {
-        opacity: 0.75;
-      }
+    &__mark {
+      padding: 3px 5px;
+      background-color: $color-green;
+      color: $color-black
     }
   }
 }

@@ -1,0 +1,46 @@
+.resume {
+  padding: 0 45px 0 0;
+
+  &__section, &__header, &__title, &__content {
+    padding-bottom: 30px;
+  }
+
+  &__section__title, &__title {
+    font-size: 36px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin-top: 15px;
+  }
+
+  &__section__title {
+    padding-bottom: 30px;
+  }
+
+  &__content__title, &__content__location {
+    font-size: 24px;
+  }
+
+  &__content__title {
+    padding-bottom: 15px;
+  }
+  
+  &__content__dates {
+    display: block;
+    padding: 15px 0;
+  }
+
+  &__content__description {
+    line-height: 1.4;
+    position: relative;
+    padding-left: 15px;
+
+    &:before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+    }
+  }
+}

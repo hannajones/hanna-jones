@@ -16,7 +16,7 @@ const ProjectComponent: React.FunctionComponent<ProjectComponentProps> = ({ imag
       ))
     }
     <div className="project__title">
-      <div className="project__title__background">{title}</div>
+      <mark className="project__title__mark">{title}</mark>
     </div>
     {
       description && display === ProjectDisplayModes.FULL &&

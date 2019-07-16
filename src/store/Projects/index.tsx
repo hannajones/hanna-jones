@@ -9,18 +9,15 @@ interface ProjectsContextType {
     projectsActions: ProjectsActions;
 }
 
-// FIXME:
 export const ProjectsContext = createContext<ProjectsContextType>(null);
 
 // handling everything to do with projects data fetching/tracking here
 // might want to decouple later
-export const ProjectsDataProvider = ({ children }): any => {
+export const ProjectsDataProvider = ({ children }) => {
     const [projectsState, dispatch] = useReducer(projectsReducer, defaultState);
     const projectsActions = createProjectActions(dispatch);
 
-    // TODO: maybe actually pass something?
     useEffect(() => {
-        console.log('this got called');
         projectsActions.loadData();
     }, []);
 

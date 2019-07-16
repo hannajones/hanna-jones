@@ -2,16 +2,14 @@
 
 /* Base Styles */
 
-html, body {
+html {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 *, *:before, *:after { 
-  box-sizing: inherit; 
+  box-sizing: border-box; 
 }
 
 body {
@@ -19,9 +17,8 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  overflow: hidden;
   font-family: $font-family;
-  color: $color-gray;
+  color: $color-text;
   font-weight: lighter;
   font-size: 16px;
   line-height: 20px;
@@ -32,36 +29,51 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
   padding: 0;
 }
 
-.wrapper {
-  height: 100vh;
-  width: 100vw;
-}
+.text {
+  &--blue {
+    color: $color-blue
+  }
+    
+  &--green {
+    color: $color-green
+  }
+  
+  &--purple {
+    color: $color-purple
+  }
 
-.particles {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  &--red {
+    color: $color-red
+  }
+  
+  &--orange {
+    color: $color-orange
+  }
 }
 
 .app {
+  padding: 45px;
   display: flex;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: $color-gray;
 
+  &__menu,
   &__screens {
-    width: 80%;
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    overflow: hidden;
+    overflow: auto;
   }
 
   &__menu {
-    height: 100%;
-    width: 20%;
-    display: flex;
-    align-items: center;
+    flex: 1;
     justify-content: center;
+  }
+
+  &__screens {
+    flex: 3;
   }
 }
