@@ -19,11 +19,8 @@ import Routes from './routes';
 
 import './App.scss';
 
-// TODO: dark mode
-// TODO: maybe wrap in a card instead
 // TODO: tslint/eslint
 // TODO: audit package.json for unnecessary stuff
-// TODO: move to lowercase css namespaces
 render((
   <Router>
       <div className="app">

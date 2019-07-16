@@ -1,13 +1,11 @@
-import { ProjectReducerActions } from "../../screens/Projects/ProjectsScreenTypes";
+import { ProjectReducerActions, ProjectReducerAction } from "../../screens/Projects/ProjectsScreenTypes";
 import { fetchProjectsData } from "../../services/ProjectsService";
 
 export interface ProjectsActions {
   loadData: () => Promise<void>;
-  selectProject: any;
 }
 
-// FIXME: dispatch generic
-function createProjectActions(dispatch: React.Dispatch<any>): ProjectsActions {
+function createProjectActions(dispatch: React.Dispatch<ProjectReducerAction>): ProjectsActions {
   return {
     loadData: async () => {
       dispatch({ type: ProjectReducerActions.LOADING });
@@ -25,11 +23,6 @@ function createProjectActions(dispatch: React.Dispatch<any>): ProjectsActions {
           error
         })
       }
-    },
-    // TODO: type for event
-    selectProject: (event) => {
-      event.preventDefault();
-      console.log('event', event);
     }
   }
 };

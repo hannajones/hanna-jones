@@ -1,12 +1,4 @@
-// TODO: move to another file - index.d.ts
-interface ReducerAction<T> {
-  type: T;
-  [property: string]: any;
-}
-
-interface ErrorPayload {
-  message: string;
-}
+import { ErrorPayload, ReducerAction } from "../../sharedTypes";
 
 export interface ProjectItem {
   description: string;

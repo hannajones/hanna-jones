@@ -45,7 +45,7 @@
 
     &__link {
       padding: 6px;
-      border: 1px solid $color-text;
+      border: 2px solid $color-text;
       border-radius: 3px;
       display: flex;
       align-items: center;
@@ -56,8 +56,8 @@
       &:hover,
       &:active,
       &:focus {
-        border: 1px solid $color-purple;
-        color: $color-purple;
+        border: 2px solid $color-red;
+        color: $color-red;
         opacity: 1;
       }
     }

@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 // components
-// TODO: make sure always importing from index.ts/x
 import Project from '../Project';
 
 // types
@@ -26,7 +25,7 @@ const ProjectListComponent: React.FunctionComponent<ProjectListProps> = ({ proje
             images={project.images}
             id={project.id}
             title={project.title}
-            link={`project/${project.id}`} // TODO: is there a way to use the Routes here?
+            link={`project/${project.id}`}
           />
         )
       })

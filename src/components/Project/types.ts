@@ -5,6 +5,7 @@ export interface ProjectComponentProps {
   link?: string;
   display?: ProjectDisplayModes;
   description?: string;
+  url?: string;
 };
 
 // TODO: move this
