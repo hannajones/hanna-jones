@@ -6,6 +6,7 @@ import './ResumeScreenStyles.scss';
 
 interface ResumeScreenProps {};
 
+// TODO: download link for CV
 const ResumeScreen: React.FunctionComponent<ResumeScreenProps> = () => (
   <Card>
     <div className="resume">
@@ -27,7 +28,7 @@ const ResumeScreen: React.FunctionComponent<ResumeScreenProps> = () => (
         <ResumeContent 
           title="Design"
           descriptions={[
-            "I have done some (mostly amateur) web & graphic design using Sketch, Adobe Creative Suite, and Balsamiq"
+            "I have done some web & graphic design using Sketch, Adobe Creative Suite, and Balsamiq"
           ]}
         />
       </ResumeSection>

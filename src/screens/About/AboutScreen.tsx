@@ -15,7 +15,7 @@ const AboutScreen: React.FunctionComponent<AboutScreenProps> = () => (
       </div>
       <div className="about__description">
         <p className="about__description__paragraph">
-          My name is <span className="text--green">Hanna Jones</span>, and I'm a front-end web developer working primarily with React and TypeScript to build beautiful, unique websites and applications. I'm also an avid cyclist, techno enthusiast, and dark mode evangelist.
+          My name is <span className="text--green">Hanna Jones</span>, and I'm a front-end web developer working primarily with React and TypeScript to build beautiful, unique websites and applications. I'm also an avid cyclist, techno enthusiast, and dark mode proponent.
         </p>
         <p className="about__description__paragraph">
           I was born & raised in <span className="text--blue">San Francisco</span>, but have called <span className="text--blue">Toronto</span> home for the past three years.

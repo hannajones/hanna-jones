@@ -1,8 +1,6 @@
 import * as React from 'react';
-import { useContext } from 'react';
 
 // containers
-// import useProjectsReducer from './ProjectsScreenContainer';
 import { ProjectsContext } from '../../store/Projects';
 
 // components
@@ -13,7 +11,7 @@ import ProjectList from '../../components/ProjectList';
 interface ProjectsScreenProps {};
 
 const ProjectsScreen: React.FunctionComponent<ProjectsScreenProps> = () => {
-  const { projectsState } = useContext(ProjectsContext);
+  const { projectsState } = React.useContext(ProjectsContext);
 
   const innerContent = projectsState.loading ? <LoadingIndicator/> : <ProjectList projects={projectsState.projects} />
 

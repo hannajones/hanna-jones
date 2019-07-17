@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useContext } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router';
 import { Link } from 'react-router-dom'
 import { ProjectsContext } from '../../store/Projects';
@@ -20,7 +19,7 @@ interface ProjectRouteParams {
 interface ProjectScreenProps extends RouteComponentProps<ProjectRouteParams> {};
 
 const ProjectScreen: React.FunctionComponent<ProjectScreenProps> = ({ match }) => {
-  const { projectsState } = useContext(ProjectsContext);
+  const { projectsState } = React.useContext(ProjectsContext);
   const project = projectsState.projects[Number(match.params.id)];
 
   return (

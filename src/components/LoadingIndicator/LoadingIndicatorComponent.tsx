@@ -5,11 +5,13 @@ import './LoadingIndicator.scss';
 interface LoadingIndicatorProps {}
 
 const LoadingIndicatorComponent: React.FunctionComponent<LoadingIndicatorProps> = () => (
-  <div className="LoadingIndicator">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+  <div className="loadingIndicatorContainer">
+    <div className="loadingIndicator">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 );
 

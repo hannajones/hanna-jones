@@ -27,7 +27,8 @@ export async function fetchProjectsData(): Promise<ProjectsList> {
       return projectsCache[cacheKey];
     }
 
-    const data: ProjectsResponse = await firebaseService.fetch(process.env.FIREBASE_PROJECTS_URL, {});
+    const base = await firebaseService();
+    const data: ProjectsResponse = await base.fetch(process.env.FIREBASE_PROJECTS_URL, {});
     return formatProjectsResponse(data.projects);
   } catch (error) {
     throw error;

@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { useReducer } from 'react';
 import * as cx from 'classnames';
 import ChevronLeft from '../../assets/icons/ChevronLeft';
 import ChevronRight from '../../assets/icons/ChevronRight';
 import Circle from '../../assets/icons/Circle';
+import { ReducerAction } from '../../sharedTypes';
 
 import './CarouselComponentStyles.scss';
-import { ReducerAction } from '../../sharedTypes';
 
 // TODO: split the logic from the render
 interface CarouselComponentProps {
@@ -72,7 +71,7 @@ function createCarouselActions(dispatch: React.Dispatch<CarouselReducerAction>) 
 
 const CarouselComponent: React.FunctionComponent<CarouselComponentProps> = ({ images }) => {
   const carouselReducer = useCarouselReducer(images.length);
-  const [state, dispatch] = useReducer(carouselReducer, defaultState);
+  const [state, dispatch] = React.useReducer(carouselReducer, defaultState);
   const carouselActions = createCarouselActions(dispatch);
   const hasMultipleImages = images.length > 1;
   
