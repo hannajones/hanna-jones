@@ -54,3 +54,17 @@
     }
   }
 }
+
+@media screen and (max-width: $break-large) {
+  .project {
+    margin-bottom:15px;
+
+    &__image {
+      max-width: 325px;
+    }
+
+    &__description {
+      padding-right: 0;
+    }
+  }
+}

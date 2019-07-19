@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .resume {
   padding: 0 45px 0 0;
 
@@ -31,6 +33,10 @@
     padding: 15px 0;
   }
 
+  &__content__descriptions {
+    list-style: none;
+  }
+
   &__content__description {
     line-height: 1.4;
     position: relative;
@@ -41,6 +47,24 @@
       position: absolute;
       left: 0;
       font-weight: 800;
+    }
+  }
+}
+
+@media screen and (max-width: $break-large) {
+  .resume {
+    padding: 15px 30px;
+
+    &__title {
+      display: none;
+    }
+
+    &__section {
+      padding-bottom: 0;
+      
+      &__title {
+        line-height: 1.1;
+      }
     }
   }
 }

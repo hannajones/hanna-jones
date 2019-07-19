@@ -68,3 +68,47 @@
     }
   }
 }
+
+@media screen and (max-width: $break-large) {
+  .menu {
+    margin: 0;
+
+    &__background {
+      padding: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    &__item {
+      padding: 7px 0;
+    }
+
+    &__item:first-of-type {
+      width: 100%;
+      text-align: center;
+    }
+
+    &__contact {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: $break-medium) and (max-width: $break-large) {
+  .menu {
+    margin: 0;
+
+    &__background {
+      justify-content: center;
+    }
+
+    &__link {
+      margin-right: 30px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}

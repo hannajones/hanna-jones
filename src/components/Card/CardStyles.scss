@@ -13,3 +13,19 @@
     overflow-y: scroll;
   }
 }
+
+@media screen and (max-width: $break-large) {
+  .card {
+    overflow-y: scroll;
+
+    &__background {
+      height: auto; 
+    }
+  }
+}
+
+@media screen and (min-width: $break-medium) and (max-width: $break-large) {
+  .card, .card__background {
+    max-width: 700px;
+  }
+}

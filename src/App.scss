@@ -77,3 +77,26 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
     flex: 3;
   }
 }
+
+@media screen and (max-width: $break-large) {
+  .app {
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+
+    &__menu {
+      flex: 1 1 120px;
+      overflow: hidden;
+    }
+
+    &__screens {
+      flex: 1 1 calc(100% - 120px);
+    }
+  }
+}
+
+@media screen and (min-width: $break-medium) and (max-width: $break-large) {
+  .app__screens {
+    align-items: center;
+  }
+}

@@ -31,3 +31,17 @@
     color: $color-white;
   }
 }
+
+@media screen and (max-width: $break-large) {
+  .about {
+    flex-direction: column;
+
+    &__description {
+      padding: 0 30px 15px; 
+    }
+
+    &__imageContainer {
+      padding: 15px 0;
+    }
+  }
+}

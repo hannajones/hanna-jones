@@ -29,3 +29,13 @@
     }
   }
 }
+
+@media screen and (max-width: $break-large) {
+  .projectScreen {
+    padding: 15px 30px;
+
+    &__header {
+      padding: 0 0 30px;
+    }
+  }
+}
