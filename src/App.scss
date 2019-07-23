@@ -1,0 +1,102 @@
+@import 'variables';
+
+/* Base Styles */
+
+html {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after { 
+  box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: $font-family;
+  color: $color-text;
+  font-weight: lighter;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+  margin: 0; 
+  padding: 0;
+}
+
+.text {
+  &--blue {
+    color: $color-blue
+  }
+    
+  &--green {
+    color: $color-green
+  }
+  
+  &--purple {
+    color: $color-purple
+  }
+
+  &--red {
+    color: $color-red
+  }
+  
+  &--orange {
+    color: $color-orange
+  }
+}
+
+.app {
+  padding: 45px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: $color-gray;
+
+  &__menu,
+  &__screens {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+  }
+
+  &__menu {
+    flex: 1;
+    justify-content: center;
+  }
+
+  &__screens {
+    flex: 3;
+  }
+}
+
+@media screen and (max-width: $break-large) {
+  .app {
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+
+    &__menu {
+      flex: 1 1 120px;
+      overflow: hidden;
+    }
+
+    &__screens {
+      flex: 1 1 calc(100% - 120px);
+    }
+  }
+}
+
+@media screen and (min-width: $break-medium) and (max-width: $break-large) {
+  .app__screens {
+    align-items: center;
+  }
+}

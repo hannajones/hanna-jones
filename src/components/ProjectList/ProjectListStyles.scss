@@ -1,0 +1,25 @@
+@import '../../variables';
+
+.projectsList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: $break-medium) {
+  .projectsList {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: $break-large) {
+  .projectsList {
+    padding-top: 30px;
+  }
+}

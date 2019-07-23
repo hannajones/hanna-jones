@@ -1,0 +1,11 @@
+@import '../../variables';
+
+.notFound {
+  color: $color-red;
+  font-size: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}

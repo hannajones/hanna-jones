@@ -1,0 +1,73 @@
+@import '../../variables';
+
+.project {
+  position: relative;
+
+  &__description {
+    padding-right: 45px;
+  }
+
+  &__link {
+    color: $color-gray;
+  }
+
+  &__image {
+    width: 350px;
+    height: 230px;
+    position: relative;
+    filter: grayscale(100%);
+    filter: $color-gray-accent;
+    border-bottom: 0px;
+    background: $color-white;
+    position: relative;
+    margin-bottom: 15px;
+
+    &:hover {
+      filter: grayscale(0%);
+      filter: none;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 1.5;
+
+    &__link {
+      text-decoration: none;
+    }
+
+    &__mark {
+      padding: 3px 5px;
+      background-color: $color-green;
+      color: $color-black
+    }
+  }
+
+  &--full {
+    position: static;
+
+    .project__title {
+      position: static;
+      padding: 30px 0;
+    }
+  }
+}
+
+@media screen and (max-width: $break-large) {
+  .project {
+    margin-bottom:15px;
+
+    &__image {
+      width: 325px;
+      height: 217px;
+    }
+
+    &__description {
+      padding-right: 0;
+    }
+  }
+}
