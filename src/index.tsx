@@ -19,8 +19,6 @@ import Routes from './routes';
 
 import './App.scss';
 
-// TODO: readme
-// TODO: separate types files
 render((
   <Router>
       <div className="app">
