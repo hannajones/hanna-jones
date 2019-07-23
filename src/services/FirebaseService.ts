@@ -1,7 +1,6 @@
 import Rebase from 're-base';
 import { importFirebase } from '../helpers/firebaseImport';
 
-// TODO: need to refactor this further, but this is a start :(
 async function initializeFirebase() {
   try {
     const [firebase] = await importFirebase();
@@ -15,11 +14,10 @@ async function initializeFirebase() {
     const db = firebase.database(app);
     return Rebase.createClass(db);
   } catch (error) {
-    console.warn(error);
+    throw new Error('Something went wrong - please try refreshing the page');
   }
-};
+}
 
-// TODO: should only ever do this once
 const base = async() => await initializeFirebase();
 
 export default base;

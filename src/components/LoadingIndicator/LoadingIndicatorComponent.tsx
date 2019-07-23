@@ -7,10 +7,10 @@ interface LoadingIndicatorProps {}
 const LoadingIndicatorComponent: React.FunctionComponent<LoadingIndicatorProps> = () => (
   <div className="loadingIndicatorContainer">
     <div className="loadingIndicator">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div/>
+      <div/>
+      <div/>
+      <div/>
     </div>
   </div>
 );

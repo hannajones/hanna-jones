@@ -28,7 +28,7 @@ const loaders = [
     test: /\.scss$/,
     use: [
       {
-        loader: MiniCssExtractPlugin.loader
+        loader: MiniCssExtractPlugin.loader,
       },
       {
         loader: 'css-loader',

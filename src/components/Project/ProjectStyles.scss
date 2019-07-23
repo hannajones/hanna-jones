@@ -12,13 +12,15 @@
   }
 
   &__image {
-    max-width: 350px;
+    width: 350px;
+    height: 230px;
     position: relative;
     filter: grayscale(100%);
     filter: $color-gray-accent;
     border-bottom: 0px;
     background: $color-white;
     position: relative;
+    margin-bottom: 15px;
 
     &:hover {
       filter: grayscale(0%);
@@ -60,7 +62,8 @@
     margin-bottom:15px;
 
     &__image {
-      max-width: 325px;
+      width: 325px;
+      height: 217px;
     }
 
     &__description {

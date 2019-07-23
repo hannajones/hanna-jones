@@ -5,7 +5,7 @@ import './CardStyles.scss';
 
 interface CardComponentProps {
   className?: string;
-};
+}
 
 const CardComponent: React.FunctionComponent<CardComponentProps> = ({ className, children }) => (
   <div className={cx('card', className)}>
@@ -13,6 +13,6 @@ const CardComponent: React.FunctionComponent<CardComponentProps> = ({ className,
       {children}
     </div>
   </div>
-)
+);
 
 export default CardComponent;

@@ -1,17 +1,28 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import Routes from '../../routes';
+
+// components
 import Card from '../../components/Card';
 
-import './AboutScreenStyles.scss';
+// types
+import Routes from '../../routes';
 
-interface AboutScreenProps {};
+// styles
+import './AboutScreenStyles.scss';
+import ProgressiveImage from '../../components/ProgressiveImage/ProgressiveImageComponent';
+import { aboutThumb, about } from '../../helpers/images';
+
+interface AboutScreenProps {}
 
 const AboutScreen: React.FunctionComponent<AboutScreenProps> = () => (
   <Card>
     <div className="about">
       <div className="about__imageContainer">
-        <img src="https://s3.amazonaws.com/hanna-jones-photos/about/hanna-web.jpg" alt="hanna jones" className="about__image"/>
+        <ProgressiveImage
+          thumb={aboutThumb}
+          main={about}
+          className="about__image"
+        />
       </div>
       <div className="about__description">
         <p className="about__description__paragraph">

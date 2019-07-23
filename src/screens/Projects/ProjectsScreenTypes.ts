@@ -1,4 +1,4 @@
-import { ErrorPayload, ReducerAction } from "../../sharedTypes";
+import { ErrorPayload, ReducerAction } from '../../sharedTypes';
 
 export interface ProjectItem {
   description: string;

@@ -1,12 +1,17 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
-import Routes from '../../routes';
+
+// components
 import LinkedInIcon from '../../assets/icons/LinkedIn';
 import GithubIcon from '../../assets/icons/Github';
 
+// types
+import Routes from '../../routes';
+
+// styles
 import './MenuStyles.scss';
 
-interface MenuComponentProps {};
+interface MenuComponentProps {}
 
 const MenuComponent: React.FunctionComponent<MenuComponentProps> = () => (
   <div className="menu">

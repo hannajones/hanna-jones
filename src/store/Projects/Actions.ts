@@ -1,5 +1,5 @@
-import { ProjectReducerActions, ProjectReducerAction } from "../../screens/Projects/ProjectsScreenTypes";
-import { fetchProjectsData } from "../../services/ProjectsService";
+import { ProjectReducerActions, ProjectReducerAction } from '../../screens/Projects/ProjectsScreenTypes';
+import { fetchProjectsData } from '../../services/ProjectsService';
 
 export interface ProjectsActions {
   loadData: () => Promise<void>;
@@ -21,10 +21,10 @@ function createProjectActions(dispatch: React.Dispatch<ProjectReducerAction>): P
         dispatch({
           type: ProjectReducerActions.ERROR,
           error
-        })
+        });
       }
     }
-  }
-};
+  };
+}
 
 export default createProjectActions;

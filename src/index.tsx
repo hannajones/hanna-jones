@@ -19,9 +19,8 @@ import Routes from './routes';
 
 import './App.scss';
 
-// TODO: tslint/eslint
-// TODO: fix for mobile devices
-// TODO: address firebase size
+// TODO: readme
+// TODO: separate types files
 render((
   <Router>
       <div className="app">

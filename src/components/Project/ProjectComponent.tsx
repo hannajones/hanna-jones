@@ -1,9 +1,15 @@
 import * as React from 'react';
 import * as cx from 'classnames';
-import { ProjectComponentProps, ProjectDisplayModes } from './types';
+
+// components
 import Carousel from '../Carousel';
 
+// types
+import { ProjectComponentProps, ProjectDisplayModes } from './types';
+
+// styles
 import './ProjectStyles.scss';
+import ProgressiveImage from '../ProgressiveImage/ProgressiveImageComponent';
 
 const ProjectComponent: React.FunctionComponent<ProjectComponentProps> = ({ images, title, description, url, display = ProjectDisplayModes.PREVIEW }) => {
   const isFullView = display === ProjectDisplayModes.FULL;
@@ -12,7 +18,7 @@ const ProjectComponent: React.FunctionComponent<ProjectComponentProps> = ({ imag
     <div className={cx('project', `project--${display}`)}>
       {
         images && !isFullView ?
-        <img className="project__image" src={images[0]} alt={title} /> :
+        <ProgressiveImage main={{ src: images[0], alt: title }} className="project__image" /> :
         <Carousel images={images} />
       }
       <div className="project__title">
@@ -31,7 +37,7 @@ const ProjectComponent: React.FunctionComponent<ProjectComponentProps> = ({ imag
         </div>
       }
     </div>
-  )
+  );
 };
 
 export default ProjectComponent;

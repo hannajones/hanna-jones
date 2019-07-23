@@ -1,26 +1,37 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { withRouter, RouteComponentProps } from 'react-router';
-import { Link } from 'react-router-dom'
-import { ProjectsContext } from '../../store/Projects';
-import Card from '../../components/Card';
-import LoadingIndicator from '../../components/LoadingIndicator';
-import Project from '../../components/Project';
 
+// components
+import Card from '../../components/Card';
+import Project from '../../components/Project';
+import ErrorComponent from '../../components/Error';
 import ChevronLeftIcon from '../../assets/icons/ChevronLeft';
+import LoadingIndicator from '../../components/LoadingIndicator';
+
+// data
+import { ProjectsContext } from '../../store/Projects';
+
+// types
 import Routes from '../../routes';
 import { ProjectDisplayModes } from '../../components/Project/types';
 
+// styles
 import './ProjectScreenStyles.scss';
 
 interface ProjectRouteParams {
   id: string;
 }
 
-interface ProjectScreenProps extends RouteComponentProps<ProjectRouteParams> {};
+interface ProjectScreenProps extends RouteComponentProps<ProjectRouteParams> {}
 
 const ProjectScreen: React.FunctionComponent<ProjectScreenProps> = ({ match }) => {
   const { projectsState } = React.useContext(ProjectsContext);
   const project = projectsState.projects[Number(match.params.id)];
+
+  if (projectsState.error) {
+    return <ErrorComponent message={projectsState.error.message} />;
+  }
 
   return (
     <Card>
@@ -52,6 +63,6 @@ const ProjectScreen: React.FunctionComponent<ProjectScreenProps> = ({ match }) =
       </div>
     </Card>
   );
-}
+};
 
 export default withRouter(ProjectScreen);

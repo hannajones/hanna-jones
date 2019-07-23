@@ -1,0 +1,9 @@
+@import '../../variables';
+
+.error__container {
+  padding: 50px 100px;
+  border-radius: 4px;
+  border: 2px solid $color-red;
+  background-color: rgba(248, 185, 185, 0.3);
+  color: $color-red;
+}

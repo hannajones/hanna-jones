@@ -11,14 +11,14 @@ import './ProjectListStyles.scss';
 
 interface ProjectListProps {
   projects: ProjectsList;
-};
+}
 
 const ProjectListComponent: React.FunctionComponent<ProjectListProps> = ({ projects }) => (
   <div className="projectsList">
     {
       Object.keys(projects).map(key => {
         const project = projects[key];
-        
+
         return (
           <Project
             key={project.id}
@@ -27,7 +27,7 @@ const ProjectListComponent: React.FunctionComponent<ProjectListProps> = ({ proje
             title={project.title}
             link={`project/${project.id}`}
           />
-        )
+        );
       })
     }
   </div>

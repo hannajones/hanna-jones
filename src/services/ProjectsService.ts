@@ -19,7 +19,7 @@ function formatProjectsResponse(data: ProjectData): ProjectsList {
   }, {});
   projectsCache[cacheKey] = formattedResponse;
   return formattedResponse;
-} 
+}
 
 export async function fetchProjectsData(): Promise<ProjectsList> {
   try {
@@ -31,6 +31,6 @@ export async function fetchProjectsData(): Promise<ProjectsList> {
     const data: ProjectsResponse = await base.fetch(process.env.FIREBASE_PROJECTS_URL, {});
     return formatProjectsResponse(data.projects);
   } catch (error) {
-    throw error;
+    throw new Error('Something went wrong - please try refreshing the page');
   }
 }

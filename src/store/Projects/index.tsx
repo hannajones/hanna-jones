@@ -24,5 +24,5 @@ export const ProjectsDataProvider = ({ children }) => {
         <ProjectsContext.Provider value={{projectsState, projectsActions}}>
             {children}
         </ProjectsContext.Provider>
-    )
+    );
 };
