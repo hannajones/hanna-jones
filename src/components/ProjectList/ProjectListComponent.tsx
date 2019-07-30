@@ -21,7 +21,7 @@ const ProjectListComponent: React.FunctionComponent<ProjectListProps> = ({ proje
 
         return (
           <Project
-            key={project.id}
+            key={`${project.title}-${project.id}`}
             images={project.images}
             id={project.id}
             title={project.title}

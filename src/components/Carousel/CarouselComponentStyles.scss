@@ -65,3 +65,12 @@
     }
   }
 }
+
+@media screen and (max-width: 665px) {
+  .carousel {
+    &__image, &__imageContainer {
+      max-width: 315px;
+      height: 210px;
+    }
+  }
+}
