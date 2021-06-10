@@ -24,11 +24,11 @@ const MenuComponent: React.FunctionComponent<MenuComponentProps> = () => (
           <h4 className="menu__header--small">About</h4>
         </div>
       </NavLink>
-      <NavLink to={Routes.PROJECTS} className="menu__link" activeClassName="menu__link--active" exact>
+      {/* <NavLink to={Routes.PROJECTS} className="menu__link" activeClassName="menu__link--active" exact>
         <div className="menu__item">
           <h4 className="menu__header--small">Projects</h4>
         </div>
-      </NavLink>
+      </NavLink> */}
       <NavLink to={Routes.RESUME} className="menu__link" activeClassName="menu__link--active" exact>
         <div className="menu__item">
           <h4 className="menu__header--small">Résumé</h4>

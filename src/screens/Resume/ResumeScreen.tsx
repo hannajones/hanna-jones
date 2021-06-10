@@ -29,12 +29,12 @@ const ResumeScreen: React.FunctionComponent<ResumeScreenProps> = () => (
             'Limited experience with PHP, Ruby, Rails, SQL',
           ]}
         />
-        <ResumeContent
+        {/* <ResumeContent
           title="Design"
           descriptions={[
             'I have done some web & graphic design using Sketch, Adobe Creative Suite, and Balsamiq'
           ]}
-        />
+        /> */}
       </ResumeSection>
       <ResumeSection title="Education">
         <ResumeContent
